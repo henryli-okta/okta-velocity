@@ -1,32 +1,222 @@
 {
 	"cparse": {
-		"prefix": ["#cparse", "cparse"],
+		"prefix": "#cparse",
 		"body": "#cparse(\"${1:path_to_include}\")",
 		"description": "cparse",
 		"scope": "source.velocity, text.html.velocity"
 	},
 	"foreach": {
-		"prefix": ["#for", "foreach"],
+		"prefix": ["#for", "#foreach"],
 		"body": "#foreach(\\$${1:temp_variable} in \\$${2:array})\n\t#${3:thing_to_do}\n#end",
 		"description": "foreach",
 		"scope": "source.velocity, text.html.velocity"
 	},
 	"if": {
-		"prefix": ["#if", "if"],
+		"prefix": "#if",
 		"body": "#if(${1:condition})\n\t#${2:thing_to_do}\n#end",
 		"description": "if",
 		"scope": "source.velocity, text.html.velocity"
 	},
+	"else": {
+        "prefix": "#else",
+        "body": "#else\n\t${0:thing_to_do}",
+        "description": "else",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "elseif": {
+        "prefix": "#elseif",
+        "body": "#elseif(${0:condition})",
+        "description": "elseif",
+        "scope": "source.velocity, text.html.velocity"
+    },
 	"ifelse": {
-		"prefix": ["#ifelse", "ifelse"],
+		"prefix": "#ifelse",
 		"body": "#if(${1:condition})\n\t#${2:thing_to_do}\n#else\n\t#${3:otherwise}\n#end",
-		"description": "ifelse",
+		"description": "if-else",
 		"scope": "source.velocity, text.html.velocity"
 	},
+	"ifelseif": {
+        "prefix": "#ifelseif",
+        "body": "#if(${1:condition})\n\t${2:thing_to_do}\n#elseif(${3:condition})\n\t${4:thing_to_do}\n#else\n\t${0:thing_to_do}\n#end",
+        "description": "if-elseif-else",
+        "scope": "source.velocity, text.html.velocity"
+    },
 	"set": {
-		"prefix": ["#set", "set"],
+		"prefix": "#set",
 		"body": "#set(\\$${1:variable} = ${2:\"${3:value}\"})",
 		"description": "set",
 		"scope": "source.velocity, text.html.velocity"
-	}
+	},
+	"end": {
+        "prefix": "#end",
+        "body": "#end",
+        "description": "end",
+        "scope": "source.velocity, text.html.velocity"
+    },
+	"include": {
+        "prefix": "#include",
+        "body": "#include(\"${0:url}\")",
+        "description": "include",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "parse": {
+        "prefix": "#parse",
+        "body": "#parse(\"${0:url}\")",
+        "description": "parse",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "define": {
+        "prefix": "#define",
+        "body": "#define(${1:ref})\r\n\t${0}\r\n#end",
+        "description": "define",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "macro": {
+        "prefix": "#macro",
+        "body": "#macro(${1:vmname} ${2:arg1} = ${3:def1})\r\n\t${0:VM VTL code}\r\n#end",
+        "description": "macro",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "count": {
+        "prefix": "$velocityCount",
+        "body": "\n\\$velocityCount\n",
+        "description": "velocity count",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "stop": {
+        "prefix": "#stop",
+        "body": "\n#stop\n",
+        "description": "stop",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "break": {
+        "prefix": "#break",
+        "body": "\n#break\n",
+        "description": "break",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "evaluate": {
+        "prefix": "#evaluate",
+        "body": "#evaluate\n",
+        "description": "evaluate",
+        "scope": "source.velocity, text.html.velocity"
+    },
+
+	/**
+		Velocity Methods
+	**/
+    "exist": {
+        "prefix": "exist",
+        "body": "\\$include.exists( \"${0:filepath}\" )",
+        "description": "\\$include.exists(filepath)",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "param": {
+        "prefix": "param",
+        "body": "\\$!{request.getParameter( \"${1:parameter name}\" )}",
+        "description": "\\$!{request.getParameter(param)}",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "vm": {
+        "prefix": "vm",
+        "body": "#!vm;utf-8",
+        "description": "#!vm;utf-8",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "host": {
+        "prefix": "host",
+        "body": "\\$!{link.getHost()}",
+        "description": "\\$!{link.getHost()}",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "ept": {
+        "prefix": "ept",
+        "body": "\nisEmpty()\n",
+        "description": "isEmpty()",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "isfeature": {
+        "prefix": "isfeature",
+        "body": "\n\\$_userAgent.isFeaturePhone()\n",
+        "description": "\\$_userAgent.isFeaturePhone()",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "issmart": {
+        "prefix": "issmart",
+        "body": "\n\\$_userAgent.isSmartPhone()\n",
+        "description": "\\$_userAgent.isSmartPhone()",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "isweb": {
+        "prefix": "isweb",
+        "body": "\n\\$_userAgent.isWeb()\n",
+        "description": "\\$_userAgent.isWeb()",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "request": {
+        "prefix": "request",
+        "body": "\n\\$_json.request( ${0:url} )\n",
+        "description": "\\$_json.request(url)",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "jstos": {
+        "prefix": ["jstos", "jsonstr"],
+        "body": "\n\\$_json.toString( ${0:obj} )\n",
+        "description": "\\$_json.toString(obj)",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    ".ks": {
+        "prefix": ".keySet",
+        "body": "\n.keySet()\n",
+        "description": ".keySet()",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "redi": {
+        "prefix": "redirect",
+        "body": "\n\\$response.setStatus(${1:301})\n\\$response.sendRedirect(\"${2:\\$${0:var}}\")\n",
+        "description": "send redirect response",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "ctype": {
+        "prefix": ["ctype", "content"],
+        "body": "\n\\$response.setContentType(\"${1:application/x-web-app-manifest+json}\")${0}\n",
+        "description": "set response content type as json",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    "sysdate": {
+        "prefix": ["sysdate", "systime"],
+        "body": "\n\\$date.getSystemTime()\n",
+        "description": "$date.getSystemTime()",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    ".toString": {
+        "prefix": ".toString",
+        "body": "\n.toString()\n",
+        "description": ".toString()",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    ".toUpperCase": {
+        "prefix": [".toUpperCase", "upper"],
+        "body": "\n.toUpperCase()\n",
+        "description": ".toUpperCase()",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    ".indexOf": {
+        "prefix": ".index",
+        "body": ".indexOf(\\$${1:string})",
+        "description": ".indexOf(str)",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    ".substring": {
+        "prefix": ".substring",
+        "body": ".substring(0)",
+        "description": ".substring(0)",
+        "scope": "source.velocity, text.html.velocity"
+    },
+    ".size": {
+        "prefix": [".size", "size"],
+        "body": ".size()",
+        "description": ".size()",
+        "scope": "source.velocity, text.html.velocity"
+    }
 }
