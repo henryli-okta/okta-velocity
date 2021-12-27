@@ -1,0 +1,32 @@
+{
+	"cparse": {
+		"prefix": ["#cparse", "cparse"],
+		"body": "#cparse(\"${1:path_to_include}\")",
+		"description": "cparse",
+		"scope": "source.velocity, text.html.velocity"
+	},
+	"foreach": {
+		"prefix": ["#for", "foreach"],
+		"body": "#foreach(\\$${1:temp_variable} in \\$${2:array})\n\t#${3:thing_to_do}\n#end",
+		"description": "foreach",
+		"scope": "source.velocity, text.html.velocity"
+	},
+	"if": {
+		"prefix": ["#if", "if"],
+		"body": "#if(${1:condition})\n\t#${2:thing_to_do}\n#end",
+		"description": "if",
+		"scope": "source.velocity, text.html.velocity"
+	},
+	"ifelse": {
+		"prefix": ["#ifelse", "ifelse"],
+		"body": "#if(${1:condition})\n\t#${2:thing_to_do}\n#else\n\t#${3:otherwise}\n#end",
+		"description": "ifelse",
+		"scope": "source.velocity, text.html.velocity"
+	},
+	"set": {
+		"prefix": ["#set", "set"],
+		"body": "#set(\\$${1:variable} = ${2:\"${3:value}\"})",
+		"description": "set",
+		"scope": "source.velocity, text.html.velocity"
+	}
+}
