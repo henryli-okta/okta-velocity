@@ -7,14 +7,15 @@
         "vscode": "^1.63.0"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Snippets"
     ],
     "contributes": {
         "languages": [{
             "id": "velocity",
             "aliases": ["Velocity", "velocity"],
             "extensions": [".vm",".fhtml","html","txt"],
-            "configuration": "./velocity-configuration.json"
+            "configuration": "./velocity.language-configuration.json"
         }],
         "grammars": [
             {
@@ -31,6 +32,12 @@
                 "scopeName": "velocity.injection",
                 "path": "./syntaxes/VelocityInjection.json",
                 "injectTo": ["text.html.velocity"]
+            }
+        ],
+        "snippets": [
+            {
+                "language": "velocity",
+                "path": "./snippets/snippets.code-snippets"
             }
         ]
     }
