@@ -1,0 +1,37 @@
+{
+    "name": "okta-velocity",
+    "displayName": "okta-velocity",
+    "description": "Okta Velocity(Enhanced Macro)",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "velocity",
+            "aliases": ["Velocity", "velocity"],
+            "extensions": [".vm",".fhtml","html","txt"],
+            "configuration": "./velocity-configuration.json"
+        }],
+        "grammars": [
+            {
+                "language": "velocity",
+                "scopeName": "text.velocity",
+                "path": "./syntaxes/Velocity.tmLanguage"
+            },
+            {
+                "language": "velocity",
+                "scopeName": "text.html.velocity",
+                "path": "./syntaxes/VelocityHTML.tmLanguage"
+            },
+            {
+                "scopeName": "velocity.injection",
+                "path": "./syntaxes/VelocityInjection.json",
+                "injectTo": ["text.html.velocity"]
+            }
+        ]
+    }
+}

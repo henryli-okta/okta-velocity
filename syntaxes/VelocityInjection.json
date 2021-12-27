@@ -1,0 +1,9 @@
+{
+    "scopeName": "velocity.injection",
+    "injectionSelector": ["L:string.quoted.double.html", "L:string.quoted.single.html", "L:string.unquoted.html"],
+    "patterns": [
+      {
+        "include": "text.velocity"
+      }
+    ]
+}
