@@ -67,13 +67,13 @@
     },
     "define": {
         "prefix": "#define",
-        "body": "#define(${1:ref})\r\n\t${0}\r\n#end",
+        "body": "#define(${1:ref})\n\t${0}\n#end",
         "description": "define",
         "scope": "source.velocity, text.html.velocity"
     },
     "macro": {
         "prefix": "#macro",
-        "body": "#macro(${1:vmname} ${2:arg1} = ${3:def1})\r\n\t${0:VM VTL code}\r\n#end",
+        "body": "#macro(${1:vmname} ${2:arg1} = ${3:def1})\n\t${0:VM VTL code}\n#end",
         "description": "macro",
         "scope": "source.velocity, text.html.velocity"
     },
