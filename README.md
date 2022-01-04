@@ -63,3 +63,11 @@ Added features X, Y, and Z.
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
+
+npm install -g antlr4ts-cli
+
+antlr4ts VTLLexer.g4
+
+change VTLLexer.ts line 240 add comment "// @ts-ignore"
+
+antlr4ts VTLParser.g4
