@@ -10,9 +10,8 @@ export interface VTLSymbol {
 }
 
 export enum VTLType {
-	Symbol,
-	Property,
-	Method,
+	Variable,
+	Property_Method,
 	Macro
 }
 

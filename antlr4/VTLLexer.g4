@@ -4,48 +4,9 @@ tokens {
   OPAR, CPAR, OBRACK, CBRACK, OBRACE, CBRACE, STRING, INTEGER, ID, REFERENCE, DOT, COMMA, ASSIGN, EQ, NE, AND, OR,
   K_NULL, ADD, SUB, MUL, DIV, MOD, COLON, FLOAT, RANGE, LT, LE, GT, GE, EXCL, K_LT, K_LE, K_GT, K_GE, K_EQ, K_NE,
   K_TRUE, K_FALSE, K_AND, K_OR, K_NOT, K_NULL, K_IN, IF, ELSEIF, ELSE, FOREACH, SET, END, BREAK, MACRO_ID, MACRO,
-  STOP, INCLUDE, EVALUATE, PARSE, DEFINE, PIPE, NUMBER, BOOL, ESCAPESIGN, DQUOTE, SQUOTE
+  STOP, INCLUDE, EVALUATE, PARSE, DEFINE
 }
 
-channels {
-  COMMENTS
-}
-
-//-------------------------------------
-//global fragments
-//-------------------------------------
-fragment BOOL
- : 'true'
- | 'false'
- ;
-
-fragment STRING
- : STRING_DQ
- | STRING_SQ
- ;
-
-fragment NUMBER
- : '[+-]' FLOAT
- | '[+-]' INTEGER
- ;
-
-fragment FLOAT
- : DIGIT* '.' DIGIT+ EXPONENT?
- | DIGIT+ '.' {this._input.LA(1) != '.'}? EXPONENT?
- | DIGIT+ EXPONENT
- ;
-
-fragment SPACES    : [ \t\r\n];
-fragment ID        : [a-zA-Z] [a-zA-Z0-9_-]*;
-fragment STRING_DQ : '"' ( ~["\r\n$] | '""' )* '"';
-fragment STRING_SQ : '\'' ( ~['\r\n] | '\'\'' )* '\'';
-fragment INTEGER   : DIGIT+;
-fragment DIGIT     : [0-9];
-fragment EXPONENT  : [eE] [+-]? DIGIT+;
-
-//-------------------------------------
-//default mode
-//-------------------------------------
 ESCAPED_CHAR
  : '\\' .
  ;
@@ -54,102 +15,67 @@ START_DIRECTIVE
  : '#' -> skip, pushMode(DIR_)
  ;
 
+DOLLAR_EXCL_OBRACE
+ : '$' '\\'* '!{' -> pushMode(FRM_)
+ ;
+
+DOLLAR_OBRACE
+ : '$' '{' -> pushMode(FRM_)
+ ;
+
+DOLLAR_EXCL
+ : '$' '\\'* '!' -> pushMode(VAR_)
+ ;
+
 DOLLAR
- : '$' -> pushMode(PRE_REF_)
+ : '$' -> pushMode(VAR_)
  ;
 
 TEXT
  : .
  ;
 
+// Formal mode
+mode FRM_;
+
+FRM_ID
+ : ID -> type(ID)
+ ;
+
+FRM_DOT
+ : '.' -> type(DOT)
+ ;
+
+FRM_OBRACK
+ : '[' -> type(OBRACK), pushMode(IDX_)
+ ;
+
+FRM_OPAR
+ : '(' -> type(OPAR), pushMode(CODE_)
+ ;
+
+FRM_CBRACE
+ : '}' -> type(CBRACE), popMode
+ ;
+
+// Directive mode
+mode DIR_;
+
 ESCAPED_BLOCK
  : '[[' .*? ']]#' -> popMode
  ;
 
 SNGLE_LINE_COMMENT
- : '##' ~[\r\n]* ('\n' | '\r\n' | EOF) -> channel(COMMENTS)
+ : '#' ~[\r\n]* -> skip , popMode
  ;
 
-BLOCK_COMMENT
- : '#*' .*? '*#' -> channel(COMMENTS)
+VTL_COMMENT_BLOCK
+ : '**' .*? '*#' -> channel(HIDDEN), popMode
  ;
 
-//Pre-reference mode
-mode PRE_REF_;
-
-PRE_REF_EXCL
- : '!' -> type(EXCL)
+MULTI_LINE_COMMENT
+ : '*' .*? '*#' -> skip, popMode
  ;
-
-PRE_REF_ESCAPE
- : '\\' * -> type(ESCAPESIGN) 
- ;
-
-PRE_REF_OBRACE
- : '{' -> type(OBRACE), mode(POST_REF_), pushMode(REF_)
- ;
-
-PRE_REF_EMPTY
- : SPACES -> skip, mode(REF_)
- ;
-
-// Reference modes
-mode REF_;
-REF_ID
- : ID -> type(ID), mode(REF2_)
- ;
-
-mode REF2_;
-REF2_OPAR
- : '(' -> type(OPAR), mode(REF3_), pushMode(CODE_)
- ;
-
-REF2_EMPTY
- : SPACES * -> skip, mode(REF3_)
- ;
-
-mode REF3_;
-REF3_DOT
- : '.' -> type(DOT), mode(REF_)
- ;
-
-REF3_OBRACK
- : '[' -> type(OBRACK), pushMode(CODE_)
- ;
-
-REF3_EMPTY
- : SPACES * -> skip, popMode
- ;
-
-//Post-reference mode
-mode POST_REF_;
-
-POST_REF_CBRACE
- : '}' -> type(CBRACE), popMode
- ;
-
-POST_REF_PIPE
- : '|' -> type(PIPE), pushMode(LITERAL_)
- ;
-
-mode LITERAL_;
-LITERAL_NUMBER
-  : NUMBER -> type(NUMBER)
-  ;
-
-LITERAL_BOOL
- : BOOL -> type(BOOL)
- ;
-
-LITERAL_STRING
- : STRING -> type(STRING)
- ;
-
-LITERAL_EMPTY
- : SPACES * -> skip, popMode;
-
-// Directive mode
-mode DIR_;
 
 DIR_SET
  : ( 'set' | '{set}' ) SPACES? '(' -> type(SET), popMode, pushMode(CODE_)
@@ -213,6 +139,49 @@ DIR_CUSTOM_CODE
 
 DIR_CUSTOM
  : ID -> type(ID), popMode
+ ;
+
+// Variable mode
+mode VAR_;
+
+VAR_DOLLAR
+ : '$'  -> type(DOLLAR)
+ ;
+
+VAR_DOLLAR_EXCL
+ : '$' '\\'* '!' -> type(DOLLAR_EXCL)
+ ;
+
+VAR_DOLLAR_EXCL_OBRACE
+ : '$' '\\'* '!{' -> type(DOLLAR_EXCL_OBRACE), popMode, pushMode(FRM_)
+ ;
+
+VAR_DOLLAR_OBRACE
+ : '$' '{' -> type(DOLLAR_OBRACE), popMode, pushMode(FRM_)
+ ;
+
+VAR_HASH
+ : '#' -> skip, popMode, pushMode(DIR_)
+ ;
+
+VAR_ID
+ : ID -> type(ID)
+ ;
+
+VAR_DOT
+ : '.' -> type(DOT)
+ ;
+
+VAR_OBRACK
+ : '[' -> type(OBRACK), pushMode(IDX_)
+ ;
+
+VAR_OPAR
+ : '(' -> type(OPAR), pushMode(CODE_)
+ ;
+
+VAR_TEXT
+ : . -> type(TEXT), popMode
  ;
 
 // Code mode
@@ -339,7 +308,7 @@ CODE_SPACES
  ;
 
 CODE_REFERENCE
- : '$' -> type(REFERENCE), pushMode(PRE_REF_)
+ : ('$' '!'? ID ('.' ID)* | '$' '!'? '{' ID ('.' ID)* '}') -> type(REFERENCE)
  ;
 
 CODE_OPAR
@@ -370,52 +339,64 @@ CODE_INTEGER
  : INTEGER -> type(INTEGER)
  ;
 
-CODE_ODQUOTE
+CODE_STRING
  : STRING -> type(STRING)
  ;
 
-CODE_DQUOTE
-  : '"' -> pushMode(STR_)
-  ;
-
-CODE_STRING
-  : STRING_SQ
-  ;
-
 CODE_OBRACK
- : '[' -> type(OBRACK), pushMode(CODE_)
+ : '[' -> type(OBRACK)
  ;
 
 CODE_CBRACK
- : ']' -> type(CBRACK), popMode
+ : ']' -> type(CBRACK)
  ;
 
 CODE_OBRACE
- : '{' -> type(OBRACE), pushMode(CODE_)
+ : '{' -> type(OBRACE)
  ;
 
 CODE_CBRACE
- : '}' -> type(CBRACE), popMode
+ : '}' -> type(CBRACE)
  ;
 
 CODE_COMMA
  : ',' -> type(COMMA)
  ;
 
-mode STR_;
-STR_TEXT
- : ~[\\$"]+
+// Index mode
+mode IDX_;
+
+IDX_CBRACK
+ : ']' -> type(CBRACK), popMode
  ;
 
-STR_ESCAPED_CHAR
- : ESCAPED_CHAR
+IDX_REFERENCE
+ : ('$' ID | '$' '{' ID '}') -> type(REFERENCE)
  ;
 
-STR_DQUOTE
- : '"' -> type(DQUOTE), popMode
+IDX_STRING
+ : STRING -> type(STRING)
  ;
 
-STR_REF
- : '$' -> type(REFERENCE), pushMode(PRE_REF_)
+IDX_INTEGER
+ : INTEGER -> type(INTEGER)
  ;
 
+fragment STRING
+ : STRING_DQ
+ | STRING_SQ
+ ;
+
+fragment FLOAT
+ : DIGIT* '.' DIGIT+ EXPONENT?
+ | DIGIT+ '.' {this._input.LA(1) != '.'}? EXPONENT?
+ | DIGIT+ EXPONENT
+ ;
+
+fragment SPACES    : [ \t\r\n];
+fragment ID        : [a-zA-Z] [a-zA-Z0-9_-]*;
+fragment STRING_DQ : '"' ( ~["\r\n] | '""' )* '"';
+fragment STRING_SQ : '\'' ( ~['\r\n] | '\'\'' )* '\'';
+fragment INTEGER   : DIGIT+;
+fragment DIGIT     : [0-9];
+fragment EXPONENT  : [eE] [+-]? DIGIT+;

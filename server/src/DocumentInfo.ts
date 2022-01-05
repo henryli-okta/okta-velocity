@@ -97,7 +97,7 @@ export class DocumentInfo {
 		if (errorList.length == 0) {
 			const listener = new OktaVTLParserListener();
 			ParseTreeWalker.DEFAULT.walk(listener as VTLParserListener, tree);
-			this.variables = listener.symbols;
+			this.variables = listener.variables;
 			this.properties_methods = listener.properties_methods;
 			this.macros = listener.macros;
 			this.tokens = listener.tokens;

@@ -1,5 +1,5 @@
 // Generated from VTLParser.g4 by ANTLR 4.9.0-SNAPSHOT
-/* eslint-disable  no-useless-escape*/
+/* eslint-disable no-useless-escape*/
 
 import { ATN } from "antlr4ts/atn/ATN";
 import { ATNDeserializer } from "antlr4ts/atn/ATNDeserializer";
@@ -83,105 +83,95 @@ export class VTLParser extends Parser {
 	public static readonly EVALUATE = 55;
 	public static readonly PARSE = 56;
 	public static readonly DEFINE = 57;
-	public static readonly PIPE = 58;
-	public static readonly NUMBER = 59;
-	public static readonly BOOL = 60;
-	public static readonly ESCAPESIGN = 61;
-	public static readonly DQUOTE = 62;
-	public static readonly SQUOTE = 63;
-	public static readonly ESCAPED_CHAR = 64;
-	public static readonly START_DIRECTIVE = 65;
-	public static readonly DOLLAR = 66;
-	public static readonly TEXT = 67;
-	public static readonly ESCAPED_BLOCK = 68;
-	public static readonly SNGLE_LINE_COMMENT = 69;
-	public static readonly BLOCK_COMMENT = 70;
-	public static readonly PRE_REF_EMPTY = 71;
-	public static readonly REF2_EMPTY = 72;
-	public static readonly REF3_EMPTY = 73;
-	public static readonly LITERAL_EMPTY = 74;
-	public static readonly CODE_SPACES = 75;
-	public static readonly CODE_DQUOTE = 76;
-	public static readonly CODE_STRING = 77;
-	public static readonly STR_TEXT = 78;
-	public static readonly STR_ESCAPED_CHAR = 79;
-	public static readonly PRE_REF_EXCL = 80;
-	public static readonly POST_REF_CBRACE = 81;
-	public static readonly CODE_K_LT = 82;
-	public static readonly CODE_K_LE = 83;
-	public static readonly CODE_K_GT = 84;
-	public static readonly CODE_K_GE = 85;
-	public static readonly CODE_K_EQ = 86;
-	public static readonly CODE_K_NE = 87;
-	public static readonly CODE_K_TRUE = 88;
-	public static readonly CODE_K_FALSE = 89;
-	public static readonly CODE_K_AND = 90;
-	public static readonly CODE_K_OR = 91;
-	public static readonly CODE_K_NOT = 92;
-	public static readonly CODE_K_NULL = 93;
-	public static readonly CODE_K_IN = 94;
-	public static readonly CODE_ADD = 95;
-	public static readonly CODE_SUB = 96;
-	public static readonly CODE_MUL = 97;
-	public static readonly CODE_DIV = 98;
-	public static readonly CODE_MOD = 99;
-	public static readonly CODE_OR = 100;
-	public static readonly CODE_AND = 101;
-	public static readonly CODE_ASSIGN = 102;
-	public static readonly CODE_EQ = 103;
-	public static readonly CODE_NEQ = 104;
-	public static readonly CODE_LT = 105;
-	public static readonly CODE_LE = 106;
-	public static readonly CODE_GT = 107;
-	public static readonly CODE_GE = 108;
-	public static readonly CODE_CPAR = 109;
-	public static readonly CODE_COLON = 110;
-	public static readonly CODE_RANGE = 111;
-	public static readonly CODE_DOT = 112;
-	public static readonly CODE_CBRACK = 113;
-	public static readonly CODE_COMMA = 114;
+	public static readonly ESCAPED_CHAR = 58;
+	public static readonly START_DIRECTIVE = 59;
+	public static readonly DOLLAR_EXCL_OBRACE = 60;
+	public static readonly DOLLAR_OBRACE = 61;
+	public static readonly DOLLAR_EXCL = 62;
+	public static readonly DOLLAR = 63;
+	public static readonly TEXT = 64;
+	public static readonly ESCAPED_BLOCK = 65;
+	public static readonly SNGLE_LINE_COMMENT = 66;
+	public static readonly VTL_COMMENT_BLOCK = 67;
+	public static readonly MULTI_LINE_COMMENT = 68;
+	public static readonly VAR_HASH = 69;
+	public static readonly CODE_SPACES = 70;
+	public static readonly FRM_DOT = 71;
+	public static readonly FRM_CBRACE = 72;
+	public static readonly CODE_K_LT = 73;
+	public static readonly CODE_K_LE = 74;
+	public static readonly CODE_K_GT = 75;
+	public static readonly CODE_K_GE = 76;
+	public static readonly CODE_K_EQ = 77;
+	public static readonly CODE_K_NE = 78;
+	public static readonly CODE_K_TRUE = 79;
+	public static readonly CODE_K_FALSE = 80;
+	public static readonly CODE_K_AND = 81;
+	public static readonly CODE_K_OR = 82;
+	public static readonly CODE_K_NOT = 83;
+	public static readonly CODE_K_NULL = 84;
+	public static readonly CODE_K_IN = 85;
+	public static readonly CODE_ADD = 86;
+	public static readonly CODE_SUB = 87;
+	public static readonly CODE_MUL = 88;
+	public static readonly CODE_DIV = 89;
+	public static readonly CODE_MOD = 90;
+	public static readonly CODE_EXCL = 91;
+	public static readonly CODE_OR = 92;
+	public static readonly CODE_AND = 93;
+	public static readonly CODE_ASSIGN = 94;
+	public static readonly CODE_EQ = 95;
+	public static readonly CODE_NEQ = 96;
+	public static readonly CODE_LT = 97;
+	public static readonly CODE_LE = 98;
+	public static readonly CODE_GT = 99;
+	public static readonly CODE_GE = 100;
+	public static readonly CODE_CPAR = 101;
+	public static readonly CODE_COLON = 102;
+	public static readonly CODE_RANGE = 103;
+	public static readonly CODE_OBRACK = 104;
+	public static readonly CODE_CBRACK = 105;
+	public static readonly CODE_OBRACE = 106;
+	public static readonly CODE_COMMA = 107;
 	public static readonly RULE_parse = 0;
 	public static readonly RULE_block = 1;
 	public static readonly RULE_atom = 2;
-	public static readonly RULE_reference = 3;
-	public static readonly RULE_call = 4;
-	public static readonly RULE_indexcall = 5;
-	public static readonly RULE_propertycall = 6;
-	public static readonly RULE_functioncall = 7;
-	public static readonly RULE_arglist = 8;
-	public static readonly RULE_literal = 9;
-	public static readonly RULE_directive = 10;
-	public static readonly RULE_expressions = 11;
-	public static readonly RULE_set_directive = 12;
-	public static readonly RULE_if_directive = 13;
-	public static readonly RULE_elseif_directive = 14;
-	public static readonly RULE_else_directive = 15;
-	public static readonly RULE_foreach_directive = 16;
-	public static readonly RULE_break_directive = 17;
-	public static readonly RULE_stop_directive = 18;
-	public static readonly RULE_custom_directive = 19;
-	public static readonly RULE_macro_directive = 20;
-	public static readonly RULE_parse_directive = 21;
-	public static readonly RULE_define_directive = 22;
-	public static readonly RULE_include_directive = 23;
-	public static readonly RULE_evaluate_directive = 24;
-	public static readonly RULE_macro_call_directive = 25;
-	public static readonly RULE_end = 26;
-	public static readonly RULE_expression = 27;
-	public static readonly RULE_stringTemplate = 28;
-	public static readonly RULE_list = 29;
-	public static readonly RULE_map = 30;
-	public static readonly RULE_map_entries = 31;
-	public static readonly RULE_map_entry = 32;
-	public static readonly RULE_id = 33;
+	public static readonly RULE_formal = 3;
+	public static readonly RULE_variable = 4;
+	public static readonly RULE_property_or_method = 5;
+	public static readonly RULE_formal_property_or_method = 6;
+	public static readonly RULE_directive = 7;
+	public static readonly RULE_property_end = 8;
+	public static readonly RULE_expressions = 9;
+	public static readonly RULE_set_directive = 10;
+	public static readonly RULE_if_directive = 11;
+	public static readonly RULE_elseif_directive = 12;
+	public static readonly RULE_else_directive = 13;
+	public static readonly RULE_foreach_directive = 14;
+	public static readonly RULE_break_directive = 15;
+	public static readonly RULE_stop_directive = 16;
+	public static readonly RULE_custom_directive = 17;
+	public static readonly RULE_macro_directive = 18;
+	public static readonly RULE_parse_directive = 19;
+	public static readonly RULE_define_directive = 20;
+	public static readonly RULE_include_directive = 21;
+	public static readonly RULE_evaluate_directive = 22;
+	public static readonly RULE_macro_call_directive = 23;
+	public static readonly RULE_end = 24;
+	public static readonly RULE_expression = 25;
+	public static readonly RULE_list = 26;
+	public static readonly RULE_map = 27;
+	public static readonly RULE_map_entries = 28;
+	public static readonly RULE_map_entry = 29;
+	public static readonly RULE_id = 30;
 	// tslint:disable:no-trailing-whitespace
 	public static readonly ruleNames: string[] = [
-		"parse", "block", "atom", "reference", "call", "indexcall", "propertycall", 
-		"functioncall", "arglist", "literal", "directive", "expressions", "set_directive", 
-		"if_directive", "elseif_directive", "else_directive", "foreach_directive", 
-		"break_directive", "stop_directive", "custom_directive", "macro_directive", 
-		"parse_directive", "define_directive", "include_directive", "evaluate_directive", 
-		"macro_call_directive", "end", "expression", "stringTemplate", "list", 
+		"parse", "block", "atom", "formal", "variable", "property_or_method", 
+		"formal_property_or_method", "directive", "property_end", "expressions", 
+		"set_directive", "if_directive", "elseif_directive", "else_directive", 
+		"foreach_directive", "break_directive", "stop_directive", "custom_directive", 
+		"macro_directive", "parse_directive", "define_directive", "include_directive", 
+		"evaluate_directive", "macro_call_directive", "end", "expression", "list", 
 		"map", "map_entries", "map_entry", "id",
 	];
 
@@ -194,14 +184,13 @@ export class VTLParser extends Parser {
 		undefined, undefined, undefined, undefined, undefined, undefined, undefined, 
 		undefined, undefined, undefined, undefined, undefined, undefined, undefined, 
 		undefined, undefined, undefined, undefined, undefined, undefined, undefined, 
+		undefined, undefined, undefined, "'#'", undefined, undefined, undefined, 
 		undefined, undefined, undefined, undefined, undefined, undefined, undefined, 
-		undefined, undefined, "'#'", "'$'", undefined, undefined, undefined, undefined, 
-		undefined, undefined, undefined, undefined, undefined, undefined, undefined, 
-		undefined, undefined, undefined, undefined, "'lt'", "'le'", "'gt'", "'ge'", 
-		"'eq'", "'ne'", "'true'", "'false'", "'and'", "'or'", "'not'", "'null'", 
-		"'in'", "'+'", "'-'", "'*'", "'/'", "'%'", "'||'", "'&&'", "'='", "'=='", 
-		"'!='", "'<'", "'<='", "'>'", "'>='", "')'", "':'", "'..'", "'.'", "']'", 
-		"','",
+		undefined, undefined, undefined, "'lt'", "'le'", "'gt'", "'ge'", "'eq'", 
+		"'ne'", "'true'", "'false'", "'and'", "'or'", "'not'", "'null'", "'in'", 
+		"'+'", "'-'", "'*'", "'/'", "'%'", "'!'", "'||'", "'&&'", "'='", "'=='", 
+		"'!='", "'<'", "'<='", "'>'", "'>='", "')'", "':'", "'..'", "'['", undefined, 
+		"'{'", "','",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
 		undefined, "OPAR", "CPAR", "OBRACK", "CBRACK", "OBRACE", "CBRACE", "STRING", 
@@ -210,17 +199,16 @@ export class VTLParser extends Parser {
 		"LT", "LE", "GT", "GE", "EXCL", "K_LT", "K_LE", "K_GT", "K_GE", "K_EQ", 
 		"K_NE", "K_TRUE", "K_FALSE", "K_AND", "K_OR", "K_NOT", "K_IN", "IF", "ELSEIF", 
 		"ELSE", "FOREACH", "SET", "END", "BREAK", "MACRO_ID", "MACRO", "STOP", 
-		"INCLUDE", "EVALUATE", "PARSE", "DEFINE", "PIPE", "NUMBER", "BOOL", "ESCAPESIGN", 
-		"DQUOTE", "SQUOTE", "ESCAPED_CHAR", "START_DIRECTIVE", "DOLLAR", "TEXT", 
-		"ESCAPED_BLOCK", "SNGLE_LINE_COMMENT", "BLOCK_COMMENT", "PRE_REF_EMPTY", 
-		"REF2_EMPTY", "REF3_EMPTY", "LITERAL_EMPTY", "CODE_SPACES", "CODE_DQUOTE", 
-		"CODE_STRING", "STR_TEXT", "STR_ESCAPED_CHAR", "PRE_REF_EXCL", "POST_REF_CBRACE", 
-		"CODE_K_LT", "CODE_K_LE", "CODE_K_GT", "CODE_K_GE", "CODE_K_EQ", "CODE_K_NE", 
-		"CODE_K_TRUE", "CODE_K_FALSE", "CODE_K_AND", "CODE_K_OR", "CODE_K_NOT", 
-		"CODE_K_NULL", "CODE_K_IN", "CODE_ADD", "CODE_SUB", "CODE_MUL", "CODE_DIV", 
-		"CODE_MOD", "CODE_OR", "CODE_AND", "CODE_ASSIGN", "CODE_EQ", "CODE_NEQ", 
-		"CODE_LT", "CODE_LE", "CODE_GT", "CODE_GE", "CODE_CPAR", "CODE_COLON", 
-		"CODE_RANGE", "CODE_DOT", "CODE_CBRACK", "CODE_COMMA",
+		"INCLUDE", "EVALUATE", "PARSE", "DEFINE", "ESCAPED_CHAR", "START_DIRECTIVE", 
+		"DOLLAR_EXCL_OBRACE", "DOLLAR_OBRACE", "DOLLAR_EXCL", "DOLLAR", "TEXT", 
+		"ESCAPED_BLOCK", "SNGLE_LINE_COMMENT", "VTL_COMMENT_BLOCK", "MULTI_LINE_COMMENT", 
+		"VAR_HASH", "CODE_SPACES", "FRM_DOT", "FRM_CBRACE", "CODE_K_LT", "CODE_K_LE", 
+		"CODE_K_GT", "CODE_K_GE", "CODE_K_EQ", "CODE_K_NE", "CODE_K_TRUE", "CODE_K_FALSE", 
+		"CODE_K_AND", "CODE_K_OR", "CODE_K_NOT", "CODE_K_NULL", "CODE_K_IN", "CODE_ADD", 
+		"CODE_SUB", "CODE_MUL", "CODE_DIV", "CODE_MOD", "CODE_EXCL", "CODE_OR", 
+		"CODE_AND", "CODE_ASSIGN", "CODE_EQ", "CODE_NEQ", "CODE_LT", "CODE_LE", 
+		"CODE_GT", "CODE_GE", "CODE_CPAR", "CODE_COLON", "CODE_RANGE", "CODE_OBRACK", 
+		"CODE_CBRACK", "CODE_OBRACE", "CODE_COMMA",
 	];
 	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(VTLParser._LITERAL_NAMES, VTLParser._SYMBOLIC_NAMES, []);
 
@@ -255,9 +243,9 @@ export class VTLParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 68;
+			this.state = 62;
 			this.block();
-			this.state = 69;
+			this.state = 63;
 			this.match(VTLParser.EOF);
 			}
 		}
@@ -283,17 +271,17 @@ export class VTLParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 74;
+			this.state = 68;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la === VTLParser.ID || ((((_la - 44)) & ~0x1F) === 0 && ((1 << (_la - 44)) & ((1 << (VTLParser.IF - 44)) | (1 << (VTLParser.FOREACH - 44)) | (1 << (VTLParser.SET - 44)) | (1 << (VTLParser.BREAK - 44)) | (1 << (VTLParser.MACRO_ID - 44)) | (1 << (VTLParser.MACRO - 44)) | (1 << (VTLParser.STOP - 44)) | (1 << (VTLParser.INCLUDE - 44)) | (1 << (VTLParser.EVALUATE - 44)) | (1 << (VTLParser.PARSE - 44)) | (1 << (VTLParser.DEFINE - 44)) | (1 << (VTLParser.ESCAPED_CHAR - 44)) | (1 << (VTLParser.DOLLAR - 44)) | (1 << (VTLParser.TEXT - 44)) | (1 << (VTLParser.ESCAPED_BLOCK - 44)))) !== 0)) {
+			while (_la === VTLParser.ID || _la === VTLParser.REFERENCE || ((((_la - 44)) & ~0x1F) === 0 && ((1 << (_la - 44)) & ((1 << (VTLParser.IF - 44)) | (1 << (VTLParser.FOREACH - 44)) | (1 << (VTLParser.SET - 44)) | (1 << (VTLParser.BREAK - 44)) | (1 << (VTLParser.MACRO_ID - 44)) | (1 << (VTLParser.MACRO - 44)) | (1 << (VTLParser.STOP - 44)) | (1 << (VTLParser.INCLUDE - 44)) | (1 << (VTLParser.EVALUATE - 44)) | (1 << (VTLParser.PARSE - 44)) | (1 << (VTLParser.DEFINE - 44)) | (1 << (VTLParser.ESCAPED_CHAR - 44)) | (1 << (VTLParser.DOLLAR_EXCL_OBRACE - 44)) | (1 << (VTLParser.DOLLAR_OBRACE - 44)) | (1 << (VTLParser.DOLLAR_EXCL - 44)) | (1 << (VTLParser.DOLLAR - 44)) | (1 << (VTLParser.TEXT - 44)) | (1 << (VTLParser.ESCAPED_BLOCK - 44)))) !== 0)) {
 				{
 				{
-				this.state = 71;
+				this.state = 65;
 				this.atom();
 				}
 				}
-				this.state = 76;
+				this.state = 70;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
@@ -318,53 +306,212 @@ export class VTLParser extends Parser {
 		const _localctx: AtomContext = new AtomContext(this._ctx, this.state);
 		this.enterRule(_localctx, 4, VTLParser.RULE_atom);
 		try {
-			this.state = 82;
+			this.state = 78;
 			this._errHandler.sync(this);
-			switch (this._input.LA(1)) {
-			case VTLParser.TEXT:
+			switch ( this.interpreter.adaptivePredict(this._input, 1, this._ctx) ) {
+			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 77;
+				this.state = 71;
 				this.match(VTLParser.TEXT);
 				}
 				break;
-			case VTLParser.ESCAPED_CHAR:
+
+			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 78;
+				this.state = 72;
 				this.match(VTLParser.ESCAPED_CHAR);
 				}
 				break;
-			case VTLParser.ESCAPED_BLOCK:
+
+			case 3:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 79;
+				this.state = 73;
 				this.match(VTLParser.ESCAPED_BLOCK);
 				}
 				break;
-			case VTLParser.DOLLAR:
+
+			case 4:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 80;
-				this.reference();
+				this.state = 74;
+				this.variable();
 				}
 				break;
-			case VTLParser.ID:
-			case VTLParser.IF:
-			case VTLParser.FOREACH:
-			case VTLParser.SET:
-			case VTLParser.BREAK:
-			case VTLParser.MACRO_ID:
-			case VTLParser.MACRO:
-			case VTLParser.STOP:
-			case VTLParser.INCLUDE:
-			case VTLParser.EVALUATE:
-			case VTLParser.PARSE:
-			case VTLParser.DEFINE:
+
+			case 5:
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 81;
+				this.state = 75;
+				this.formal();
+				}
+				break;
+
+			case 6:
+				this.enterOuterAlt(_localctx, 6);
+				{
+				this.state = 76;
+				this.property_or_method();
+				}
+				break;
+
+			case 7:
+				this.enterOuterAlt(_localctx, 7);
+				{
+				this.state = 77;
 				this.directive();
+				}
+				break;
+			}
+		}
+		catch (re) {
+			if (re instanceof RecognitionException) {
+				_localctx.exception = re;
+				this._errHandler.reportError(this, re);
+				this._errHandler.recover(this, re);
+			} else {
+				throw re;
+			}
+		}
+		finally {
+			this.exitRule();
+		}
+		return _localctx;
+	}
+	// @RuleVersion(0)
+	public formal(): FormalContext {
+		const _localctx: FormalContext = new FormalContext(this._ctx, this.state);
+		this.enterRule(_localctx, 6, VTLParser.RULE_formal);
+		try {
+			this.state = 96;
+			this._errHandler.sync(this);
+			switch ( this.interpreter.adaptivePredict(this._input, 2, this._ctx) ) {
+			case 1:
+				this.enterOuterAlt(_localctx, 1);
+				{
+				this.state = 80;
+				this.match(VTLParser.DOLLAR_OBRACE);
+				this.state = 81;
+				this.formal_property_or_method();
+				this.state = 82;
+				this.match(VTLParser.CBRACE);
+				}
+				break;
+
+			case 2:
+				this.enterOuterAlt(_localctx, 2);
+				{
+				this.state = 84;
+				this.match(VTLParser.DOLLAR_EXCL_OBRACE);
+				this.state = 85;
+				this.formal_property_or_method();
+				this.state = 86;
+				this.match(VTLParser.CBRACE);
+				}
+				break;
+
+			case 3:
+				this.enterOuterAlt(_localctx, 3);
+				{
+				this.state = 88;
+				this.match(VTLParser.DOLLAR_OBRACE);
+				this.state = 89;
+				this.id();
+				this.state = 90;
+				this.match(VTLParser.CBRACE);
+				}
+				break;
+
+			case 4:
+				this.enterOuterAlt(_localctx, 4);
+				{
+				this.state = 92;
+				this.match(VTLParser.DOLLAR_EXCL_OBRACE);
+				this.state = 93;
+				this.id();
+				this.state = 94;
+				this.match(VTLParser.CBRACE);
+				}
+				break;
+			}
+		}
+		catch (re) {
+			if (re instanceof RecognitionException) {
+				_localctx.exception = re;
+				this._errHandler.reportError(this, re);
+				this._errHandler.recover(this, re);
+			} else {
+				throw re;
+			}
+		}
+		finally {
+			this.exitRule();
+		}
+		return _localctx;
+	}
+	// @RuleVersion(0)
+	public variable(): VariableContext {
+		const _localctx: VariableContext = new VariableContext(this._ctx, this.state);
+		this.enterRule(_localctx, 8, VTLParser.RULE_variable);
+		try {
+			this.state = 112;
+			this._errHandler.sync(this);
+			switch (this._input.LA(1)) {
+			case VTLParser.DOLLAR:
+				this.enterOuterAlt(_localctx, 1);
+				{
+				this.state = 98;
+				this.match(VTLParser.DOLLAR);
+				this.state = 99;
+				this.id();
+				this.state = 101;
+				this._errHandler.sync(this);
+				switch ( this.interpreter.adaptivePredict(this._input, 3, this._ctx) ) {
+				case 1:
+					{
+					this.state = 100;
+					this.match(VTLParser.DOT);
+					}
+					break;
+				}
+				}
+				break;
+			case VTLParser.DOLLAR_EXCL:
+				this.enterOuterAlt(_localctx, 2);
+				{
+				this.state = 103;
+				this.match(VTLParser.DOLLAR_EXCL);
+				this.state = 104;
+				this.id();
+				this.state = 106;
+				this._errHandler.sync(this);
+				switch ( this.interpreter.adaptivePredict(this._input, 4, this._ctx) ) {
+				case 1:
+					{
+					this.state = 105;
+					this.match(VTLParser.DOT);
+					}
+					break;
+				}
+				}
+				break;
+			case VTLParser.REFERENCE:
+				this.enterOuterAlt(_localctx, 3);
+				{
+				this.state = 108;
+				this.match(VTLParser.REFERENCE);
+				this.state = 110;
+				this._errHandler.sync(this);
+				switch ( this.interpreter.adaptivePredict(this._input, 5, this._ctx) ) {
+				case 1:
+					{
+					this.state = 109;
+					this.match(VTLParser.DOT);
+					}
+					break;
+				}
 				}
 				break;
 			default:
@@ -386,151 +533,35 @@ export class VTLParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public reference(): ReferenceContext {
-		const _localctx: ReferenceContext = new ReferenceContext(this._ctx, this.state);
-		this.enterRule(_localctx, 6, VTLParser.RULE_reference);
-		let _la: number;
+	public property_or_method(): Property_or_methodContext {
+		const _localctx: Property_or_methodContext = new Property_or_methodContext(this._ctx, this.state);
+		this.enterRule(_localctx, 10, VTLParser.RULE_property_or_method);
 		try {
 			let _alt: number;
+			this.enterOuterAlt(_localctx, 1);
+			{
 			this.state = 114;
+			this.variable();
+			this.state = 116;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 7, this._ctx) ) {
-			case 1:
-				this.enterOuterAlt(_localctx, 1);
-				{
-				this.state = 84;
-				this.match(VTLParser.DOLLAR);
-				this.state = 85;
-				this.match(VTLParser.ESCAPESIGN);
-				this.state = 87;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				if (_la === VTLParser.EXCL) {
-					{
-					this.state = 86;
-					this.match(VTLParser.EXCL);
-					}
-				}
-
-				this.state = 89;
-				this.match(VTLParser.ID);
-				this.state = 93;
-				this._errHandler.sync(this);
-				_alt = this.interpreter.adaptivePredict(this._input, 3, this._ctx);
-				while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
-					if (_alt === 1) {
-						{
-						{
-						this.state = 90;
-						this.call();
-						}
-						}
-					}
-					this.state = 95;
-					this._errHandler.sync(this);
-					_alt = this.interpreter.adaptivePredict(this._input, 3, this._ctx);
-				}
-				}
-				break;
-
-			case 2:
-				this.enterOuterAlt(_localctx, 2);
-				{
-				this.state = 96;
-				this.match(VTLParser.DOLLAR);
-				this.state = 97;
-				this.match(VTLParser.ESCAPESIGN);
-				this.state = 99;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				if (_la === VTLParser.EXCL) {
-					{
-					this.state = 98;
-					this.match(VTLParser.EXCL);
-					}
-				}
-
-				this.state = 101;
-				this.match(VTLParser.OBRACE);
-				this.state = 102;
-				this.match(VTLParser.ID);
-				this.state = 106;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				while (_la === VTLParser.OBRACK || _la === VTLParser.DOT) {
+			_alt = 1;
+			do {
+				switch (_alt) {
+				case 1:
 					{
 					{
-					this.state = 103;
-					this.call();
+					this.state = 115;
+					this.property_end();
 					}
 					}
-					this.state = 108;
-					this._errHandler.sync(this);
-					_la = this._input.LA(1);
+					break;
+				default:
+					throw new NoViableAltException(this);
 				}
-				this.state = 111;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				if (_la === VTLParser.PIPE) {
-					{
-					this.state = 109;
-					this.match(VTLParser.PIPE);
-					this.state = 110;
-					this.literal();
-					}
-				}
-
-				this.state = 113;
-				this.match(VTLParser.CBRACE);
-				}
-				break;
-			}
-		}
-		catch (re) {
-			if (re instanceof RecognitionException) {
-				_localctx.exception = re;
-				this._errHandler.reportError(this, re);
-				this._errHandler.recover(this, re);
-			} else {
-				throw re;
-			}
-		}
-		finally {
-			this.exitRule();
-		}
-		return _localctx;
-	}
-	// @RuleVersion(0)
-	public call(): CallContext {
-		const _localctx: CallContext = new CallContext(this._ctx, this.state);
-		this.enterRule(_localctx, 8, VTLParser.RULE_call);
-		try {
-			this.state = 119;
-			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 8, this._ctx) ) {
-			case 1:
-				this.enterOuterAlt(_localctx, 1);
-				{
-				this.state = 116;
-				this.indexcall();
-				}
-				break;
-
-			case 2:
-				this.enterOuterAlt(_localctx, 2);
-				{
-				this.state = 117;
-				this.propertycall();
-				}
-				break;
-
-			case 3:
-				this.enterOuterAlt(_localctx, 3);
-				{
 				this.state = 118;
-				this.functioncall();
-				}
-				break;
+				this._errHandler.sync(this);
+				_alt = this.interpreter.adaptivePredict(this._input, 7, this._ctx);
+			} while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER);
 			}
 		}
 		catch (re) {
@@ -548,165 +579,29 @@ export class VTLParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public indexcall(): IndexcallContext {
-		const _localctx: IndexcallContext = new IndexcallContext(this._ctx, this.state);
-		this.enterRule(_localctx, 10, VTLParser.RULE_indexcall);
+	public formal_property_or_method(): Formal_property_or_methodContext {
+		const _localctx: Formal_property_or_methodContext = new Formal_property_or_methodContext(this._ctx, this.state);
+		this.enterRule(_localctx, 12, VTLParser.RULE_formal_property_or_method);
+		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 121;
-			this.match(VTLParser.OBRACK);
+			this.state = 120;
+			this.id();
 			this.state = 122;
-			this.expression(0);
-			this.state = 123;
-			this.match(VTLParser.CBRACK);
-			}
-		}
-		catch (re) {
-			if (re instanceof RecognitionException) {
-				_localctx.exception = re;
-				this._errHandler.reportError(this, re);
-				this._errHandler.recover(this, re);
-			} else {
-				throw re;
-			}
-		}
-		finally {
-			this.exitRule();
-		}
-		return _localctx;
-	}
-	// @RuleVersion(0)
-	public propertycall(): PropertycallContext {
-		const _localctx: PropertycallContext = new PropertycallContext(this._ctx, this.state);
-		this.enterRule(_localctx, 12, VTLParser.RULE_propertycall);
-		try {
-			this.enterOuterAlt(_localctx, 1);
-			{
-			this.state = 125;
-			this.match(VTLParser.DOT);
-			this.state = 126;
-			this.match(VTLParser.ID);
-			}
-		}
-		catch (re) {
-			if (re instanceof RecognitionException) {
-				_localctx.exception = re;
-				this._errHandler.reportError(this, re);
-				this._errHandler.recover(this, re);
-			} else {
-				throw re;
-			}
-		}
-		finally {
-			this.exitRule();
-		}
-		return _localctx;
-	}
-	// @RuleVersion(0)
-	public functioncall(): FunctioncallContext {
-		const _localctx: FunctioncallContext = new FunctioncallContext(this._ctx, this.state);
-		this.enterRule(_localctx, 14, VTLParser.RULE_functioncall);
-		let _la: number;
-		try {
-			this.enterOuterAlt(_localctx, 1);
-			{
-			this.state = 128;
-			this.match(VTLParser.DOT);
-			this.state = 129;
-			this.match(VTLParser.ID);
-			this.state = 130;
-			this.match(VTLParser.OPAR);
-			this.state = 132;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (((((_la - 3)) & ~0x1F) === 0 && ((1 << (_la - 3)) & ((1 << (VTLParser.OBRACK - 3)) | (1 << (VTLParser.OBRACE - 3)) | (1 << (VTLParser.STRING - 3)) | (1 << (VTLParser.ID - 3)) | (1 << (VTLParser.K_NULL - 3)) | (1 << (VTLParser.SUB - 3)) | (1 << (VTLParser.EXCL - 3)) | (1 << (VTLParser.K_LT - 3)) | (1 << (VTLParser.K_LE - 3)) | (1 << (VTLParser.K_GT - 3)))) !== 0) || ((((_la - 35)) & ~0x1F) === 0 && ((1 << (_la - 35)) & ((1 << (VTLParser.K_GE - 35)) | (1 << (VTLParser.K_EQ - 35)) | (1 << (VTLParser.K_NE - 35)) | (1 << (VTLParser.K_TRUE - 35)) | (1 << (VTLParser.K_FALSE - 35)) | (1 << (VTLParser.K_AND - 35)) | (1 << (VTLParser.K_OR - 35)) | (1 << (VTLParser.K_NOT - 35)) | (1 << (VTLParser.K_IN - 35)) | (1 << (VTLParser.NUMBER - 35)) | (1 << (VTLParser.BOOL - 35)) | (1 << (VTLParser.DQUOTE - 35)) | (1 << (VTLParser.DOLLAR - 35)))) !== 0)) {
-				{
-				this.state = 131;
-				this.arglist();
-				}
-			}
-
-			this.state = 134;
-			this.match(VTLParser.CPAR);
-			}
-		}
-		catch (re) {
-			if (re instanceof RecognitionException) {
-				_localctx.exception = re;
-				this._errHandler.reportError(this, re);
-				this._errHandler.recover(this, re);
-			} else {
-				throw re;
-			}
-		}
-		finally {
-			this.exitRule();
-		}
-		return _localctx;
-	}
-	// @RuleVersion(0)
-	public arglist(): ArglistContext {
-		const _localctx: ArglistContext = new ArglistContext(this._ctx, this.state);
-		this.enterRule(_localctx, 16, VTLParser.RULE_arglist);
-		let _la: number;
-		try {
-			this.enterOuterAlt(_localctx, 1);
-			{
-			this.state = 136;
-			this.expression(0);
-			this.state = 141;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			while (_la === VTLParser.COMMA) {
+			do {
 				{
 				{
-				this.state = 137;
-				this.match(VTLParser.COMMA);
-				this.state = 138;
-				this.expression(0);
+				this.state = 121;
+				this.property_end();
 				}
 				}
-				this.state = 143;
+				this.state = 124;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-			}
-			}
-		}
-		catch (re) {
-			if (re instanceof RecognitionException) {
-				_localctx.exception = re;
-				this._errHandler.reportError(this, re);
-				this._errHandler.recover(this, re);
-			} else {
-				throw re;
-			}
-		}
-		finally {
-			this.exitRule();
-		}
-		return _localctx;
-	}
-	// @RuleVersion(0)
-	public literal(): LiteralContext {
-		const _localctx: LiteralContext = new LiteralContext(this._ctx, this.state);
-		this.enterRule(_localctx, 18, VTLParser.RULE_literal);
-		let _la: number;
-		try {
-			this.enterOuterAlt(_localctx, 1);
-			{
-			this.state = 144;
-			_la = this._input.LA(1);
-			if (!(_la === VTLParser.STRING || _la === VTLParser.NUMBER || _la === VTLParser.BOOL)) {
-			this._errHandler.recoverInline(this);
-			} else {
-				if (this._input.LA(1) === Token.EOF) {
-					this.matchedEOF = true;
-				}
-
-				this._errHandler.reportMatch(this);
-				this.consume();
-			}
+			} while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << VTLParser.OPAR) | (1 << VTLParser.OBRACK) | (1 << VTLParser.DOT))) !== 0));
 			}
 		}
 		catch (re) {
@@ -726,93 +621,159 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public directive(): DirectiveContext {
 		const _localctx: DirectiveContext = new DirectiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 20, VTLParser.RULE_directive);
+		this.enterRule(_localctx, 14, VTLParser.RULE_directive);
 		try {
-			this.state = 158;
+			this.state = 138;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case VTLParser.SET:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 146;
+				this.state = 126;
 				this.set_directive();
 				}
 				break;
 			case VTLParser.IF:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 147;
+				this.state = 127;
 				this.if_directive();
 				}
 				break;
 			case VTLParser.FOREACH:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 148;
+				this.state = 128;
 				this.foreach_directive();
 				}
 				break;
 			case VTLParser.BREAK:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 149;
+				this.state = 129;
 				this.break_directive();
 				}
 				break;
 			case VTLParser.STOP:
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 150;
+				this.state = 130;
 				this.stop_directive();
 				}
 				break;
 			case VTLParser.MACRO:
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 151;
+				this.state = 131;
 				this.macro_directive();
 				}
 				break;
 			case VTLParser.PARSE:
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 152;
+				this.state = 132;
 				this.parse_directive();
 				}
 				break;
 			case VTLParser.DEFINE:
 				this.enterOuterAlt(_localctx, 8);
 				{
-				this.state = 153;
+				this.state = 133;
 				this.define_directive();
 				}
 				break;
 			case VTLParser.INCLUDE:
 				this.enterOuterAlt(_localctx, 9);
 				{
-				this.state = 154;
+				this.state = 134;
 				this.include_directive();
 				}
 				break;
 			case VTLParser.EVALUATE:
 				this.enterOuterAlt(_localctx, 10);
 				{
-				this.state = 155;
+				this.state = 135;
 				this.evaluate_directive();
 				}
 				break;
 			case VTLParser.MACRO_ID:
 				this.enterOuterAlt(_localctx, 11);
 				{
-				this.state = 156;
+				this.state = 136;
 				this.macro_call_directive();
 				}
 				break;
 			case VTLParser.ID:
 				this.enterOuterAlt(_localctx, 12);
 				{
-				this.state = 157;
+				this.state = 137;
 				this.custom_directive();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (re) {
+			if (re instanceof RecognitionException) {
+				_localctx.exception = re;
+				this._errHandler.reportError(this, re);
+				this._errHandler.recover(this, re);
+			} else {
+				throw re;
+			}
+		}
+		finally {
+			this.exitRule();
+		}
+		return _localctx;
+	}
+	// @RuleVersion(0)
+	public property_end(): Property_endContext {
+		const _localctx: Property_endContext = new Property_endContext(this._ctx, this.state);
+		this.enterRule(_localctx, 16, VTLParser.RULE_property_end);
+		let _la: number;
+		try {
+			this.state = 151;
+			this._errHandler.sync(this);
+			switch (this._input.LA(1)) {
+			case VTLParser.DOT:
+				this.enterOuterAlt(_localctx, 1);
+				{
+				this.state = 140;
+				this.match(VTLParser.DOT);
+				this.state = 141;
+				this.match(VTLParser.ID);
+				}
+				break;
+			case VTLParser.OBRACK:
+				this.enterOuterAlt(_localctx, 2);
+				{
+				this.state = 142;
+				this.match(VTLParser.OBRACK);
+				this.state = 143;
+				this.expression(0);
+				this.state = 144;
+				this.match(VTLParser.CBRACK);
+				}
+				break;
+			case VTLParser.OPAR:
+				this.enterOuterAlt(_localctx, 3);
+				{
+				this.state = 146;
+				this.match(VTLParser.OPAR);
+				this.state = 148;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << VTLParser.OBRACK) | (1 << VTLParser.OBRACE) | (1 << VTLParser.STRING) | (1 << VTLParser.INTEGER) | (1 << VTLParser.ID) | (1 << VTLParser.REFERENCE) | (1 << VTLParser.K_NULL) | (1 << VTLParser.SUB) | (1 << VTLParser.FLOAT) | (1 << VTLParser.EXCL))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (VTLParser.K_LT - 32)) | (1 << (VTLParser.K_LE - 32)) | (1 << (VTLParser.K_GT - 32)) | (1 << (VTLParser.K_GE - 32)) | (1 << (VTLParser.K_EQ - 32)) | (1 << (VTLParser.K_NE - 32)) | (1 << (VTLParser.K_TRUE - 32)) | (1 << (VTLParser.K_FALSE - 32)) | (1 << (VTLParser.K_AND - 32)) | (1 << (VTLParser.K_OR - 32)) | (1 << (VTLParser.K_NOT - 32)) | (1 << (VTLParser.K_IN - 32)) | (1 << (VTLParser.DOLLAR_EXCL_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_EXCL - 32)) | (1 << (VTLParser.DOLLAR - 32)))) !== 0)) {
+					{
+					this.state = 147;
+					this.expressions();
+					}
+				}
+
+				this.state = 150;
+				this.match(VTLParser.CPAR);
 				}
 				break;
 			default:
@@ -836,26 +797,26 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public expressions(): ExpressionsContext {
 		const _localctx: ExpressionsContext = new ExpressionsContext(this._ctx, this.state);
-		this.enterRule(_localctx, 22, VTLParser.RULE_expressions);
+		this.enterRule(_localctx, 18, VTLParser.RULE_expressions);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 160;
+			this.state = 153;
 			this.expression(0);
-			this.state = 165;
+			this.state = 158;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === VTLParser.COMMA) {
 				{
 				{
-				this.state = 161;
+				this.state = 154;
 				this.match(VTLParser.COMMA);
-				this.state = 162;
+				this.state = 155;
 				this.expression(0);
 				}
 				}
-				this.state = 167;
+				this.state = 160;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
@@ -878,19 +839,19 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public set_directive(): Set_directiveContext {
 		const _localctx: Set_directiveContext = new Set_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 24, VTLParser.RULE_set_directive);
+		this.enterRule(_localctx, 20, VTLParser.RULE_set_directive);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 168;
+			this.state = 161;
 			this.match(VTLParser.SET);
-			this.state = 169;
+			this.state = 162;
 			this.expression(0);
-			this.state = 170;
+			this.state = 163;
 			this.match(VTLParser.ASSIGN);
-			this.state = 171;
+			this.state = 164;
 			this.expression(0);
-			this.state = 172;
+			this.state = 165;
 			this.match(VTLParser.CPAR);
 			}
 		}
@@ -911,44 +872,44 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public if_directive(): If_directiveContext {
 		const _localctx: If_directiveContext = new If_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 26, VTLParser.RULE_if_directive);
+		this.enterRule(_localctx, 22, VTLParser.RULE_if_directive);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 174;
+			this.state = 167;
 			this.match(VTLParser.IF);
-			this.state = 175;
+			this.state = 168;
 			this.expression(0);
-			this.state = 176;
+			this.state = 169;
 			this.match(VTLParser.CPAR);
-			this.state = 177;
+			this.state = 170;
 			this.block();
-			this.state = 181;
+			this.state = 174;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === VTLParser.ELSEIF) {
 				{
 				{
-				this.state = 178;
+				this.state = 171;
 				this.elseif_directive();
 				}
 				}
-				this.state = 183;
+				this.state = 176;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 185;
+			this.state = 178;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			if (_la === VTLParser.ELSE) {
 				{
-				this.state = 184;
+				this.state = 177;
 				this.else_directive();
 				}
 			}
 
-			this.state = 187;
+			this.state = 180;
 			this.end();
 			}
 		}
@@ -969,17 +930,17 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public elseif_directive(): Elseif_directiveContext {
 		const _localctx: Elseif_directiveContext = new Elseif_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 28, VTLParser.RULE_elseif_directive);
+		this.enterRule(_localctx, 24, VTLParser.RULE_elseif_directive);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 189;
+			this.state = 182;
 			this.match(VTLParser.ELSEIF);
-			this.state = 190;
+			this.state = 183;
 			this.expression(0);
-			this.state = 191;
+			this.state = 184;
 			this.match(VTLParser.CPAR);
-			this.state = 192;
+			this.state = 185;
 			this.block();
 			}
 		}
@@ -1000,13 +961,13 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public else_directive(): Else_directiveContext {
 		const _localctx: Else_directiveContext = new Else_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 30, VTLParser.RULE_else_directive);
+		this.enterRule(_localctx, 26, VTLParser.RULE_else_directive);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 194;
+			this.state = 187;
 			this.match(VTLParser.ELSE);
-			this.state = 195;
+			this.state = 188;
 			this.block();
 			}
 		}
@@ -1027,23 +988,23 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public foreach_directive(): Foreach_directiveContext {
 		const _localctx: Foreach_directiveContext = new Foreach_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 32, VTLParser.RULE_foreach_directive);
+		this.enterRule(_localctx, 28, VTLParser.RULE_foreach_directive);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 197;
+			this.state = 190;
 			this.match(VTLParser.FOREACH);
-			this.state = 198;
-			this.reference();
-			this.state = 199;
+			this.state = 191;
+			this.variable();
+			this.state = 192;
 			this.match(VTLParser.K_IN);
-			this.state = 200;
+			this.state = 193;
 			this.expression(0);
-			this.state = 201;
+			this.state = 194;
 			this.match(VTLParser.CPAR);
-			this.state = 202;
+			this.state = 195;
 			this.block();
-			this.state = 203;
+			this.state = 196;
 			this.end();
 			}
 		}
@@ -1064,11 +1025,11 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public break_directive(): Break_directiveContext {
 		const _localctx: Break_directiveContext = new Break_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 34, VTLParser.RULE_break_directive);
+		this.enterRule(_localctx, 30, VTLParser.RULE_break_directive);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 205;
+			this.state = 198;
 			this.match(VTLParser.BREAK);
 			}
 		}
@@ -1089,11 +1050,11 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public stop_directive(): Stop_directiveContext {
 		const _localctx: Stop_directiveContext = new Stop_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 36, VTLParser.RULE_stop_directive);
+		this.enterRule(_localctx, 32, VTLParser.RULE_stop_directive);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 207;
+			this.state = 200;
 			this.match(VTLParser.STOP);
 			}
 		}
@@ -1114,45 +1075,45 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public custom_directive(): Custom_directiveContext {
 		const _localctx: Custom_directiveContext = new Custom_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 38, VTLParser.RULE_custom_directive);
+		this.enterRule(_localctx, 34, VTLParser.RULE_custom_directive);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 209;
+			this.state = 202;
 			this.match(VTLParser.ID);
-			this.state = 217;
+			this.state = 210;
 			this._errHandler.sync(this);
 			switch ( this.interpreter.adaptivePredict(this._input, 16, this._ctx) ) {
 			case 1:
 				{
-				this.state = 213;
+				this.state = 206;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (((((_la - 3)) & ~0x1F) === 0 && ((1 << (_la - 3)) & ((1 << (VTLParser.OBRACK - 3)) | (1 << (VTLParser.OBRACE - 3)) | (1 << (VTLParser.STRING - 3)) | (1 << (VTLParser.ID - 3)) | (1 << (VTLParser.K_NULL - 3)) | (1 << (VTLParser.SUB - 3)) | (1 << (VTLParser.EXCL - 3)) | (1 << (VTLParser.K_LT - 3)) | (1 << (VTLParser.K_LE - 3)) | (1 << (VTLParser.K_GT - 3)))) !== 0) || ((((_la - 35)) & ~0x1F) === 0 && ((1 << (_la - 35)) & ((1 << (VTLParser.K_GE - 35)) | (1 << (VTLParser.K_EQ - 35)) | (1 << (VTLParser.K_NE - 35)) | (1 << (VTLParser.K_TRUE - 35)) | (1 << (VTLParser.K_FALSE - 35)) | (1 << (VTLParser.K_AND - 35)) | (1 << (VTLParser.K_OR - 35)) | (1 << (VTLParser.K_NOT - 35)) | (1 << (VTLParser.K_IN - 35)) | (1 << (VTLParser.NUMBER - 35)) | (1 << (VTLParser.BOOL - 35)) | (1 << (VTLParser.DQUOTE - 35)) | (1 << (VTLParser.DOLLAR - 35)))) !== 0)) {
+				while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << VTLParser.OBRACK) | (1 << VTLParser.OBRACE) | (1 << VTLParser.STRING) | (1 << VTLParser.INTEGER) | (1 << VTLParser.ID) | (1 << VTLParser.REFERENCE) | (1 << VTLParser.K_NULL) | (1 << VTLParser.SUB) | (1 << VTLParser.FLOAT) | (1 << VTLParser.EXCL))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (VTLParser.K_LT - 32)) | (1 << (VTLParser.K_LE - 32)) | (1 << (VTLParser.K_GT - 32)) | (1 << (VTLParser.K_GE - 32)) | (1 << (VTLParser.K_EQ - 32)) | (1 << (VTLParser.K_NE - 32)) | (1 << (VTLParser.K_TRUE - 32)) | (1 << (VTLParser.K_FALSE - 32)) | (1 << (VTLParser.K_AND - 32)) | (1 << (VTLParser.K_OR - 32)) | (1 << (VTLParser.K_NOT - 32)) | (1 << (VTLParser.K_IN - 32)) | (1 << (VTLParser.DOLLAR_EXCL_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_EXCL - 32)) | (1 << (VTLParser.DOLLAR - 32)))) !== 0)) {
 					{
 					{
-					this.state = 210;
+					this.state = 203;
 					this.expression(0);
 					}
 					}
-					this.state = 215;
+					this.state = 208;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 216;
+				this.state = 209;
 				this.match(VTLParser.CPAR);
 				}
 				break;
 			}
-			this.state = 222;
+			this.state = 215;
 			this._errHandler.sync(this);
 			switch ( this.interpreter.adaptivePredict(this._input, 17, this._ctx) ) {
 			case 1:
 				{
-				this.state = 219;
+				this.state = 212;
 				this.block();
-				this.state = 220;
+				this.state = 213;
 				this.end();
 				}
 				break;
@@ -1176,32 +1137,32 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public macro_directive(): Macro_directiveContext {
 		const _localctx: Macro_directiveContext = new Macro_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 40, VTLParser.RULE_macro_directive);
+		this.enterRule(_localctx, 36, VTLParser.RULE_macro_directive);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 224;
+			this.state = 217;
 			this.match(VTLParser.MACRO);
-			this.state = 228;
+			this.state = 221;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (((((_la - 3)) & ~0x1F) === 0 && ((1 << (_la - 3)) & ((1 << (VTLParser.OBRACK - 3)) | (1 << (VTLParser.OBRACE - 3)) | (1 << (VTLParser.STRING - 3)) | (1 << (VTLParser.ID - 3)) | (1 << (VTLParser.K_NULL - 3)) | (1 << (VTLParser.SUB - 3)) | (1 << (VTLParser.EXCL - 3)) | (1 << (VTLParser.K_LT - 3)) | (1 << (VTLParser.K_LE - 3)) | (1 << (VTLParser.K_GT - 3)))) !== 0) || ((((_la - 35)) & ~0x1F) === 0 && ((1 << (_la - 35)) & ((1 << (VTLParser.K_GE - 35)) | (1 << (VTLParser.K_EQ - 35)) | (1 << (VTLParser.K_NE - 35)) | (1 << (VTLParser.K_TRUE - 35)) | (1 << (VTLParser.K_FALSE - 35)) | (1 << (VTLParser.K_AND - 35)) | (1 << (VTLParser.K_OR - 35)) | (1 << (VTLParser.K_NOT - 35)) | (1 << (VTLParser.K_IN - 35)) | (1 << (VTLParser.NUMBER - 35)) | (1 << (VTLParser.BOOL - 35)) | (1 << (VTLParser.DQUOTE - 35)) | (1 << (VTLParser.DOLLAR - 35)))) !== 0)) {
+			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << VTLParser.OBRACK) | (1 << VTLParser.OBRACE) | (1 << VTLParser.STRING) | (1 << VTLParser.INTEGER) | (1 << VTLParser.ID) | (1 << VTLParser.REFERENCE) | (1 << VTLParser.K_NULL) | (1 << VTLParser.SUB) | (1 << VTLParser.FLOAT) | (1 << VTLParser.EXCL))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (VTLParser.K_LT - 32)) | (1 << (VTLParser.K_LE - 32)) | (1 << (VTLParser.K_GT - 32)) | (1 << (VTLParser.K_GE - 32)) | (1 << (VTLParser.K_EQ - 32)) | (1 << (VTLParser.K_NE - 32)) | (1 << (VTLParser.K_TRUE - 32)) | (1 << (VTLParser.K_FALSE - 32)) | (1 << (VTLParser.K_AND - 32)) | (1 << (VTLParser.K_OR - 32)) | (1 << (VTLParser.K_NOT - 32)) | (1 << (VTLParser.K_IN - 32)) | (1 << (VTLParser.DOLLAR_EXCL_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_EXCL - 32)) | (1 << (VTLParser.DOLLAR - 32)))) !== 0)) {
 				{
 				{
-				this.state = 225;
+				this.state = 218;
 				this.expression(0);
 				}
 				}
-				this.state = 230;
+				this.state = 223;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 231;
+			this.state = 224;
 			this.match(VTLParser.CPAR);
-			this.state = 232;
+			this.state = 225;
 			this.block();
-			this.state = 233;
+			this.state = 226;
 			this.end();
 			}
 		}
@@ -1222,15 +1183,15 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public parse_directive(): Parse_directiveContext {
 		const _localctx: Parse_directiveContext = new Parse_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 42, VTLParser.RULE_parse_directive);
+		this.enterRule(_localctx, 38, VTLParser.RULE_parse_directive);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 235;
+			this.state = 228;
 			this.match(VTLParser.PARSE);
-			this.state = 236;
+			this.state = 229;
 			this.expression(0);
-			this.state = 237;
+			this.state = 230;
 			this.match(VTLParser.CPAR);
 			}
 		}
@@ -1251,19 +1212,19 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public define_directive(): Define_directiveContext {
 		const _localctx: Define_directiveContext = new Define_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 44, VTLParser.RULE_define_directive);
+		this.enterRule(_localctx, 40, VTLParser.RULE_define_directive);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 239;
+			this.state = 232;
 			this.match(VTLParser.DEFINE);
-			this.state = 240;
+			this.state = 233;
 			this.expression(0);
-			this.state = 241;
+			this.state = 234;
 			this.match(VTLParser.CPAR);
-			this.state = 242;
+			this.state = 235;
 			this.block();
-			this.state = 243;
+			this.state = 236;
 			this.end();
 			}
 		}
@@ -1284,15 +1245,15 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public include_directive(): Include_directiveContext {
 		const _localctx: Include_directiveContext = new Include_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 46, VTLParser.RULE_include_directive);
+		this.enterRule(_localctx, 42, VTLParser.RULE_include_directive);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 245;
+			this.state = 238;
 			this.match(VTLParser.INCLUDE);
-			this.state = 246;
+			this.state = 239;
 			this.expressions();
-			this.state = 247;
+			this.state = 240;
 			this.match(VTLParser.CPAR);
 			}
 		}
@@ -1313,15 +1274,15 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public evaluate_directive(): Evaluate_directiveContext {
 		const _localctx: Evaluate_directiveContext = new Evaluate_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 48, VTLParser.RULE_evaluate_directive);
+		this.enterRule(_localctx, 44, VTLParser.RULE_evaluate_directive);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 249;
+			this.state = 242;
 			this.match(VTLParser.EVALUATE);
-			this.state = 250;
+			this.state = 243;
 			this.expression(0);
-			this.state = 251;
+			this.state = 244;
 			this.match(VTLParser.CPAR);
 			}
 		}
@@ -1342,32 +1303,32 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public macro_call_directive(): Macro_call_directiveContext {
 		const _localctx: Macro_call_directiveContext = new Macro_call_directiveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 50, VTLParser.RULE_macro_call_directive);
+		this.enterRule(_localctx, 46, VTLParser.RULE_macro_call_directive);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 253;
+			this.state = 246;
 			this.match(VTLParser.MACRO_ID);
-			this.state = 257;
+			this.state = 250;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (((((_la - 3)) & ~0x1F) === 0 && ((1 << (_la - 3)) & ((1 << (VTLParser.OBRACK - 3)) | (1 << (VTLParser.OBRACE - 3)) | (1 << (VTLParser.STRING - 3)) | (1 << (VTLParser.ID - 3)) | (1 << (VTLParser.K_NULL - 3)) | (1 << (VTLParser.SUB - 3)) | (1 << (VTLParser.EXCL - 3)) | (1 << (VTLParser.K_LT - 3)) | (1 << (VTLParser.K_LE - 3)) | (1 << (VTLParser.K_GT - 3)))) !== 0) || ((((_la - 35)) & ~0x1F) === 0 && ((1 << (_la - 35)) & ((1 << (VTLParser.K_GE - 35)) | (1 << (VTLParser.K_EQ - 35)) | (1 << (VTLParser.K_NE - 35)) | (1 << (VTLParser.K_TRUE - 35)) | (1 << (VTLParser.K_FALSE - 35)) | (1 << (VTLParser.K_AND - 35)) | (1 << (VTLParser.K_OR - 35)) | (1 << (VTLParser.K_NOT - 35)) | (1 << (VTLParser.K_IN - 35)) | (1 << (VTLParser.NUMBER - 35)) | (1 << (VTLParser.BOOL - 35)) | (1 << (VTLParser.DQUOTE - 35)) | (1 << (VTLParser.DOLLAR - 35)))) !== 0)) {
+			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << VTLParser.OBRACK) | (1 << VTLParser.OBRACE) | (1 << VTLParser.STRING) | (1 << VTLParser.INTEGER) | (1 << VTLParser.ID) | (1 << VTLParser.REFERENCE) | (1 << VTLParser.K_NULL) | (1 << VTLParser.SUB) | (1 << VTLParser.FLOAT) | (1 << VTLParser.EXCL))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (VTLParser.K_LT - 32)) | (1 << (VTLParser.K_LE - 32)) | (1 << (VTLParser.K_GT - 32)) | (1 << (VTLParser.K_GE - 32)) | (1 << (VTLParser.K_EQ - 32)) | (1 << (VTLParser.K_NE - 32)) | (1 << (VTLParser.K_TRUE - 32)) | (1 << (VTLParser.K_FALSE - 32)) | (1 << (VTLParser.K_AND - 32)) | (1 << (VTLParser.K_OR - 32)) | (1 << (VTLParser.K_NOT - 32)) | (1 << (VTLParser.K_IN - 32)) | (1 << (VTLParser.DOLLAR_EXCL_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_EXCL - 32)) | (1 << (VTLParser.DOLLAR - 32)))) !== 0)) {
 				{
 				{
-				this.state = 254;
+				this.state = 247;
 				this.expression(0);
 				}
 				}
-				this.state = 259;
+				this.state = 252;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 260;
+			this.state = 253;
 			this.match(VTLParser.CPAR);
-			this.state = 261;
+			this.state = 254;
 			this.block();
-			this.state = 262;
+			this.state = 255;
 			this.end();
 			}
 		}
@@ -1388,11 +1349,11 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public end(): EndContext {
 		const _localctx: EndContext = new EndContext(this._ctx, this.state);
-		this.enterRule(_localctx, 52, VTLParser.RULE_end);
+		this.enterRule(_localctx, 48, VTLParser.RULE_end);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 264;
+			this.state = 257;
 			this.match(VTLParser.END);
 			}
 		}
@@ -1423,19 +1384,19 @@ export class VTLParser extends Parser {
 		const _parentState: number = this.state;
 		let _localctx: ExpressionContext = new ExpressionContext(this._ctx, _parentState);
 		let _prevctx: ExpressionContext = _localctx;
-		const _startState = 54;
-		this.enterRecursionRule(_localctx, 54, VTLParser.RULE_expression, _p);
+		const _startState = 50;
+		this.enterRecursionRule(_localctx, 50, VTLParser.RULE_expression, _p);
 		let _la: number;
 		try {
 			let _alt: number;
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 278;
+			this.state = 274;
 			this._errHandler.sync(this);
 			switch ( this.interpreter.adaptivePredict(this._input, 20, this._ctx) ) {
 			case 1:
 				{
-				this.state = 267;
+				this.state = 260;
 				_la = this._input.LA(1);
 				if (!(_la === VTLParser.EXCL || _la === VTLParser.K_NOT)) {
 				this._errHandler.recoverInline(this);
@@ -1447,71 +1408,92 @@ export class VTLParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 268;
-				this.expression(16);
+				this.state = 261;
+				this.expression(19);
 				}
 				break;
 
 			case 2:
 				{
-				this.state = 269;
+				this.state = 262;
 				this.match(VTLParser.SUB);
-				this.state = 270;
-				this.expression(15);
+				this.state = 263;
+				this.expression(18);
 				}
 				break;
 
 			case 3:
 				{
-				this.state = 271;
+				this.state = 264;
 				this.list();
 				}
 				break;
 
 			case 4:
 				{
-				this.state = 272;
+				this.state = 265;
 				this.map();
 				}
 				break;
 
 			case 5:
 				{
-				this.state = 273;
-				this.reference();
+				this.state = 266;
+				this.formal();
 				}
 				break;
 
 			case 6:
 				{
-				this.state = 274;
-				this.id();
+				this.state = 267;
+				this.property_or_method();
 				}
 				break;
 
 			case 7:
 				{
-				this.state = 275;
-				this.stringTemplate();
+				this.state = 268;
+				this.variable();
 				}
 				break;
 
 			case 8:
 				{
-				this.state = 276;
-				this.literal();
+				this.state = 269;
+				this.id();
 				}
 				break;
 
 			case 9:
 				{
-				this.state = 277;
+				this.state = 270;
+				this.match(VTLParser.STRING);
+				}
+				break;
+
+			case 10:
+				{
+				this.state = 271;
+				this.match(VTLParser.INTEGER);
+				}
+				break;
+
+			case 11:
+				{
+				this.state = 272;
+				this.match(VTLParser.FLOAT);
+				}
+				break;
+
+			case 12:
+				{
+				this.state = 273;
 				this.match(VTLParser.K_NULL);
 				}
 				break;
 			}
 			this._ctx._stop = this._input.tryLT(-1);
-			this.state = 303;
+			this.state = 299;
 			this._errHandler.sync(this);
 			_alt = this.interpreter.adaptivePredict(this._input, 22, this._ctx);
 			while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
@@ -1521,18 +1503,18 @@ export class VTLParser extends Parser {
 					}
 					_prevctx = _localctx;
 					{
-					this.state = 301;
+					this.state = 297;
 					this._errHandler.sync(this);
 					switch ( this.interpreter.adaptivePredict(this._input, 21, this._ctx) ) {
 					case 1:
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						this.pushNewRecursionContext(_localctx, _startState, VTLParser.RULE_expression);
-						this.state = 280;
-						if (!(this.precpred(this._ctx, 14))) {
-							throw this.createFailedPredicateException("this.precpred(this._ctx, 14)");
+						this.state = 276;
+						if (!(this.precpred(this._ctx, 17))) {
+							throw this.createFailedPredicateException("this.precpred(this._ctx, 17)");
 						}
-						this.state = 281;
+						this.state = 277;
 						_la = this._input.LA(1);
 						if (!((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << VTLParser.MUL) | (1 << VTLParser.DIV) | (1 << VTLParser.MOD))) !== 0))) {
 						this._errHandler.recoverInline(this);
@@ -1544,8 +1526,8 @@ export class VTLParser extends Parser {
 							this._errHandler.reportMatch(this);
 							this.consume();
 						}
-						this.state = 282;
-						this.expression(15);
+						this.state = 278;
+						this.expression(18);
 						}
 						break;
 
@@ -1553,11 +1535,11 @@ export class VTLParser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						this.pushNewRecursionContext(_localctx, _startState, VTLParser.RULE_expression);
-						this.state = 283;
-						if (!(this.precpred(this._ctx, 13))) {
-							throw this.createFailedPredicateException("this.precpred(this._ctx, 13)");
+						this.state = 279;
+						if (!(this.precpred(this._ctx, 16))) {
+							throw this.createFailedPredicateException("this.precpred(this._ctx, 16)");
 						}
-						this.state = 284;
+						this.state = 280;
 						_la = this._input.LA(1);
 						if (!(_la === VTLParser.ADD || _la === VTLParser.SUB)) {
 						this._errHandler.recoverInline(this);
@@ -1569,8 +1551,8 @@ export class VTLParser extends Parser {
 							this._errHandler.reportMatch(this);
 							this.consume();
 						}
-						this.state = 285;
-						this.expression(14);
+						this.state = 281;
+						this.expression(17);
 						}
 						break;
 
@@ -1578,11 +1560,11 @@ export class VTLParser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						this.pushNewRecursionContext(_localctx, _startState, VTLParser.RULE_expression);
-						this.state = 286;
-						if (!(this.precpred(this._ctx, 12))) {
-							throw this.createFailedPredicateException("this.precpred(this._ctx, 12)");
+						this.state = 282;
+						if (!(this.precpred(this._ctx, 15))) {
+							throw this.createFailedPredicateException("this.precpred(this._ctx, 15)");
 						}
-						this.state = 287;
+						this.state = 283;
 						_la = this._input.LA(1);
 						if (!(((((_la - 14)) & ~0x1F) === 0 && ((1 << (_la - 14)) & ((1 << (VTLParser.EQ - 14)) | (1 << (VTLParser.NE - 14)) | (1 << (VTLParser.K_EQ - 14)) | (1 << (VTLParser.K_NE - 14)))) !== 0))) {
 						this._errHandler.recoverInline(this);
@@ -1594,8 +1576,8 @@ export class VTLParser extends Parser {
 							this._errHandler.reportMatch(this);
 							this.consume();
 						}
-						this.state = 288;
-						this.expression(13);
+						this.state = 284;
+						this.expression(16);
 						}
 						break;
 
@@ -1603,11 +1585,11 @@ export class VTLParser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						this.pushNewRecursionContext(_localctx, _startState, VTLParser.RULE_expression);
-						this.state = 289;
-						if (!(this.precpred(this._ctx, 11))) {
-							throw this.createFailedPredicateException("this.precpred(this._ctx, 11)");
+						this.state = 285;
+						if (!(this.precpred(this._ctx, 14))) {
+							throw this.createFailedPredicateException("this.precpred(this._ctx, 14)");
 						}
-						this.state = 290;
+						this.state = 286;
 						_la = this._input.LA(1);
 						if (!(((((_la - 27)) & ~0x1F) === 0 && ((1 << (_la - 27)) & ((1 << (VTLParser.LT - 27)) | (1 << (VTLParser.LE - 27)) | (1 << (VTLParser.GT - 27)) | (1 << (VTLParser.GE - 27)) | (1 << (VTLParser.K_LT - 27)) | (1 << (VTLParser.K_LE - 27)) | (1 << (VTLParser.K_GT - 27)) | (1 << (VTLParser.K_GE - 27)))) !== 0))) {
 						this._errHandler.recoverInline(this);
@@ -1619,8 +1601,8 @@ export class VTLParser extends Parser {
 							this._errHandler.reportMatch(this);
 							this.consume();
 						}
-						this.state = 291;
-						this.expression(12);
+						this.state = 287;
+						this.expression(15);
 						}
 						break;
 
@@ -1628,11 +1610,11 @@ export class VTLParser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						this.pushNewRecursionContext(_localctx, _startState, VTLParser.RULE_expression);
-						this.state = 292;
-						if (!(this.precpred(this._ctx, 10))) {
-							throw this.createFailedPredicateException("this.precpred(this._ctx, 10)");
+						this.state = 288;
+						if (!(this.precpred(this._ctx, 13))) {
+							throw this.createFailedPredicateException("this.precpred(this._ctx, 13)");
 						}
-						this.state = 293;
+						this.state = 289;
 						_la = this._input.LA(1);
 						if (!(_la === VTLParser.AND || _la === VTLParser.K_AND)) {
 						this._errHandler.recoverInline(this);
@@ -1644,8 +1626,8 @@ export class VTLParser extends Parser {
 							this._errHandler.reportMatch(this);
 							this.consume();
 						}
-						this.state = 294;
-						this.expression(11);
+						this.state = 290;
+						this.expression(14);
 						}
 						break;
 
@@ -1653,11 +1635,11 @@ export class VTLParser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						this.pushNewRecursionContext(_localctx, _startState, VTLParser.RULE_expression);
-						this.state = 295;
-						if (!(this.precpred(this._ctx, 9))) {
-							throw this.createFailedPredicateException("this.precpred(this._ctx, 9)");
+						this.state = 291;
+						if (!(this.precpred(this._ctx, 12))) {
+							throw this.createFailedPredicateException("this.precpred(this._ctx, 12)");
 						}
-						this.state = 296;
+						this.state = 292;
 						_la = this._input.LA(1);
 						if (!(_la === VTLParser.OR || _la === VTLParser.K_OR)) {
 						this._errHandler.recoverInline(this);
@@ -1669,8 +1651,8 @@ export class VTLParser extends Parser {
 							this._errHandler.reportMatch(this);
 							this.consume();
 						}
-						this.state = 297;
-						this.expression(10);
+						this.state = 293;
+						this.expression(13);
 						}
 						break;
 
@@ -1678,20 +1660,20 @@ export class VTLParser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						this.pushNewRecursionContext(_localctx, _startState, VTLParser.RULE_expression);
-						this.state = 298;
-						if (!(this.precpred(this._ctx, 8))) {
-							throw this.createFailedPredicateException("this.precpred(this._ctx, 8)");
+						this.state = 294;
+						if (!(this.precpred(this._ctx, 11))) {
+							throw this.createFailedPredicateException("this.precpred(this._ctx, 11)");
 						}
-						this.state = 299;
+						this.state = 295;
 						this.match(VTLParser.RANGE);
-						this.state = 300;
-						this.expression(9);
+						this.state = 296;
+						this.expression(12);
 						}
 						break;
 					}
 					}
 				}
-				this.state = 305;
+				this.state = 301;
 				this._errHandler.sync(this);
 				_alt = this.interpreter.adaptivePredict(this._input, 22, this._ctx);
 			}
@@ -1712,78 +1694,26 @@ export class VTLParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public stringTemplate(): StringTemplateContext {
-		const _localctx: StringTemplateContext = new StringTemplateContext(this._ctx, this.state);
-		this.enterRule(_localctx, 56, VTLParser.RULE_stringTemplate);
-		let _la: number;
-		try {
-			this.enterOuterAlt(_localctx, 1);
-			{
-			this.state = 306;
-			this.match(VTLParser.DQUOTE);
-			this.state = 310;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			while (_la === VTLParser.REFERENCE || _la === VTLParser.STR_TEXT || _la === VTLParser.STR_ESCAPED_CHAR) {
-				{
-				{
-				this.state = 307;
-				_la = this._input.LA(1);
-				if (!(_la === VTLParser.REFERENCE || _la === VTLParser.STR_TEXT || _la === VTLParser.STR_ESCAPED_CHAR)) {
-				this._errHandler.recoverInline(this);
-				} else {
-					if (this._input.LA(1) === Token.EOF) {
-						this.matchedEOF = true;
-					}
-
-					this._errHandler.reportMatch(this);
-					this.consume();
-				}
-				}
-				}
-				this.state = 312;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-			}
-			this.state = 313;
-			this.match(VTLParser.DQUOTE);
-			}
-		}
-		catch (re) {
-			if (re instanceof RecognitionException) {
-				_localctx.exception = re;
-				this._errHandler.reportError(this, re);
-				this._errHandler.recover(this, re);
-			} else {
-				throw re;
-			}
-		}
-		finally {
-			this.exitRule();
-		}
-		return _localctx;
-	}
-	// @RuleVersion(0)
 	public list(): ListContext {
 		const _localctx: ListContext = new ListContext(this._ctx, this.state);
-		this.enterRule(_localctx, 58, VTLParser.RULE_list);
+		this.enterRule(_localctx, 52, VTLParser.RULE_list);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 315;
+			this.state = 302;
 			this.match(VTLParser.OBRACK);
-			this.state = 317;
+			this.state = 304;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (((((_la - 3)) & ~0x1F) === 0 && ((1 << (_la - 3)) & ((1 << (VTLParser.OBRACK - 3)) | (1 << (VTLParser.OBRACE - 3)) | (1 << (VTLParser.STRING - 3)) | (1 << (VTLParser.ID - 3)) | (1 << (VTLParser.K_NULL - 3)) | (1 << (VTLParser.SUB - 3)) | (1 << (VTLParser.EXCL - 3)) | (1 << (VTLParser.K_LT - 3)) | (1 << (VTLParser.K_LE - 3)) | (1 << (VTLParser.K_GT - 3)))) !== 0) || ((((_la - 35)) & ~0x1F) === 0 && ((1 << (_la - 35)) & ((1 << (VTLParser.K_GE - 35)) | (1 << (VTLParser.K_EQ - 35)) | (1 << (VTLParser.K_NE - 35)) | (1 << (VTLParser.K_TRUE - 35)) | (1 << (VTLParser.K_FALSE - 35)) | (1 << (VTLParser.K_AND - 35)) | (1 << (VTLParser.K_OR - 35)) | (1 << (VTLParser.K_NOT - 35)) | (1 << (VTLParser.K_IN - 35)) | (1 << (VTLParser.NUMBER - 35)) | (1 << (VTLParser.BOOL - 35)) | (1 << (VTLParser.DQUOTE - 35)) | (1 << (VTLParser.DOLLAR - 35)))) !== 0)) {
+			if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << VTLParser.OBRACK) | (1 << VTLParser.OBRACE) | (1 << VTLParser.STRING) | (1 << VTLParser.INTEGER) | (1 << VTLParser.ID) | (1 << VTLParser.REFERENCE) | (1 << VTLParser.K_NULL) | (1 << VTLParser.SUB) | (1 << VTLParser.FLOAT) | (1 << VTLParser.EXCL))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (VTLParser.K_LT - 32)) | (1 << (VTLParser.K_LE - 32)) | (1 << (VTLParser.K_GT - 32)) | (1 << (VTLParser.K_GE - 32)) | (1 << (VTLParser.K_EQ - 32)) | (1 << (VTLParser.K_NE - 32)) | (1 << (VTLParser.K_TRUE - 32)) | (1 << (VTLParser.K_FALSE - 32)) | (1 << (VTLParser.K_AND - 32)) | (1 << (VTLParser.K_OR - 32)) | (1 << (VTLParser.K_NOT - 32)) | (1 << (VTLParser.K_IN - 32)) | (1 << (VTLParser.DOLLAR_EXCL_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_EXCL - 32)) | (1 << (VTLParser.DOLLAR - 32)))) !== 0)) {
 				{
-				this.state = 316;
+				this.state = 303;
 				this.expressions();
 				}
 			}
 
-			this.state = 319;
+			this.state = 306;
 			this.match(VTLParser.CBRACK);
 			}
 		}
@@ -1804,24 +1734,24 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public map(): MapContext {
 		const _localctx: MapContext = new MapContext(this._ctx, this.state);
-		this.enterRule(_localctx, 60, VTLParser.RULE_map);
+		this.enterRule(_localctx, 54, VTLParser.RULE_map);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 321;
+			this.state = 308;
 			this.match(VTLParser.OBRACE);
-			this.state = 323;
+			this.state = 310;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (((((_la - 3)) & ~0x1F) === 0 && ((1 << (_la - 3)) & ((1 << (VTLParser.OBRACK - 3)) | (1 << (VTLParser.OBRACE - 3)) | (1 << (VTLParser.STRING - 3)) | (1 << (VTLParser.ID - 3)) | (1 << (VTLParser.K_NULL - 3)) | (1 << (VTLParser.SUB - 3)) | (1 << (VTLParser.EXCL - 3)) | (1 << (VTLParser.K_LT - 3)) | (1 << (VTLParser.K_LE - 3)) | (1 << (VTLParser.K_GT - 3)))) !== 0) || ((((_la - 35)) & ~0x1F) === 0 && ((1 << (_la - 35)) & ((1 << (VTLParser.K_GE - 35)) | (1 << (VTLParser.K_EQ - 35)) | (1 << (VTLParser.K_NE - 35)) | (1 << (VTLParser.K_TRUE - 35)) | (1 << (VTLParser.K_FALSE - 35)) | (1 << (VTLParser.K_AND - 35)) | (1 << (VTLParser.K_OR - 35)) | (1 << (VTLParser.K_NOT - 35)) | (1 << (VTLParser.K_IN - 35)) | (1 << (VTLParser.NUMBER - 35)) | (1 << (VTLParser.BOOL - 35)) | (1 << (VTLParser.DQUOTE - 35)) | (1 << (VTLParser.DOLLAR - 35)))) !== 0)) {
+			if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << VTLParser.OBRACK) | (1 << VTLParser.OBRACE) | (1 << VTLParser.STRING) | (1 << VTLParser.INTEGER) | (1 << VTLParser.ID) | (1 << VTLParser.REFERENCE) | (1 << VTLParser.K_NULL) | (1 << VTLParser.SUB) | (1 << VTLParser.FLOAT) | (1 << VTLParser.EXCL))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (VTLParser.K_LT - 32)) | (1 << (VTLParser.K_LE - 32)) | (1 << (VTLParser.K_GT - 32)) | (1 << (VTLParser.K_GE - 32)) | (1 << (VTLParser.K_EQ - 32)) | (1 << (VTLParser.K_NE - 32)) | (1 << (VTLParser.K_TRUE - 32)) | (1 << (VTLParser.K_FALSE - 32)) | (1 << (VTLParser.K_AND - 32)) | (1 << (VTLParser.K_OR - 32)) | (1 << (VTLParser.K_NOT - 32)) | (1 << (VTLParser.K_IN - 32)) | (1 << (VTLParser.DOLLAR_EXCL_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_OBRACE - 32)) | (1 << (VTLParser.DOLLAR_EXCL - 32)) | (1 << (VTLParser.DOLLAR - 32)))) !== 0)) {
 				{
-				this.state = 322;
+				this.state = 309;
 				this.map_entries();
 				}
 			}
 
-			this.state = 325;
+			this.state = 312;
 			this.match(VTLParser.CBRACE);
 			}
 		}
@@ -1842,26 +1772,26 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public map_entries(): Map_entriesContext {
 		const _localctx: Map_entriesContext = new Map_entriesContext(this._ctx, this.state);
-		this.enterRule(_localctx, 62, VTLParser.RULE_map_entries);
+		this.enterRule(_localctx, 56, VTLParser.RULE_map_entries);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 327;
+			this.state = 314;
 			this.map_entry();
-			this.state = 332;
+			this.state = 319;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === VTLParser.COMMA) {
 				{
 				{
-				this.state = 328;
+				this.state = 315;
 				this.match(VTLParser.COMMA);
-				this.state = 329;
+				this.state = 316;
 				this.map_entry();
 				}
 				}
-				this.state = 334;
+				this.state = 321;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
@@ -1884,15 +1814,15 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public map_entry(): Map_entryContext {
 		const _localctx: Map_entryContext = new Map_entryContext(this._ctx, this.state);
-		this.enterRule(_localctx, 64, VTLParser.RULE_map_entry);
+		this.enterRule(_localctx, 58, VTLParser.RULE_map_entry);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 335;
+			this.state = 322;
 			this.expression(0);
-			this.state = 336;
+			this.state = 323;
 			this.match(VTLParser.COLON);
-			this.state = 337;
+			this.state = 324;
 			this.expression(0);
 			}
 		}
@@ -1913,12 +1843,12 @@ export class VTLParser extends Parser {
 	// @RuleVersion(0)
 	public id(): IdContext {
 		const _localctx: IdContext = new IdContext(this._ctx, this.state);
-		this.enterRule(_localctx, 66, VTLParser.RULE_id);
+		this.enterRule(_localctx, 60, VTLParser.RULE_id);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 339;
+			this.state = 326;
 			_la = this._input.LA(1);
 			if (!(_la === VTLParser.ID || _la === VTLParser.K_NULL || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (VTLParser.K_LT - 32)) | (1 << (VTLParser.K_LE - 32)) | (1 << (VTLParser.K_GT - 32)) | (1 << (VTLParser.K_GE - 32)) | (1 << (VTLParser.K_EQ - 32)) | (1 << (VTLParser.K_NE - 32)) | (1 << (VTLParser.K_TRUE - 32)) | (1 << (VTLParser.K_FALSE - 32)) | (1 << (VTLParser.K_AND - 32)) | (1 << (VTLParser.K_OR - 32)) | (1 << (VTLParser.K_NOT - 32)) | (1 << (VTLParser.K_IN - 32)))) !== 0))) {
 			this._errHandler.recoverInline(this);
@@ -1949,7 +1879,7 @@ export class VTLParser extends Parser {
 
 	public sempred(_localctx: RuleContext, ruleIndex: number, predIndex: number): boolean {
 		switch (ruleIndex) {
-		case 27:
+		case 25:
 			return this.expression_sempred(_localctx as ExpressionContext, predIndex);
 		}
 		return true;
@@ -1957,190 +1887,186 @@ export class VTLParser extends Parser {
 	private expression_sempred(_localctx: ExpressionContext, predIndex: number): boolean {
 		switch (predIndex) {
 		case 0:
-			return this.precpred(this._ctx, 14);
+			return this.precpred(this._ctx, 17);
 
 		case 1:
-			return this.precpred(this._ctx, 13);
+			return this.precpred(this._ctx, 16);
 
 		case 2:
-			return this.precpred(this._ctx, 12);
+			return this.precpred(this._ctx, 15);
 
 		case 3:
-			return this.precpred(this._ctx, 11);
+			return this.precpred(this._ctx, 14);
 
 		case 4:
-			return this.precpred(this._ctx, 10);
+			return this.precpred(this._ctx, 13);
 
 		case 5:
-			return this.precpred(this._ctx, 9);
+			return this.precpred(this._ctx, 12);
 
 		case 6:
-			return this.precpred(this._ctx, 8);
+			return this.precpred(this._ctx, 11);
 		}
 		return true;
 	}
 
 	public static readonly _serializedATN: string =
-		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03t\u0158\x04\x02" +
+		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03m\u014B\x04\x02" +
 		"\t\x02\x04\x03\t\x03\x04\x04\t\x04\x04\x05\t\x05\x04\x06\t\x06\x04\x07" +
 		"\t\x07\x04\b\t\b\x04\t\t\t\x04\n\t\n\x04\v\t\v\x04\f\t\f\x04\r\t\r\x04" +
 		"\x0E\t\x0E\x04\x0F\t\x0F\x04\x10\t\x10\x04\x11\t\x11\x04\x12\t\x12\x04" +
 		"\x13\t\x13\x04\x14\t\x14\x04\x15\t\x15\x04\x16\t\x16\x04\x17\t\x17\x04" +
 		"\x18\t\x18\x04\x19\t\x19\x04\x1A\t\x1A\x04\x1B\t\x1B\x04\x1C\t\x1C\x04" +
-		"\x1D\t\x1D\x04\x1E\t\x1E\x04\x1F\t\x1F\x04 \t \x04!\t!\x04\"\t\"\x04#" +
-		"\t#\x03\x02\x03\x02\x03\x02\x03\x03\x07\x03K\n\x03\f\x03\x0E\x03N\v\x03" +
-		"\x03\x04\x03\x04\x03\x04\x03\x04\x03\x04\x05\x04U\n\x04\x03\x05\x03\x05" +
-		"\x03\x05\x05\x05Z\n\x05\x03\x05\x03\x05\x07\x05^\n\x05\f\x05\x0E\x05a" +
-		"\v\x05\x03\x05\x03\x05\x03\x05\x05\x05f\n\x05\x03\x05\x03\x05\x03\x05" +
-		"\x07\x05k\n\x05\f\x05\x0E\x05n\v\x05\x03\x05\x03\x05\x05\x05r\n\x05\x03" +
-		"\x05\x05\x05u\n\x05\x03\x06\x03\x06\x03\x06\x05\x06z\n\x06\x03\x07\x03" +
-		"\x07\x03\x07\x03\x07\x03\b\x03\b\x03\b\x03\t\x03\t\x03\t\x03\t\x05\t\x87" +
-		"\n\t\x03\t\x03\t\x03\n\x03\n\x03\n\x07\n\x8E\n\n\f\n\x0E\n\x91\v\n\x03" +
-		"\v\x03\v\x03\f\x03\f\x03\f\x03\f\x03\f\x03\f\x03\f\x03\f\x03\f\x03\f\x03" +
-		"\f\x03\f\x05\f\xA1\n\f\x03\r\x03\r\x03\r\x07\r\xA6\n\r\f\r\x0E\r\xA9\v" +
-		"\r\x03\x0E\x03\x0E\x03\x0E\x03\x0E\x03\x0E\x03\x0E\x03\x0F\x03\x0F\x03" +
-		"\x0F\x03\x0F\x03\x0F\x07\x0F\xB6\n\x0F\f\x0F\x0E\x0F\xB9\v\x0F\x03\x0F" +
-		"\x05\x0F\xBC\n\x0F\x03\x0F\x03\x0F\x03\x10\x03\x10\x03\x10\x03\x10\x03" +
-		"\x10\x03\x11\x03\x11\x03\x11\x03\x12\x03\x12\x03\x12\x03\x12\x03\x12\x03" +
-		"\x12\x03\x12\x03\x12\x03\x13\x03\x13\x03\x14\x03\x14\x03\x15\x03\x15\x07" +
-		"\x15\xD6\n\x15\f\x15\x0E\x15\xD9\v\x15\x03\x15\x05\x15\xDC\n\x15\x03\x15" +
-		"\x03\x15\x03\x15\x05\x15\xE1\n\x15\x03\x16\x03\x16\x07\x16\xE5\n\x16\f" +
-		"\x16\x0E\x16\xE8\v\x16\x03\x16\x03\x16\x03\x16\x03\x16\x03\x17\x03\x17" +
-		"\x03\x17\x03\x17\x03\x18\x03\x18\x03\x18\x03\x18\x03\x18\x03\x18\x03\x19" +
-		"\x03\x19\x03\x19\x03\x19\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1B\x03\x1B" +
-		"\x07\x1B\u0102\n\x1B\f\x1B\x0E\x1B\u0105\v\x1B\x03\x1B\x03\x1B\x03\x1B" +
-		"\x03\x1B\x03\x1C\x03\x1C\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D" +
-		"\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x05\x1D\u0119\n\x1D\x03" +
-		"\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03" +
-		"\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03" +
-		"\x1D\x03\x1D\x03\x1D\x07\x1D\u0130\n\x1D\f\x1D\x0E\x1D\u0133\v\x1D\x03" +
-		"\x1E\x03\x1E\x07\x1E\u0137\n\x1E\f\x1E\x0E\x1E\u013A\v\x1E\x03\x1E\x03" +
-		"\x1E\x03\x1F\x03\x1F\x05\x1F\u0140\n\x1F\x03\x1F\x03\x1F\x03 \x03 \x05" +
-		" \u0146\n \x03 \x03 \x03!\x03!\x03!\x07!\u014D\n!\f!\x0E!\u0150\v!\x03" +
-		"\"\x03\"\x03\"\x03\"\x03#\x03#\x03#\x02\x02\x038$\x02\x02\x04\x02\x06" +
-		"\x02\b\x02\n\x02\f\x02\x0E\x02\x10\x02\x12\x02\x14\x02\x16\x02\x18\x02" +
-		"\x1A\x02\x1C\x02\x1E\x02 \x02\"\x02$\x02&\x02(\x02*\x02,\x02.\x020\x02" +
-		"2\x024\x026\x028\x02:\x02<\x02>\x02@\x02B\x02D\x02\x02\f\x04\x02\t\t=" +
-		">\x04\x02!!,,\x03\x02\x17\x19\x03\x02\x15\x16\x04\x02\x10\x11&\'\x04\x02" +
-		"\x1D \"%\x04\x02\x12\x12**\x04\x02\x13\x13++\x04\x02\f\fPQ\x05\x02\v\v" +
-		"\x14\x14\"-\x02\u016A\x02F\x03\x02\x02\x02\x04L\x03\x02\x02\x02\x06T\x03" +
-		"\x02\x02\x02\bt\x03\x02\x02\x02\ny\x03\x02\x02\x02\f{\x03\x02\x02\x02" +
-		"\x0E\x7F\x03\x02\x02\x02\x10\x82\x03\x02\x02\x02\x12\x8A\x03\x02\x02\x02" +
-		"\x14\x92\x03\x02\x02\x02\x16\xA0\x03\x02\x02\x02\x18\xA2\x03\x02\x02\x02" +
-		"\x1A\xAA\x03\x02\x02\x02\x1C\xB0\x03\x02\x02\x02\x1E\xBF\x03\x02\x02\x02" +
-		" \xC4\x03\x02\x02\x02\"\xC7\x03\x02\x02\x02$\xCF\x03\x02\x02\x02&\xD1" +
-		"\x03\x02\x02\x02(\xD3\x03\x02\x02\x02*\xE2\x03\x02\x02\x02,\xED\x03\x02" +
-		"\x02\x02.\xF1\x03\x02\x02\x020\xF7\x03\x02\x02\x022\xFB\x03\x02\x02\x02" +
-		"4\xFF\x03\x02\x02\x026\u010A\x03\x02\x02\x028\u0118\x03\x02\x02\x02:\u0134" +
-		"\x03\x02\x02\x02<\u013D\x03\x02\x02\x02>\u0143\x03\x02\x02\x02@\u0149" +
-		"\x03\x02\x02\x02B\u0151\x03\x02\x02\x02D\u0155\x03\x02\x02\x02FG\x05\x04" +
-		"\x03\x02GH\x07\x02\x02\x03H\x03\x03\x02\x02\x02IK\x05\x06\x04\x02JI\x03" +
-		"\x02\x02\x02KN\x03\x02\x02\x02LJ\x03\x02\x02\x02LM\x03\x02\x02\x02M\x05" +
-		"\x03\x02\x02\x02NL\x03\x02\x02\x02OU\x07E\x02\x02PU\x07B\x02\x02QU\x07" +
-		"F\x02\x02RU\x05\b\x05\x02SU\x05\x16\f\x02TO\x03\x02\x02\x02TP\x03\x02" +
-		"\x02\x02TQ\x03\x02\x02\x02TR\x03\x02\x02\x02TS\x03\x02\x02\x02U\x07\x03" +
-		"\x02\x02\x02VW\x07D\x02\x02WY\x07?\x02\x02XZ\x07!\x02\x02YX\x03\x02\x02" +
-		"\x02YZ\x03\x02\x02\x02Z[\x03\x02\x02\x02[_\x07\v\x02\x02\\^\x05\n\x06" +
-		"\x02]\\\x03\x02\x02\x02^a\x03\x02\x02\x02_]\x03\x02\x02\x02_`\x03\x02" +
-		"\x02\x02`u\x03\x02\x02\x02a_\x03\x02\x02\x02bc\x07D\x02\x02ce\x07?\x02" +
-		"\x02df\x07!\x02\x02ed\x03\x02\x02\x02ef\x03\x02\x02\x02fg\x03\x02\x02" +
-		"\x02gh\x07\x07\x02\x02hl\x07\v\x02\x02ik\x05\n\x06\x02ji\x03\x02\x02\x02" +
-		"kn\x03\x02\x02\x02lj\x03\x02\x02\x02lm\x03\x02\x02\x02mq\x03\x02\x02\x02" +
-		"nl\x03\x02\x02\x02op\x07<\x02\x02pr\x05\x14\v\x02qo\x03\x02\x02\x02qr" +
-		"\x03\x02\x02\x02rs\x03\x02\x02\x02su\x07\b\x02\x02tV\x03\x02\x02\x02t" +
-		"b\x03\x02\x02\x02u\t\x03\x02\x02\x02vz\x05\f\x07\x02wz\x05\x0E\b\x02x" +
-		"z\x05\x10\t\x02yv\x03\x02\x02\x02yw\x03\x02\x02\x02yx\x03\x02\x02\x02" +
-		"z\v\x03\x02\x02\x02{|\x07\x05\x02\x02|}\x058\x1D\x02}~\x07\x06\x02\x02" +
-		"~\r\x03\x02\x02\x02\x7F\x80\x07\r\x02\x02\x80\x81\x07\v\x02\x02\x81\x0F" +
-		"\x03\x02\x02\x02\x82\x83\x07\r\x02\x02\x83\x84\x07\v\x02\x02\x84\x86\x07" +
-		"\x03\x02\x02\x85\x87\x05\x12\n\x02\x86\x85\x03\x02\x02\x02\x86\x87\x03" +
-		"\x02\x02\x02\x87\x88\x03\x02\x02\x02\x88\x89\x07\x04\x02\x02\x89\x11\x03" +
-		"\x02\x02\x02\x8A\x8F\x058\x1D\x02\x8B\x8C\x07\x0E\x02\x02\x8C\x8E\x05" +
-		"8\x1D\x02\x8D\x8B\x03\x02\x02\x02\x8E\x91\x03\x02\x02\x02\x8F\x8D\x03" +
-		"\x02\x02\x02\x8F\x90\x03\x02\x02\x02\x90\x13\x03\x02\x02\x02\x91\x8F\x03" +
-		"\x02\x02\x02\x92\x93\t\x02\x02\x02\x93\x15\x03\x02\x02\x02\x94\xA1\x05" +
-		"\x1A\x0E\x02\x95\xA1\x05\x1C\x0F\x02\x96\xA1\x05\"\x12\x02\x97\xA1\x05" +
-		"$\x13\x02\x98\xA1\x05&\x14\x02\x99\xA1\x05*\x16\x02\x9A\xA1\x05,\x17\x02" +
-		"\x9B\xA1\x05.\x18\x02\x9C\xA1\x050\x19\x02\x9D\xA1\x052\x1A\x02\x9E\xA1" +
-		"\x054\x1B\x02\x9F\xA1\x05(\x15\x02\xA0\x94\x03\x02\x02\x02\xA0\x95\x03" +
-		"\x02\x02\x02\xA0\x96\x03\x02\x02\x02\xA0\x97\x03\x02\x02\x02\xA0\x98\x03" +
-		"\x02\x02\x02\xA0\x99\x03\x02\x02\x02\xA0\x9A\x03\x02\x02\x02\xA0\x9B\x03" +
-		"\x02\x02\x02\xA0\x9C\x03\x02\x02\x02\xA0\x9D\x03\x02\x02\x02\xA0\x9E\x03" +
-		"\x02\x02\x02\xA0\x9F\x03\x02\x02\x02\xA1\x17\x03\x02\x02\x02\xA2\xA7\x05" +
-		"8\x1D\x02\xA3\xA4\x07\x0E\x02\x02\xA4\xA6\x058\x1D\x02\xA5\xA3\x03\x02" +
-		"\x02\x02\xA6\xA9\x03\x02\x02\x02\xA7\xA5\x03\x02\x02\x02\xA7\xA8\x03\x02" +
-		"\x02\x02\xA8\x19\x03\x02\x02\x02\xA9\xA7\x03\x02\x02\x02\xAA\xAB\x072" +
-		"\x02\x02\xAB\xAC\x058\x1D\x02\xAC\xAD\x07\x0F\x02\x02\xAD\xAE\x058\x1D" +
-		"\x02\xAE\xAF\x07\x04\x02\x02\xAF\x1B\x03\x02\x02\x02\xB0\xB1\x07.\x02" +
-		"\x02\xB1\xB2\x058\x1D\x02\xB2\xB3\x07\x04\x02\x02\xB3\xB7\x05\x04\x03" +
-		"\x02\xB4\xB6\x05\x1E\x10\x02\xB5\xB4\x03\x02\x02\x02\xB6\xB9\x03\x02\x02" +
-		"\x02\xB7\xB5\x03\x02\x02\x02\xB7\xB8\x03\x02\x02\x02\xB8\xBB\x03\x02\x02" +
-		"\x02\xB9\xB7\x03\x02\x02\x02\xBA\xBC\x05 \x11\x02\xBB\xBA\x03\x02\x02" +
-		"\x02\xBB\xBC\x03\x02\x02\x02\xBC\xBD\x03\x02\x02\x02\xBD\xBE\x056\x1C" +
-		"\x02\xBE\x1D\x03\x02\x02\x02\xBF\xC0\x07/\x02\x02\xC0\xC1\x058\x1D\x02" +
-		"\xC1\xC2\x07\x04\x02\x02\xC2\xC3\x05\x04\x03\x02\xC3\x1F\x03\x02\x02\x02" +
-		"\xC4\xC5\x070\x02\x02\xC5\xC6\x05\x04\x03\x02\xC6!\x03\x02\x02\x02\xC7" +
-		"\xC8\x071\x02\x02\xC8\xC9\x05\b\x05\x02\xC9\xCA\x07-\x02\x02\xCA\xCB\x05" +
-		"8\x1D\x02\xCB\xCC\x07\x04\x02\x02\xCC\xCD\x05\x04\x03\x02\xCD\xCE\x05" +
-		"6\x1C\x02\xCE#\x03\x02\x02\x02\xCF\xD0\x074\x02\x02\xD0%\x03\x02\x02\x02" +
-		"\xD1\xD2\x077\x02\x02\xD2\'\x03\x02\x02\x02\xD3\xDB\x07\v\x02\x02\xD4" +
-		"\xD6\x058\x1D\x02\xD5\xD4\x03\x02\x02\x02\xD6\xD9\x03\x02\x02\x02\xD7" +
-		"\xD5\x03\x02\x02\x02\xD7\xD8\x03\x02\x02\x02\xD8\xDA\x03\x02\x02\x02\xD9" +
-		"\xD7\x03\x02\x02\x02\xDA\xDC\x07\x04\x02\x02\xDB\xD7\x03\x02\x02\x02\xDB" +
-		"\xDC\x03\x02\x02\x02\xDC\xE0\x03\x02\x02\x02\xDD\xDE\x05\x04\x03\x02\xDE" +
-		"\xDF\x056\x1C\x02\xDF\xE1\x03\x02\x02\x02\xE0\xDD\x03\x02\x02\x02\xE0" +
-		"\xE1\x03\x02\x02\x02\xE1)\x03\x02\x02\x02\xE2\xE6\x076\x02\x02\xE3\xE5" +
-		"\x058\x1D\x02\xE4\xE3\x03\x02\x02\x02\xE5\xE8\x03\x02\x02\x02\xE6\xE4" +
-		"\x03\x02\x02\x02\xE6\xE7\x03\x02\x02\x02\xE7\xE9\x03\x02\x02\x02\xE8\xE6" +
-		"\x03\x02\x02\x02\xE9\xEA\x07\x04\x02\x02\xEA\xEB\x05\x04\x03\x02\xEB\xEC" +
-		"\x056\x1C\x02\xEC+\x03\x02\x02\x02\xED\xEE\x07:\x02\x02\xEE\xEF\x058\x1D" +
-		"\x02\xEF\xF0\x07\x04\x02\x02\xF0-\x03\x02\x02\x02\xF1\xF2\x07;\x02\x02" +
-		"\xF2\xF3\x058\x1D\x02\xF3\xF4\x07\x04\x02\x02\xF4\xF5\x05\x04\x03\x02" +
-		"\xF5\xF6\x056\x1C\x02\xF6/\x03\x02\x02\x02\xF7\xF8\x078\x02\x02\xF8\xF9" +
-		"\x05\x18\r\x02\xF9\xFA\x07\x04\x02\x02\xFA1\x03\x02\x02\x02\xFB\xFC\x07" +
-		"9\x02\x02\xFC\xFD\x058\x1D\x02\xFD\xFE\x07\x04\x02\x02\xFE3\x03\x02\x02" +
-		"\x02\xFF\u0103\x075\x02\x02\u0100\u0102\x058\x1D\x02\u0101\u0100\x03\x02" +
-		"\x02\x02\u0102\u0105\x03\x02\x02\x02\u0103\u0101\x03\x02\x02\x02\u0103" +
-		"\u0104\x03\x02\x02\x02\u0104\u0106\x03\x02\x02\x02\u0105\u0103\x03\x02" +
-		"\x02\x02\u0106\u0107\x07\x04\x02\x02\u0107\u0108\x05\x04\x03\x02\u0108" +
-		"\u0109\x056\x1C\x02\u01095\x03\x02\x02\x02\u010A\u010B\x073\x02\x02\u010B" +
-		"7\x03\x02\x02\x02\u010C\u010D\b\x1D\x01\x02\u010D\u010E\t\x03\x02\x02" +
-		"\u010E\u0119\x058\x1D\x12\u010F\u0110\x07\x16\x02\x02\u0110\u0119\x05" +
-		"8\x1D\x11\u0111\u0119\x05<\x1F\x02\u0112\u0119\x05> \x02\u0113\u0119\x05" +
-		"\b\x05\x02\u0114\u0119\x05D#\x02\u0115\u0119\x05:\x1E\x02\u0116\u0119" +
-		"\x05\x14\v\x02\u0117\u0119\x07\x14\x02\x02\u0118\u010C\x03\x02\x02\x02" +
-		"\u0118\u010F\x03\x02\x02\x02\u0118\u0111\x03\x02\x02\x02\u0118\u0112\x03" +
-		"\x02\x02\x02\u0118\u0113\x03\x02\x02\x02\u0118\u0114\x03\x02\x02\x02\u0118" +
-		"\u0115\x03\x02\x02\x02\u0118\u0116\x03\x02\x02\x02\u0118\u0117\x03\x02" +
-		"\x02\x02\u0119\u0131\x03\x02\x02\x02\u011A\u011B\f\x10\x02\x02\u011B\u011C" +
-		"\t\x04\x02\x02\u011C\u0130\x058\x1D\x11\u011D\u011E\f\x0F\x02\x02\u011E" +
-		"\u011F\t\x05\x02\x02\u011F\u0130\x058\x1D\x10\u0120\u0121\f\x0E\x02\x02" +
-		"\u0121\u0122\t\x06\x02\x02\u0122\u0130\x058\x1D\x0F\u0123\u0124\f\r\x02" +
-		"\x02\u0124\u0125\t\x07\x02\x02\u0125\u0130\x058\x1D\x0E\u0126\u0127\f" +
-		"\f\x02\x02\u0127\u0128\t\b\x02\x02\u0128\u0130\x058\x1D\r\u0129\u012A" +
-		"\f\v\x02\x02\u012A\u012B\t\t\x02\x02\u012B\u0130\x058\x1D\f\u012C\u012D" +
-		"\f\n\x02\x02\u012D\u012E\x07\x1C\x02\x02\u012E\u0130\x058\x1D\v\u012F" +
-		"\u011A\x03\x02\x02\x02\u012F\u011D\x03\x02\x02\x02\u012F\u0120\x03\x02" +
-		"\x02\x02\u012F\u0123\x03\x02\x02\x02\u012F\u0126\x03\x02\x02\x02\u012F" +
-		"\u0129\x03\x02\x02\x02\u012F\u012C\x03\x02\x02\x02\u0130\u0133\x03\x02" +
-		"\x02\x02\u0131\u012F\x03\x02\x02\x02\u0131\u0132\x03\x02\x02\x02\u0132" +
-		"9\x03\x02\x02\x02\u0133\u0131\x03\x02\x02\x02\u0134\u0138\x07@\x02\x02" +
-		"\u0135\u0137\t\n\x02\x02\u0136\u0135\x03\x02\x02\x02\u0137\u013A\x03\x02" +
-		"\x02\x02\u0138\u0136\x03\x02\x02\x02\u0138\u0139\x03\x02\x02\x02\u0139" +
-		"\u013B\x03\x02\x02\x02\u013A\u0138\x03\x02\x02\x02\u013B\u013C\x07@\x02" +
-		"\x02\u013C;\x03\x02\x02\x02\u013D\u013F\x07\x05\x02\x02\u013E\u0140\x05" +
-		"\x18\r\x02\u013F\u013E\x03\x02\x02\x02\u013F\u0140\x03\x02\x02\x02\u0140" +
-		"\u0141\x03\x02\x02\x02\u0141\u0142\x07\x06\x02\x02\u0142=\x03\x02\x02" +
-		"\x02\u0143\u0145\x07\x07\x02\x02\u0144\u0146\x05@!\x02\u0145\u0144\x03" +
-		"\x02\x02\x02\u0145\u0146\x03\x02\x02\x02\u0146\u0147\x03\x02\x02\x02\u0147" +
-		"\u0148\x07\b\x02\x02\u0148?\x03\x02\x02\x02\u0149\u014E\x05B\"\x02\u014A" +
-		"\u014B\x07\x0E\x02\x02\u014B\u014D\x05B\"\x02\u014C\u014A\x03\x02\x02" +
-		"\x02\u014D\u0150\x03\x02\x02\x02\u014E\u014C\x03\x02\x02\x02\u014E\u014F" +
-		"\x03\x02\x02\x02\u014FA\x03\x02\x02\x02\u0150\u014E\x03\x02\x02\x02\u0151" +
-		"\u0152\x058\x1D\x02\u0152\u0153\x07\x1A\x02\x02\u0153\u0154\x058\x1D\x02" +
-		"\u0154C\x03\x02\x02\x02\u0155\u0156\t\v\x02\x02\u0156E\x03\x02\x02\x02" +
-		"\x1DLTY_elqty\x86\x8F\xA0\xA7\xB7\xBB\xD7\xDB\xE0\xE6\u0103\u0118\u012F" +
-		"\u0131\u0138\u013F\u0145\u014E";
+		"\x1D\t\x1D\x04\x1E\t\x1E\x04\x1F\t\x1F\x04 \t \x03\x02\x03\x02\x03\x02" +
+		"\x03\x03\x07\x03E\n\x03\f\x03\x0E\x03H\v\x03\x03\x04\x03\x04\x03\x04\x03" +
+		"\x04\x03\x04\x03\x04\x03\x04\x05\x04Q\n\x04\x03\x05\x03\x05\x03\x05\x03" +
+		"\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03" +
+		"\x05\x03\x05\x03\x05\x03\x05\x05\x05c\n\x05\x03\x06\x03\x06\x03\x06\x05" +
+		"\x06h\n\x06\x03\x06\x03\x06\x03\x06\x05\x06m\n\x06\x03\x06\x03\x06\x05" +
+		"\x06q\n\x06\x05\x06s\n\x06\x03\x07\x03\x07\x06\x07w\n\x07\r\x07\x0E\x07" +
+		"x\x03\b\x03\b\x06\b}\n\b\r\b\x0E\b~\x03\t\x03\t\x03\t\x03\t\x03\t\x03" +
+		"\t\x03\t\x03\t\x03\t\x03\t\x03\t\x03\t\x05\t\x8D\n\t\x03\n\x03\n\x03\n" +
+		"\x03\n\x03\n\x03\n\x03\n\x03\n\x05\n\x97\n\n\x03\n\x05\n\x9A\n\n\x03\v" +
+		"\x03\v\x03\v\x07\v\x9F\n\v\f\v\x0E\v\xA2\v\v\x03\f\x03\f\x03\f\x03\f\x03" +
+		"\f\x03\f\x03\r\x03\r\x03\r\x03\r\x03\r\x07\r\xAF\n\r\f\r\x0E\r\xB2\v\r" +
+		"\x03\r\x05\r\xB5\n\r\x03\r\x03\r\x03\x0E\x03\x0E\x03\x0E\x03\x0E\x03\x0E" +
+		"\x03\x0F\x03\x0F\x03\x0F\x03\x10\x03\x10\x03\x10\x03\x10\x03\x10\x03\x10" +
+		"\x03\x10\x03\x10\x03\x11\x03\x11\x03\x12\x03\x12\x03\x13\x03\x13\x07\x13" +
+		"\xCF\n\x13\f\x13\x0E\x13\xD2\v\x13\x03\x13\x05\x13\xD5\n\x13\x03\x13\x03" +
+		"\x13\x03\x13\x05\x13\xDA\n\x13\x03\x14\x03\x14\x07\x14\xDE\n\x14\f\x14" +
+		"\x0E\x14\xE1\v\x14\x03\x14\x03\x14\x03\x14\x03\x14\x03\x15\x03\x15\x03" +
+		"\x15\x03\x15\x03\x16\x03\x16\x03\x16\x03\x16\x03\x16\x03\x16\x03\x17\x03" +
+		"\x17\x03\x17\x03\x17\x03\x18\x03\x18\x03\x18\x03\x18\x03\x19\x03\x19\x07" +
+		"\x19\xFB\n\x19\f\x19\x0E\x19\xFE\v\x19\x03\x19\x03\x19\x03\x19\x03\x19" +
+		"\x03\x1A\x03\x1A\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B" +
+		"\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x05\x1B" +
+		"\u0115\n\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03" +
+		"\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03" +
+		"\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x07\x1B\u012C\n\x1B\f\x1B\x0E\x1B" +
+		"\u012F\v\x1B\x03\x1C\x03\x1C\x05\x1C\u0133\n\x1C\x03\x1C\x03\x1C\x03\x1D" +
+		"\x03\x1D\x05\x1D\u0139\n\x1D\x03\x1D\x03\x1D\x03\x1E\x03\x1E\x03\x1E\x07" +
+		"\x1E\u0140\n\x1E\f\x1E\x0E\x1E\u0143\v\x1E\x03\x1F\x03\x1F\x03\x1F\x03" +
+		"\x1F\x03 \x03 \x03 \x02\x02\x034!\x02\x02\x04\x02\x06\x02\b\x02\n\x02" +
+		"\f\x02\x0E\x02\x10\x02\x12\x02\x14\x02\x16\x02\x18\x02\x1A\x02\x1C\x02" +
+		"\x1E\x02 \x02\"\x02$\x02&\x02(\x02*\x02,\x02.\x020\x022\x024\x026\x02" +
+		"8\x02:\x02<\x02>\x02\x02\n\x04\x02!!,,\x03\x02\x17\x19\x03\x02\x15\x16" +
+		"\x04\x02\x10\x11&\'\x04\x02\x1D \"%\x04\x02\x12\x12**\x04\x02\x13\x13" +
+		"++\x05\x02\v\v\x14\x14\"-\x02\u0167\x02@\x03\x02\x02\x02\x04F\x03\x02" +
+		"\x02\x02\x06P\x03\x02\x02\x02\bb\x03\x02\x02\x02\nr\x03\x02\x02\x02\f" +
+		"t\x03\x02\x02\x02\x0Ez\x03\x02\x02\x02\x10\x8C\x03\x02\x02\x02\x12\x99" +
+		"\x03\x02\x02\x02\x14\x9B\x03\x02\x02\x02\x16\xA3\x03\x02\x02\x02\x18\xA9" +
+		"\x03\x02\x02\x02\x1A\xB8\x03\x02\x02\x02\x1C\xBD\x03\x02\x02\x02\x1E\xC0" +
+		"\x03\x02\x02\x02 \xC8\x03\x02\x02\x02\"\xCA\x03\x02\x02\x02$\xCC\x03\x02" +
+		"\x02\x02&\xDB\x03\x02\x02\x02(\xE6\x03\x02\x02\x02*\xEA\x03\x02\x02\x02" +
+		",\xF0\x03\x02\x02\x02.\xF4\x03\x02\x02\x020\xF8\x03\x02\x02\x022\u0103" +
+		"\x03\x02\x02\x024\u0114\x03\x02\x02\x026\u0130\x03\x02\x02\x028\u0136" +
+		"\x03\x02\x02\x02:\u013C\x03\x02\x02\x02<\u0144\x03\x02\x02\x02>\u0148" +
+		"\x03\x02\x02\x02@A\x05\x04\x03\x02AB\x07\x02\x02\x03B\x03\x03\x02\x02" +
+		"\x02CE\x05\x06\x04\x02DC\x03\x02\x02\x02EH\x03\x02\x02\x02FD\x03\x02\x02" +
+		"\x02FG\x03\x02\x02\x02G\x05\x03\x02\x02\x02HF\x03\x02\x02\x02IQ\x07B\x02" +
+		"\x02JQ\x07<\x02\x02KQ\x07C\x02\x02LQ\x05\n\x06\x02MQ\x05\b\x05\x02NQ\x05" +
+		"\f\x07\x02OQ\x05\x10\t\x02PI\x03\x02\x02\x02PJ\x03\x02\x02\x02PK\x03\x02" +
+		"\x02\x02PL\x03\x02\x02\x02PM\x03\x02\x02\x02PN\x03\x02\x02\x02PO\x03\x02" +
+		"\x02\x02Q\x07\x03\x02\x02\x02RS\x07?\x02\x02ST\x05\x0E\b\x02TU\x07\b\x02" +
+		"\x02Uc\x03\x02\x02\x02VW\x07>\x02\x02WX\x05\x0E\b\x02XY\x07\b\x02\x02" +
+		"Yc\x03\x02\x02\x02Z[\x07?\x02\x02[\\\x05> \x02\\]\x07\b\x02\x02]c\x03" +
+		"\x02\x02\x02^_\x07>\x02\x02_`\x05> \x02`a\x07\b\x02\x02ac\x03\x02\x02" +
+		"\x02bR\x03\x02\x02\x02bV\x03\x02\x02\x02bZ\x03\x02\x02\x02b^\x03\x02\x02" +
+		"\x02c\t\x03\x02\x02\x02de\x07A\x02\x02eg\x05> \x02fh\x07\r\x02\x02gf\x03" +
+		"\x02\x02\x02gh\x03\x02\x02\x02hs\x03\x02\x02\x02ij\x07@\x02\x02jl\x05" +
+		"> \x02km\x07\r\x02\x02lk\x03\x02\x02\x02lm\x03\x02\x02\x02ms\x03\x02\x02" +
+		"\x02np\x07\f\x02\x02oq\x07\r\x02\x02po\x03\x02\x02\x02pq\x03\x02\x02\x02" +
+		"qs\x03\x02\x02\x02rd\x03\x02\x02\x02ri\x03\x02\x02\x02rn\x03\x02\x02\x02" +
+		"s\v\x03\x02\x02\x02tv\x05\n\x06\x02uw\x05\x12\n\x02vu\x03\x02\x02\x02" +
+		"wx\x03\x02\x02\x02xv\x03\x02\x02\x02xy\x03\x02\x02\x02y\r\x03\x02\x02" +
+		"\x02z|\x05> \x02{}\x05\x12\n\x02|{\x03\x02\x02\x02}~\x03\x02\x02\x02~" +
+		"|\x03\x02\x02\x02~\x7F\x03\x02\x02\x02\x7F\x0F\x03\x02\x02\x02\x80\x8D" +
+		"\x05\x16\f\x02\x81\x8D\x05\x18\r\x02\x82\x8D\x05\x1E\x10\x02\x83\x8D\x05" +
+		" \x11\x02\x84\x8D\x05\"\x12\x02\x85\x8D\x05&\x14\x02\x86\x8D\x05(\x15" +
+		"\x02\x87\x8D\x05*\x16\x02\x88\x8D\x05,\x17\x02\x89\x8D\x05.\x18\x02\x8A" +
+		"\x8D\x050\x19\x02\x8B\x8D\x05$\x13\x02\x8C\x80\x03\x02\x02\x02\x8C\x81" +
+		"\x03\x02\x02\x02\x8C\x82\x03\x02\x02\x02\x8C\x83\x03\x02\x02\x02\x8C\x84" +
+		"\x03\x02\x02\x02\x8C\x85\x03\x02\x02\x02\x8C\x86\x03\x02\x02\x02\x8C\x87" +
+		"\x03\x02\x02\x02\x8C\x88\x03\x02\x02\x02\x8C\x89\x03\x02\x02\x02\x8C\x8A" +
+		"\x03\x02\x02\x02\x8C\x8B\x03\x02\x02\x02\x8D\x11\x03\x02\x02\x02\x8E\x8F" +
+		"\x07\r\x02\x02\x8F\x9A\x07\v\x02\x02\x90\x91\x07\x05\x02\x02\x91\x92\x05" +
+		"4\x1B\x02\x92\x93\x07\x06\x02\x02\x93\x9A\x03\x02\x02\x02\x94\x96\x07" +
+		"\x03\x02\x02\x95\x97\x05\x14\v\x02\x96\x95\x03\x02\x02\x02\x96\x97\x03" +
+		"\x02\x02\x02\x97\x98\x03\x02\x02\x02\x98\x9A\x07\x04\x02\x02\x99\x8E\x03" +
+		"\x02\x02\x02\x99\x90\x03\x02\x02\x02\x99\x94\x03\x02\x02\x02\x9A\x13\x03" +
+		"\x02\x02\x02\x9B\xA0\x054\x1B\x02\x9C\x9D\x07\x0E\x02\x02\x9D\x9F\x05" +
+		"4\x1B\x02\x9E\x9C\x03\x02\x02\x02\x9F\xA2\x03\x02\x02\x02\xA0\x9E\x03" +
+		"\x02\x02\x02\xA0\xA1\x03\x02\x02\x02\xA1\x15\x03\x02\x02\x02\xA2\xA0\x03" +
+		"\x02\x02\x02\xA3\xA4\x072\x02\x02\xA4\xA5\x054\x1B\x02\xA5\xA6\x07\x0F" +
+		"\x02\x02\xA6\xA7\x054\x1B\x02\xA7\xA8\x07\x04\x02\x02\xA8\x17\x03\x02" +
+		"\x02\x02\xA9\xAA\x07.\x02\x02\xAA\xAB\x054\x1B\x02\xAB\xAC\x07\x04\x02" +
+		"\x02\xAC\xB0\x05\x04\x03\x02\xAD\xAF\x05\x1A\x0E\x02\xAE\xAD\x03\x02\x02" +
+		"\x02\xAF\xB2\x03\x02\x02\x02\xB0\xAE\x03\x02\x02\x02\xB0\xB1\x03\x02\x02" +
+		"\x02\xB1\xB4\x03\x02\x02\x02\xB2\xB0\x03\x02\x02\x02\xB3\xB5\x05\x1C\x0F" +
+		"\x02\xB4\xB3\x03\x02\x02\x02\xB4\xB5\x03\x02\x02\x02\xB5\xB6\x03\x02\x02" +
+		"\x02\xB6\xB7\x052\x1A\x02\xB7\x19\x03\x02\x02\x02\xB8\xB9\x07/\x02\x02" +
+		"\xB9\xBA\x054\x1B\x02\xBA\xBB\x07\x04\x02\x02\xBB\xBC\x05\x04\x03\x02" +
+		"\xBC\x1B\x03\x02\x02\x02\xBD\xBE\x070\x02\x02\xBE\xBF\x05\x04\x03\x02" +
+		"\xBF\x1D\x03\x02\x02\x02\xC0\xC1\x071\x02\x02\xC1\xC2\x05\n\x06\x02\xC2" +
+		"\xC3\x07-\x02\x02\xC3\xC4\x054\x1B\x02\xC4\xC5\x07\x04\x02\x02\xC5\xC6" +
+		"\x05\x04\x03\x02\xC6\xC7\x052\x1A\x02\xC7\x1F\x03\x02\x02\x02\xC8\xC9" +
+		"\x074\x02\x02\xC9!\x03\x02\x02\x02\xCA\xCB\x077\x02\x02\xCB#\x03\x02\x02" +
+		"\x02\xCC\xD4\x07\v\x02\x02\xCD\xCF\x054\x1B\x02\xCE\xCD\x03\x02\x02\x02" +
+		"\xCF\xD2\x03\x02\x02\x02\xD0\xCE\x03\x02\x02\x02\xD0\xD1\x03\x02\x02\x02" +
+		"\xD1\xD3\x03\x02\x02\x02\xD2\xD0\x03\x02\x02\x02\xD3\xD5\x07\x04\x02\x02" +
+		"\xD4\xD0\x03\x02\x02\x02\xD4\xD5\x03\x02\x02\x02\xD5\xD9\x03\x02\x02\x02" +
+		"\xD6\xD7\x05\x04\x03\x02\xD7\xD8\x052\x1A\x02\xD8\xDA\x03\x02\x02\x02" +
+		"\xD9\xD6\x03\x02\x02\x02\xD9\xDA\x03\x02\x02\x02\xDA%\x03\x02\x02\x02" +
+		"\xDB\xDF\x076\x02\x02\xDC\xDE\x054\x1B\x02\xDD\xDC\x03\x02\x02\x02\xDE" +
+		"\xE1\x03\x02\x02\x02\xDF\xDD\x03\x02\x02\x02\xDF\xE0\x03\x02\x02\x02\xE0" +
+		"\xE2\x03\x02\x02\x02\xE1\xDF\x03\x02\x02\x02\xE2\xE3\x07\x04\x02\x02\xE3" +
+		"\xE4\x05\x04\x03\x02\xE4\xE5\x052\x1A\x02\xE5\'\x03\x02\x02\x02\xE6\xE7" +
+		"\x07:\x02\x02\xE7\xE8\x054\x1B\x02\xE8\xE9\x07\x04\x02\x02\xE9)\x03\x02" +
+		"\x02\x02\xEA\xEB\x07;\x02\x02\xEB\xEC\x054\x1B\x02\xEC\xED\x07\x04\x02" +
+		"\x02\xED\xEE\x05\x04\x03\x02\xEE\xEF\x052\x1A\x02\xEF+\x03\x02\x02\x02" +
+		"\xF0\xF1\x078\x02\x02\xF1\xF2\x05\x14\v\x02\xF2\xF3\x07\x04\x02\x02\xF3" +
+		"-\x03\x02\x02\x02\xF4\xF5\x079\x02\x02\xF5\xF6\x054\x1B\x02\xF6\xF7\x07" +
+		"\x04\x02\x02\xF7/\x03\x02\x02\x02\xF8\xFC\x075\x02\x02\xF9\xFB\x054\x1B" +
+		"\x02\xFA\xF9\x03\x02\x02\x02\xFB\xFE\x03\x02\x02\x02\xFC\xFA\x03\x02\x02" +
+		"\x02\xFC\xFD\x03\x02\x02\x02\xFD\xFF\x03\x02\x02\x02\xFE\xFC\x03\x02\x02" +
+		"\x02\xFF\u0100\x07\x04\x02\x02\u0100\u0101\x05\x04\x03\x02\u0101\u0102" +
+		"\x052\x1A\x02\u01021\x03\x02\x02\x02\u0103\u0104\x073\x02\x02\u01043\x03" +
+		"\x02\x02\x02\u0105\u0106\b\x1B\x01\x02\u0106\u0107\t\x02\x02\x02\u0107" +
+		"\u0115\x054\x1B\x15\u0108\u0109\x07\x16\x02\x02\u0109\u0115\x054\x1B\x14" +
+		"\u010A\u0115\x056\x1C\x02\u010B\u0115\x058\x1D\x02\u010C\u0115\x05\b\x05" +
+		"\x02\u010D\u0115\x05\f\x07\x02\u010E\u0115\x05\n\x06\x02\u010F\u0115\x05" +
+		"> \x02\u0110\u0115\x07\t\x02\x02\u0111\u0115\x07\n\x02\x02\u0112\u0115" +
+		"\x07\x1B\x02\x02\u0113\u0115\x07\x14\x02\x02\u0114\u0105\x03\x02\x02\x02" +
+		"\u0114\u0108\x03\x02\x02\x02\u0114\u010A\x03\x02\x02\x02\u0114\u010B\x03" +
+		"\x02\x02\x02\u0114\u010C\x03\x02\x02\x02\u0114\u010D\x03\x02\x02\x02\u0114" +
+		"\u010E\x03\x02\x02\x02\u0114\u010F\x03\x02\x02\x02\u0114\u0110\x03\x02" +
+		"\x02\x02\u0114\u0111\x03\x02\x02\x02\u0114\u0112\x03\x02\x02\x02\u0114" +
+		"\u0113\x03\x02\x02\x02\u0115\u012D\x03\x02\x02\x02\u0116\u0117\f\x13\x02" +
+		"\x02\u0117\u0118\t\x03\x02\x02\u0118\u012C\x054\x1B\x14\u0119\u011A\f" +
+		"\x12\x02\x02\u011A\u011B\t\x04\x02\x02\u011B\u012C\x054\x1B\x13\u011C" +
+		"\u011D\f\x11\x02\x02\u011D\u011E\t\x05\x02\x02\u011E\u012C\x054\x1B\x12" +
+		"\u011F\u0120\f\x10\x02\x02\u0120\u0121\t\x06\x02\x02\u0121\u012C\x054" +
+		"\x1B\x11\u0122\u0123\f\x0F\x02\x02\u0123\u0124\t\x07\x02\x02\u0124\u012C" +
+		"\x054\x1B\x10\u0125\u0126\f\x0E\x02\x02\u0126\u0127\t\b\x02\x02\u0127" +
+		"\u012C\x054\x1B\x0F\u0128\u0129\f\r\x02\x02\u0129\u012A\x07\x1C\x02\x02" +
+		"\u012A\u012C\x054\x1B\x0E\u012B\u0116\x03\x02\x02\x02\u012B\u0119\x03" +
+		"\x02\x02\x02\u012B\u011C\x03\x02\x02\x02\u012B\u011F\x03\x02\x02\x02\u012B" +
+		"\u0122\x03\x02\x02\x02\u012B\u0125\x03\x02\x02\x02\u012B\u0128\x03\x02" +
+		"\x02\x02\u012C\u012F\x03\x02\x02\x02\u012D\u012B\x03\x02\x02\x02\u012D" +
+		"\u012E\x03\x02\x02\x02\u012E5\x03\x02\x02\x02\u012F\u012D\x03\x02\x02" +
+		"\x02\u0130\u0132\x07\x05\x02\x02\u0131\u0133\x05\x14\v\x02\u0132\u0131" +
+		"\x03\x02\x02\x02\u0132\u0133\x03\x02\x02\x02\u0133\u0134\x03\x02\x02\x02" +
+		"\u0134\u0135\x07\x06\x02\x02\u01357\x03\x02\x02\x02\u0136\u0138\x07\x07" +
+		"\x02\x02\u0137\u0139\x05:\x1E\x02\u0138\u0137\x03\x02\x02\x02\u0138\u0139" +
+		"\x03\x02\x02\x02\u0139\u013A\x03\x02\x02\x02\u013A\u013B\x07\b\x02\x02" +
+		"\u013B9\x03\x02\x02\x02\u013C\u0141\x05<\x1F\x02\u013D\u013E\x07\x0E\x02" +
+		"\x02\u013E\u0140\x05<\x1F\x02\u013F\u013D\x03\x02\x02\x02\u0140\u0143" +
+		"\x03\x02\x02\x02\u0141\u013F\x03\x02\x02\x02\u0141\u0142\x03\x02\x02\x02" +
+		"\u0142;\x03\x02\x02\x02\u0143\u0141\x03\x02\x02\x02\u0144\u0145\x054\x1B" +
+		"\x02\u0145\u0146\x07\x1A\x02\x02\u0146\u0147\x054\x1B\x02\u0147=\x03\x02" +
+		"\x02\x02\u0148\u0149\t\t\x02\x02\u0149?\x03\x02\x02\x02\x1CFPbglprx~\x8C" +
+		"\x96\x99\xA0\xB0\xB4\xD0\xD4\xD9\xDF\xFC\u0114\u012B\u012D\u0132\u0138" +
+		"\u0141";
 	public static __ATN: ATN;
 	public static get _ATN(): ATN {
 		if (!VTLParser.__ATN) {
@@ -2211,8 +2137,14 @@ export class AtomContext extends ParserRuleContext {
 	public TEXT(): TerminalNode | undefined { return this.tryGetToken(VTLParser.TEXT, 0); }
 	public ESCAPED_CHAR(): TerminalNode | undefined { return this.tryGetToken(VTLParser.ESCAPED_CHAR, 0); }
 	public ESCAPED_BLOCK(): TerminalNode | undefined { return this.tryGetToken(VTLParser.ESCAPED_BLOCK, 0); }
-	public reference(): ReferenceContext | undefined {
-		return this.tryGetRuleContext(0, ReferenceContext);
+	public variable(): VariableContext | undefined {
+		return this.tryGetRuleContext(0, VariableContext);
+	}
+	public formal(): FormalContext | undefined {
+		return this.tryGetRuleContext(0, FormalContext);
+	}
+	public property_or_method(): Property_or_methodContext | undefined {
+		return this.tryGetRuleContext(0, Property_or_methodContext);
 	}
 	public directive(): DirectiveContext | undefined {
 		return this.tryGetRuleContext(0, DirectiveContext);
@@ -2237,211 +2169,125 @@ export class AtomContext extends ParserRuleContext {
 }
 
 
-export class ReferenceContext extends ParserRuleContext {
-	public DOLLAR(): TerminalNode { return this.getToken(VTLParser.DOLLAR, 0); }
-	public ESCAPESIGN(): TerminalNode { return this.getToken(VTLParser.ESCAPESIGN, 0); }
-	public ID(): TerminalNode { return this.getToken(VTLParser.ID, 0); }
-	public EXCL(): TerminalNode | undefined { return this.tryGetToken(VTLParser.EXCL, 0); }
-	public call(): CallContext[];
-	public call(i: number): CallContext;
-	public call(i?: number): CallContext | CallContext[] {
+export class FormalContext extends ParserRuleContext {
+	public DOLLAR_OBRACE(): TerminalNode | undefined { return this.tryGetToken(VTLParser.DOLLAR_OBRACE, 0); }
+	public formal_property_or_method(): Formal_property_or_methodContext | undefined {
+		return this.tryGetRuleContext(0, Formal_property_or_methodContext);
+	}
+	public CBRACE(): TerminalNode { return this.getToken(VTLParser.CBRACE, 0); }
+	public DOLLAR_EXCL_OBRACE(): TerminalNode | undefined { return this.tryGetToken(VTLParser.DOLLAR_EXCL_OBRACE, 0); }
+	public id(): IdContext | undefined {
+		return this.tryGetRuleContext(0, IdContext);
+	}
+	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
+		super(parent, invokingState);
+	}
+	// @Override
+	public get ruleIndex(): number { return VTLParser.RULE_formal; }
+	// @Override
+	public enterRule(listener: VTLParserListener): void {
+		if (listener.enterFormal) {
+			listener.enterFormal(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: VTLParserListener): void {
+		if (listener.exitFormal) {
+			listener.exitFormal(this);
+		}
+	}
+}
+
+
+export class VariableContext extends ParserRuleContext {
+	public DOLLAR(): TerminalNode | undefined { return this.tryGetToken(VTLParser.DOLLAR, 0); }
+	public id(): IdContext | undefined {
+		return this.tryGetRuleContext(0, IdContext);
+	}
+	public DOT(): TerminalNode | undefined { return this.tryGetToken(VTLParser.DOT, 0); }
+	public DOLLAR_EXCL(): TerminalNode | undefined { return this.tryGetToken(VTLParser.DOLLAR_EXCL, 0); }
+	public REFERENCE(): TerminalNode | undefined { return this.tryGetToken(VTLParser.REFERENCE, 0); }
+	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
+		super(parent, invokingState);
+	}
+	// @Override
+	public get ruleIndex(): number { return VTLParser.RULE_variable; }
+	// @Override
+	public enterRule(listener: VTLParserListener): void {
+		if (listener.enterVariable) {
+			listener.enterVariable(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: VTLParserListener): void {
+		if (listener.exitVariable) {
+			listener.exitVariable(this);
+		}
+	}
+}
+
+
+export class Property_or_methodContext extends ParserRuleContext {
+	public variable(): VariableContext {
+		return this.getRuleContext(0, VariableContext);
+	}
+	public property_end(): Property_endContext[];
+	public property_end(i: number): Property_endContext;
+	public property_end(i?: number): Property_endContext | Property_endContext[] {
 		if (i === undefined) {
-			return this.getRuleContexts(CallContext);
+			return this.getRuleContexts(Property_endContext);
 		} else {
-			return this.getRuleContext(i, CallContext);
+			return this.getRuleContext(i, Property_endContext);
 		}
-	}
-	public OBRACE(): TerminalNode | undefined { return this.tryGetToken(VTLParser.OBRACE, 0); }
-	public CBRACE(): TerminalNode | undefined { return this.tryGetToken(VTLParser.CBRACE, 0); }
-	public PIPE(): TerminalNode | undefined { return this.tryGetToken(VTLParser.PIPE, 0); }
-	public literal(): LiteralContext | undefined {
-		return this.tryGetRuleContext(0, LiteralContext);
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return VTLParser.RULE_reference; }
+	public get ruleIndex(): number { return VTLParser.RULE_property_or_method; }
 	// @Override
 	public enterRule(listener: VTLParserListener): void {
-		if (listener.enterReference) {
-			listener.enterReference(this);
+		if (listener.enterProperty_or_method) {
+			listener.enterProperty_or_method(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: VTLParserListener): void {
-		if (listener.exitReference) {
-			listener.exitReference(this);
+		if (listener.exitProperty_or_method) {
+			listener.exitProperty_or_method(this);
 		}
 	}
 }
 
 
-export class CallContext extends ParserRuleContext {
-	public indexcall(): IndexcallContext | undefined {
-		return this.tryGetRuleContext(0, IndexcallContext);
+export class Formal_property_or_methodContext extends ParserRuleContext {
+	public id(): IdContext {
+		return this.getRuleContext(0, IdContext);
 	}
-	public propertycall(): PropertycallContext | undefined {
-		return this.tryGetRuleContext(0, PropertycallContext);
-	}
-	public functioncall(): FunctioncallContext | undefined {
-		return this.tryGetRuleContext(0, FunctioncallContext);
-	}
-	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
-		super(parent, invokingState);
-	}
-	// @Override
-	public get ruleIndex(): number { return VTLParser.RULE_call; }
-	// @Override
-	public enterRule(listener: VTLParserListener): void {
-		if (listener.enterCall) {
-			listener.enterCall(this);
-		}
-	}
-	// @Override
-	public exitRule(listener: VTLParserListener): void {
-		if (listener.exitCall) {
-			listener.exitCall(this);
-		}
-	}
-}
-
-
-export class IndexcallContext extends ParserRuleContext {
-	public OBRACK(): TerminalNode { return this.getToken(VTLParser.OBRACK, 0); }
-	public expression(): ExpressionContext {
-		return this.getRuleContext(0, ExpressionContext);
-	}
-	public CBRACK(): TerminalNode { return this.getToken(VTLParser.CBRACK, 0); }
-	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
-		super(parent, invokingState);
-	}
-	// @Override
-	public get ruleIndex(): number { return VTLParser.RULE_indexcall; }
-	// @Override
-	public enterRule(listener: VTLParserListener): void {
-		if (listener.enterIndexcall) {
-			listener.enterIndexcall(this);
-		}
-	}
-	// @Override
-	public exitRule(listener: VTLParserListener): void {
-		if (listener.exitIndexcall) {
-			listener.exitIndexcall(this);
-		}
-	}
-}
-
-
-export class PropertycallContext extends ParserRuleContext {
-	public DOT(): TerminalNode { return this.getToken(VTLParser.DOT, 0); }
-	public ID(): TerminalNode { return this.getToken(VTLParser.ID, 0); }
-	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
-		super(parent, invokingState);
-	}
-	// @Override
-	public get ruleIndex(): number { return VTLParser.RULE_propertycall; }
-	// @Override
-	public enterRule(listener: VTLParserListener): void {
-		if (listener.enterPropertycall) {
-			listener.enterPropertycall(this);
-		}
-	}
-	// @Override
-	public exitRule(listener: VTLParserListener): void {
-		if (listener.exitPropertycall) {
-			listener.exitPropertycall(this);
-		}
-	}
-}
-
-
-export class FunctioncallContext extends ParserRuleContext {
-	public DOT(): TerminalNode { return this.getToken(VTLParser.DOT, 0); }
-	public ID(): TerminalNode { return this.getToken(VTLParser.ID, 0); }
-	public OPAR(): TerminalNode { return this.getToken(VTLParser.OPAR, 0); }
-	public CPAR(): TerminalNode { return this.getToken(VTLParser.CPAR, 0); }
-	public arglist(): ArglistContext | undefined {
-		return this.tryGetRuleContext(0, ArglistContext);
-	}
-	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
-		super(parent, invokingState);
-	}
-	// @Override
-	public get ruleIndex(): number { return VTLParser.RULE_functioncall; }
-	// @Override
-	public enterRule(listener: VTLParserListener): void {
-		if (listener.enterFunctioncall) {
-			listener.enterFunctioncall(this);
-		}
-	}
-	// @Override
-	public exitRule(listener: VTLParserListener): void {
-		if (listener.exitFunctioncall) {
-			listener.exitFunctioncall(this);
-		}
-	}
-}
-
-
-export class ArglistContext extends ParserRuleContext {
-	public expression(): ExpressionContext[];
-	public expression(i: number): ExpressionContext;
-	public expression(i?: number): ExpressionContext | ExpressionContext[] {
+	public property_end(): Property_endContext[];
+	public property_end(i: number): Property_endContext;
+	public property_end(i?: number): Property_endContext | Property_endContext[] {
 		if (i === undefined) {
-			return this.getRuleContexts(ExpressionContext);
+			return this.getRuleContexts(Property_endContext);
 		} else {
-			return this.getRuleContext(i, ExpressionContext);
-		}
-	}
-	public COMMA(): TerminalNode[];
-	public COMMA(i: number): TerminalNode;
-	public COMMA(i?: number): TerminalNode | TerminalNode[] {
-		if (i === undefined) {
-			return this.getTokens(VTLParser.COMMA);
-		} else {
-			return this.getToken(VTLParser.COMMA, i);
+			return this.getRuleContext(i, Property_endContext);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return VTLParser.RULE_arglist; }
+	public get ruleIndex(): number { return VTLParser.RULE_formal_property_or_method; }
 	// @Override
 	public enterRule(listener: VTLParserListener): void {
-		if (listener.enterArglist) {
-			listener.enterArglist(this);
+		if (listener.enterFormal_property_or_method) {
+			listener.enterFormal_property_or_method(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: VTLParserListener): void {
-		if (listener.exitArglist) {
-			listener.exitArglist(this);
-		}
-	}
-}
-
-
-export class LiteralContext extends ParserRuleContext {
-	public STRING(): TerminalNode | undefined { return this.tryGetToken(VTLParser.STRING, 0); }
-	public NUMBER(): TerminalNode | undefined { return this.tryGetToken(VTLParser.NUMBER, 0); }
-	public BOOL(): TerminalNode | undefined { return this.tryGetToken(VTLParser.BOOL, 0); }
-	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
-		super(parent, invokingState);
-	}
-	// @Override
-	public get ruleIndex(): number { return VTLParser.RULE_literal; }
-	// @Override
-	public enterRule(listener: VTLParserListener): void {
-		if (listener.enterLiteral) {
-			listener.enterLiteral(this);
-		}
-	}
-	// @Override
-	public exitRule(listener: VTLParserListener): void {
-		if (listener.exitLiteral) {
-			listener.exitLiteral(this);
+		if (listener.exitFormal_property_or_method) {
+			listener.exitFormal_property_or_method(this);
 		}
 	}
 }
@@ -2499,6 +2345,39 @@ export class DirectiveContext extends ParserRuleContext {
 	public exitRule(listener: VTLParserListener): void {
 		if (listener.exitDirective) {
 			listener.exitDirective(this);
+		}
+	}
+}
+
+
+export class Property_endContext extends ParserRuleContext {
+	public DOT(): TerminalNode | undefined { return this.tryGetToken(VTLParser.DOT, 0); }
+	public ID(): TerminalNode | undefined { return this.tryGetToken(VTLParser.ID, 0); }
+	public OBRACK(): TerminalNode | undefined { return this.tryGetToken(VTLParser.OBRACK, 0); }
+	public expression(): ExpressionContext | undefined {
+		return this.tryGetRuleContext(0, ExpressionContext);
+	}
+	public CBRACK(): TerminalNode | undefined { return this.tryGetToken(VTLParser.CBRACK, 0); }
+	public OPAR(): TerminalNode | undefined { return this.tryGetToken(VTLParser.OPAR, 0); }
+	public CPAR(): TerminalNode | undefined { return this.tryGetToken(VTLParser.CPAR, 0); }
+	public expressions(): ExpressionsContext | undefined {
+		return this.tryGetRuleContext(0, ExpressionsContext);
+	}
+	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
+		super(parent, invokingState);
+	}
+	// @Override
+	public get ruleIndex(): number { return VTLParser.RULE_property_end; }
+	// @Override
+	public enterRule(listener: VTLParserListener): void {
+		if (listener.enterProperty_end) {
+			listener.enterProperty_end(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: VTLParserListener): void {
+		if (listener.exitProperty_end) {
+			listener.exitProperty_end(this);
 		}
 	}
 }
@@ -2676,8 +2555,8 @@ export class Else_directiveContext extends ParserRuleContext {
 
 export class Foreach_directiveContext extends ParserRuleContext {
 	public FOREACH(): TerminalNode { return this.getToken(VTLParser.FOREACH, 0); }
-	public reference(): ReferenceContext {
-		return this.getRuleContext(0, ReferenceContext);
+	public variable(): VariableContext {
+		return this.getRuleContext(0, VariableContext);
 	}
 	public K_IN(): TerminalNode { return this.getToken(VTLParser.K_IN, 0); }
 	public expression(): ExpressionContext {
@@ -3040,18 +2919,21 @@ export class ExpressionContext extends ParserRuleContext {
 	public map(): MapContext | undefined {
 		return this.tryGetRuleContext(0, MapContext);
 	}
-	public reference(): ReferenceContext | undefined {
-		return this.tryGetRuleContext(0, ReferenceContext);
+	public formal(): FormalContext | undefined {
+		return this.tryGetRuleContext(0, FormalContext);
+	}
+	public property_or_method(): Property_or_methodContext | undefined {
+		return this.tryGetRuleContext(0, Property_or_methodContext);
+	}
+	public variable(): VariableContext | undefined {
+		return this.tryGetRuleContext(0, VariableContext);
 	}
 	public id(): IdContext | undefined {
 		return this.tryGetRuleContext(0, IdContext);
 	}
-	public stringTemplate(): StringTemplateContext | undefined {
-		return this.tryGetRuleContext(0, StringTemplateContext);
-	}
-	public literal(): LiteralContext | undefined {
-		return this.tryGetRuleContext(0, LiteralContext);
-	}
+	public STRING(): TerminalNode | undefined { return this.tryGetToken(VTLParser.STRING, 0); }
+	public INTEGER(): TerminalNode | undefined { return this.tryGetToken(VTLParser.INTEGER, 0); }
+	public FLOAT(): TerminalNode | undefined { return this.tryGetToken(VTLParser.FLOAT, 0); }
 	public K_NULL(): TerminalNode | undefined { return this.tryGetToken(VTLParser.K_NULL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
@@ -3068,63 +2950,6 @@ export class ExpressionContext extends ParserRuleContext {
 	public exitRule(listener: VTLParserListener): void {
 		if (listener.exitExpression) {
 			listener.exitExpression(this);
-		}
-	}
-}
-
-
-export class StringTemplateContext extends ParserRuleContext {
-	public DQUOTE(): TerminalNode[];
-	public DQUOTE(i: number): TerminalNode;
-	public DQUOTE(i?: number): TerminalNode | TerminalNode[] {
-		if (i === undefined) {
-			return this.getTokens(VTLParser.DQUOTE);
-		} else {
-			return this.getToken(VTLParser.DQUOTE, i);
-		}
-	}
-	public STR_TEXT(): TerminalNode[];
-	public STR_TEXT(i: number): TerminalNode;
-	public STR_TEXT(i?: number): TerminalNode | TerminalNode[] {
-		if (i === undefined) {
-			return this.getTokens(VTLParser.STR_TEXT);
-		} else {
-			return this.getToken(VTLParser.STR_TEXT, i);
-		}
-	}
-	public STR_ESCAPED_CHAR(): TerminalNode[];
-	public STR_ESCAPED_CHAR(i: number): TerminalNode;
-	public STR_ESCAPED_CHAR(i?: number): TerminalNode | TerminalNode[] {
-		if (i === undefined) {
-			return this.getTokens(VTLParser.STR_ESCAPED_CHAR);
-		} else {
-			return this.getToken(VTLParser.STR_ESCAPED_CHAR, i);
-		}
-	}
-	public REFERENCE(): TerminalNode[];
-	public REFERENCE(i: number): TerminalNode;
-	public REFERENCE(i?: number): TerminalNode | TerminalNode[] {
-		if (i === undefined) {
-			return this.getTokens(VTLParser.REFERENCE);
-		} else {
-			return this.getToken(VTLParser.REFERENCE, i);
-		}
-	}
-	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
-		super(parent, invokingState);
-	}
-	// @Override
-	public get ruleIndex(): number { return VTLParser.RULE_stringTemplate; }
-	// @Override
-	public enterRule(listener: VTLParserListener): void {
-		if (listener.enterStringTemplate) {
-			listener.enterStringTemplate(this);
-		}
-	}
-	// @Override
-	public exitRule(listener: VTLParserListener): void {
-		if (listener.exitStringTemplate) {
-			listener.exitStringTemplate(this);
 		}
 	}
 }

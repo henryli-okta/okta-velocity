@@ -6,14 +6,12 @@ import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 import { ParseContext } from "./VTLParser";
 import { BlockContext } from "./VTLParser";
 import { AtomContext } from "./VTLParser";
-import { ReferenceContext } from "./VTLParser";
-import { CallContext } from "./VTLParser";
-import { IndexcallContext } from "./VTLParser";
-import { PropertycallContext } from "./VTLParser";
-import { FunctioncallContext } from "./VTLParser";
-import { ArglistContext } from "./VTLParser";
-import { LiteralContext } from "./VTLParser";
+import { FormalContext } from "./VTLParser";
+import { VariableContext } from "./VTLParser";
+import { Property_or_methodContext } from "./VTLParser";
+import { Formal_property_or_methodContext } from "./VTLParser";
 import { DirectiveContext } from "./VTLParser";
+import { Property_endContext } from "./VTLParser";
 import { ExpressionsContext } from "./VTLParser";
 import { Set_directiveContext } from "./VTLParser";
 import { If_directiveContext } from "./VTLParser";
@@ -31,7 +29,6 @@ import { Evaluate_directiveContext } from "./VTLParser";
 import { Macro_call_directiveContext } from "./VTLParser";
 import { EndContext } from "./VTLParser";
 import { ExpressionContext } from "./VTLParser";
-import { StringTemplateContext } from "./VTLParser";
 import { ListContext } from "./VTLParser";
 import { MapContext } from "./VTLParser";
 import { Map_entriesContext } from "./VTLParser";
@@ -78,81 +75,48 @@ export interface VTLParserListener extends ParseTreeListener {
 	exitAtom?: (ctx: AtomContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `VTLParser.reference`.
+	 * Enter a parse tree produced by `VTLParser.formal`.
 	 * @param ctx the parse tree
 	 */
-	enterReference?: (ctx: ReferenceContext) => void;
+	enterFormal?: (ctx: FormalContext) => void;
 	/**
-	 * Exit a parse tree produced by `VTLParser.reference`.
+	 * Exit a parse tree produced by `VTLParser.formal`.
 	 * @param ctx the parse tree
 	 */
-	exitReference?: (ctx: ReferenceContext) => void;
+	exitFormal?: (ctx: FormalContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `VTLParser.call`.
+	 * Enter a parse tree produced by `VTLParser.variable`.
 	 * @param ctx the parse tree
 	 */
-	enterCall?: (ctx: CallContext) => void;
+	enterVariable?: (ctx: VariableContext) => void;
 	/**
-	 * Exit a parse tree produced by `VTLParser.call`.
+	 * Exit a parse tree produced by `VTLParser.variable`.
 	 * @param ctx the parse tree
 	 */
-	exitCall?: (ctx: CallContext) => void;
+	exitVariable?: (ctx: VariableContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `VTLParser.indexcall`.
+	 * Enter a parse tree produced by `VTLParser.property_or_method`.
 	 * @param ctx the parse tree
 	 */
-	enterIndexcall?: (ctx: IndexcallContext) => void;
+	enterProperty_or_method?: (ctx: Property_or_methodContext) => void;
 	/**
-	 * Exit a parse tree produced by `VTLParser.indexcall`.
+	 * Exit a parse tree produced by `VTLParser.property_or_method`.
 	 * @param ctx the parse tree
 	 */
-	exitIndexcall?: (ctx: IndexcallContext) => void;
+	exitProperty_or_method?: (ctx: Property_or_methodContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `VTLParser.propertycall`.
+	 * Enter a parse tree produced by `VTLParser.formal_property_or_method`.
 	 * @param ctx the parse tree
 	 */
-	enterPropertycall?: (ctx: PropertycallContext) => void;
+	enterFormal_property_or_method?: (ctx: Formal_property_or_methodContext) => void;
 	/**
-	 * Exit a parse tree produced by `VTLParser.propertycall`.
+	 * Exit a parse tree produced by `VTLParser.formal_property_or_method`.
 	 * @param ctx the parse tree
 	 */
-	exitPropertycall?: (ctx: PropertycallContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `VTLParser.functioncall`.
-	 * @param ctx the parse tree
-	 */
-	enterFunctioncall?: (ctx: FunctioncallContext) => void;
-	/**
-	 * Exit a parse tree produced by `VTLParser.functioncall`.
-	 * @param ctx the parse tree
-	 */
-	exitFunctioncall?: (ctx: FunctioncallContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `VTLParser.arglist`.
-	 * @param ctx the parse tree
-	 */
-	enterArglist?: (ctx: ArglistContext) => void;
-	/**
-	 * Exit a parse tree produced by `VTLParser.arglist`.
-	 * @param ctx the parse tree
-	 */
-	exitArglist?: (ctx: ArglistContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `VTLParser.literal`.
-	 * @param ctx the parse tree
-	 */
-	enterLiteral?: (ctx: LiteralContext) => void;
-	/**
-	 * Exit a parse tree produced by `VTLParser.literal`.
-	 * @param ctx the parse tree
-	 */
-	exitLiteral?: (ctx: LiteralContext) => void;
+	exitFormal_property_or_method?: (ctx: Formal_property_or_methodContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `VTLParser.directive`.
@@ -164,6 +128,17 @@ export interface VTLParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitDirective?: (ctx: DirectiveContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `VTLParser.property_end`.
+	 * @param ctx the parse tree
+	 */
+	enterProperty_end?: (ctx: Property_endContext) => void;
+	/**
+	 * Exit a parse tree produced by `VTLParser.property_end`.
+	 * @param ctx the parse tree
+	 */
+	exitProperty_end?: (ctx: Property_endContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `VTLParser.expressions`.
@@ -351,17 +326,6 @@ export interface VTLParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitExpression?: (ctx: ExpressionContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `VTLParser.stringTemplate`.
-	 * @param ctx the parse tree
-	 */
-	enterStringTemplate?: (ctx: StringTemplateContext) => void;
-	/**
-	 * Exit a parse tree produced by `VTLParser.stringTemplate`.
-	 * @param ctx the parse tree
-	 */
-	exitStringTemplate?: (ctx: StringTemplateContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `VTLParser.list`.
