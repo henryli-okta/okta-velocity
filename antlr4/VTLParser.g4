@@ -16,31 +16,41 @@ atom
  : TEXT
  | ESCAPED_CHAR
  | ESCAPED_BLOCK
- | variable
- | formal
- | property_or_method
+ | reference
  | directive
  ;
 
-formal
- : DOLLAR_OBRACE formal_property_or_method CBRACE
- | DOLLAR_EXCL_OBRACE formal_property_or_method CBRACE
- | DOLLAR_OBRACE id CBRACE
- | DOLLAR_EXCL_OBRACE id CBRACE
+reference
+ : DOLLAR ESCAPESIGN EXCL? ID call*
+ | DOLLAR ESCAPESIGN EXCL? OBRACE ID call* (PIPE literal)? CBRACE
  ;
 
-variable
- : DOLLAR id DOT?
- | DOLLAR_EXCL id DOT?
- | REFERENCE DOT?
+call
+ : indexcall
+ | propertycall
+ | functioncall
  ;
 
-property_or_method
- : variable property_end+
+indexcall
+ : OBRACK expression CBRACK
  ;
 
-formal_property_or_method
- : id property_end+
+propertycall
+ : DOT ID
+ ;
+
+functioncall
+ : DOT ID OPAR arglist? CPAR
+ ;
+
+arglist
+ : expression (COMMA expression)*
+ ;
+
+literal
+ : STRING
+ | NUMBER
+ | BOOL
  ;
 
 directive
@@ -56,12 +66,6 @@ directive
  | evaluate_directive
  | macro_call_directive
  | custom_directive
- ;
-
-property_end
- : DOT ID
- | OBRACK expression CBRACK
- | OPAR expressions? CPAR
  ;
 
 expressions
@@ -85,7 +89,7 @@ else_directive
  ;
 
 foreach_directive
- : FOREACH variable K_IN expression CPAR block end
+ : FOREACH reference K_IN expression CPAR block end
  ;
 
 break_directive
@@ -142,14 +146,16 @@ expression
  | expression RANGE expression
  | list
  | map
- | property_or_method
- | variable
+ | reference
  | id
- | STRING
- | INTEGER
- | FLOAT
+ | stringTemplate
+ | literal
  | K_NULL
  ;
+
+stringTemplate
+  : DQUOTE (STR_TEXT | STR_ESCAPED_CHAR | REFERENCE)* DQUOTE
+  ; 
 
 list
  : OBRACK expressions? CBRACK

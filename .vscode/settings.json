@@ -5,7 +5,7 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
 	},
-	"antlr4.generation": {
-		"mode": "none"
-	}
+	// "antlr4.generation": {
+	// 	"mode": "none"
+	// }
 }
