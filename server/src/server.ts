@@ -20,11 +20,17 @@ import {
 	ResponseError,
 	TextEdit,
 	TextDocumentSyncKind,
-	InitializeResult
+	InitializeResult,
+	MarkupKind,
+	MarkupContent,
+	HoverParams,
+	Hover
 } from 'vscode-languageserver/node';
 import { TextDocument } from 'vscode-languageserver-textdocument';
 import { DocumentInfo } from './DocumentInfo';
 import { VTLType } from './VTLSymbol';
+import fs = require('fs');
+import path = require('path');
 
 // Create a connection for the server, using Node's IPC as a transport.
 // Also include all preview / proposed LSP features.
@@ -35,6 +41,10 @@ const documents: TextDocuments<TextDocument> = new TextDocuments(TextDocument);
 
 // Create a DocumentInfo cache, key is the document uri
 const documentInfoCache = new Map<string, DocumentInfo>();
+
+// Okta Variables
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const oktaVariables: Map<string, any> = getOktaVariables();
 
 let hasConfigurationCapability = false;
 let hasWorkspaceFolderCapability = false;
@@ -60,20 +70,19 @@ connection.onInitialize((params: InitializeParams) => {
 	const result: InitializeResult = {
 		capabilities: {
 			// Enable incremental document sync
-			textDocumentSync: TextDocumentSyncKind.Incremental
+			textDocumentSync: TextDocumentSyncKind.Incremental,
 			//Tell the client that this server supports code completion.
-			// completionProvider: {
-			// 	resolveProvider: true,
-			// 	triggerCharacters: ['$', '#', '.']
-			// },
+			completionProvider: {
+				resolveProvider: true,
+				triggerCharacters: ['$', '.']
+			},
+			// Tell the client that this server supports hover
+			hoverProvider: true
 			//documentSymbolProvider: true,
 			// referencesProvider: true,
 			// definitionProvider: true,
 			// foldingRangeProvider: true,
 			// renameProvider: true
-
-			// Tell the client that this server supports hover
-			//hoverProvider: true
 		}
 	};
 	if (hasWorkspaceFolderCapability) {
@@ -152,7 +161,7 @@ documents.onDidOpen(e => {
 	info.onError = (errorList) => {
 		connection.sendDiagnostics({ uri: uri, diagnostics: errorList });
 	};	
-	documentInfoCache.set(e.document.uri, info);
+	documentInfoCache.set(uri, info);
 	info.parseDocument();
 });
 
@@ -178,6 +187,98 @@ connection.onDidChangeWatchedFiles(_change => {
 	connection.console.log('We received an file change event');
 });
 
+// This handler provides the initial list of the completion items.
+connection.onCompletion(
+	(_completionParams: CompletionParams): CompletionItem[] | null => {	
+		console.log(oktaVariables);
+		if (oktaVariables.size <= 0) {
+			return null;
+		}
+
+		const charPressed = _completionParams.context!.triggerCharacter;
+		const result: CompletionItem[] = [];
+
+		if (charPressed === '.') {
+			return getDotCompletionItems(_completionParams);
+		}
+		
+		//$ doesn't work, which is a bug for vs code
+		for (const [key, value] of oktaVariables) {
+			result.push(
+				{
+					label: "$" + value.get("label"),
+					kind: getCompletionItemKind(value.get("type")),
+					detail: value.get("description")
+				}
+			);
+		}
+
+		return result;
+	}
+);
+
+connection.onCompletionResolve(
+	(item: CompletionItem): CompletionItem => {
+		return item;
+	}
+);
+
+connection.onHover(
+	(_hoverParams: HoverParams): Hover|null => {
+		const word = getWordAtPosition(_hoverParams.textDocument.uri, _hoverParams.position, true);
+
+		if (word == "hello") {
+			const helloContent: MarkupContent = {
+				kind: MarkupKind.Markdown,
+				value: [
+					'### Header',
+					'---',
+					'Some text',
+					'```typescript',
+					'someCode();',
+					'```'
+					].join('\n')
+			};
+			return {
+				contents: helloContent
+			};
+		}
+
+		if (!word) {
+			return null;
+		}
+		
+		const words: string[] = word.split(".");
+		let variableMap: Map<string, any> | null = oktaVariables;
+		for (let index = 0; index < words.length; index++) {
+			const item = words[index];
+			if (variableMap) {
+				if (!variableMap.has(item)) {
+					break;
+				}
+				if (index == words.length - 1) {
+					return {
+						contents: {
+							kind: MarkupKind.PlainText,
+							value: variableMap.get(item).get("description")
+						}
+					};
+				} else {
+					variableMap = variableMap.get(item).get("properties");
+				}
+			}
+		}
+
+		return {
+			contents: {
+				kind: MarkupKind.PlainText,
+				value: word
+			}
+		};
+		
+	}
+);
+
 // Make the text document manager listen on the connection
 // for open, change and close text document events
 documents.listen(connection);
@@ -185,3 +286,151 @@ documents.listen(connection);
 // Listen on the connection
 connection.listen();
 
+function getOktaVariables(): Map<string, any> {
+	const result = new Map<string, any>();
+	try {
+		const data = fs.readFileSync(path.resolve(__dirname, "./assets/OktaVariables.json"), 'utf8');
+		const json = JSON.parse(data.toString());
+		console.log("READ COMPLETED:" + json);
+		dfs(json, result);
+	} catch (error) {
+		console.error(error);
+	}
+	return result;
+}
+
+function dfs(json: any[] | null, map: Map<string, any>) {
+	if (!json) {
+		return;
+	}
+
+	json.forEach(element => {
+		const key = element.name;
+		const value = new Map<string, any>();
+		value.set("description", element.description);
+		value.set("type", element.type);
+		value.set("example", element.example);
+		value.set("label", element.label);
+
+		const properties = new Map<string, any>();
+		dfs(element.properties, properties);
+		value.set("properties", properties);
+
+		map.set(key, value);
+	});
+}
+
+function getCompletionItemKind(type:string): CompletionItemKind {
+	if (type === "Variable" || type === "FinalVariable") {
+		return CompletionItemKind.Variable;
+	} else if (type === "Function") {
+		return CompletionItemKind.Property;
+	} else {
+		return CompletionItemKind.Property;
+	}
+}
+
+function getDotCompletionItems(_completionParams: CompletionParams): CompletionItem[] | null {
+	const word = getWordAtPosition(_completionParams.textDocument.uri, _completionParams.position, false);
+	if (!word) {
+		return null;
+	}
+
+	const result: CompletionItem[] = [];
+
+	const words: string[] = word.split(".");
+	let variableMap: Map<string, any> | null = oktaVariables;
+	for (let index = 0; index < words.length; index++) {
+		const item = words[index];
+		if (variableMap) {
+			if (!variableMap.has(item)) {
+				variableMap = null;
+				break;
+			}
+			variableMap = variableMap.get(item).get("properties");
+		}
+	}
+	
+	if (variableMap) {
+		for (const [key, value] of variableMap) {
+			result.push(
+				{
+					label: value.get("label"),
+					kind: getCompletionItemKind(value.get("type")),
+					detail: value.get("description")
+				}
+			);
+		}
+	}
+	
+	return result;
+}
+
+function getWordAtPosition(docUri: string, position: Position, isHover: boolean) {
+	const doc = documents.get(docUri);
+	if (!doc) {
+		return null;
+	}
+	
+	const typeIdx = position.character;
+	//find out the previous $ character
+	const textline = doc.getText({
+		start: { 
+			line: position.line,
+			character: 0
+		},
+		end: {
+			line: position.line,
+			character: typeIdx
+		}
+	});
+
+	let dollarIdx = -1;
+	for (let i = typeIdx; i >= 0; i--) {
+		if(textline[i] == '$') {
+			dollarIdx = i;
+			break;
+		}
+	}
+	if(dollarIdx == -1) {
+		return null;
+	}
+
+	let word = textline.substring(dollarIdx+1, typeIdx);
+	if (word[0] === '!') {
+		word = word.substring(1);
+	}
+	if (word[0] === '{') {
+		word = word.substring(1);
+	}
+
+	if (isHover) {
+		const line = doc.getText({
+			start: { 
+				line: position.line,
+				character: 0
+			},
+			end: {
+				line: position.line,
+				character: typeIdx + 100
+			}
+		});
+		if (!line[typeIdx].match("\\w")) return null;
+
+		let end: number = typeIdx;
+
+		while (end <= line.length - 1 && line[end].match("\\w")) { 
+			end++;
+		}
+		const hoverWord = line.substring(typeIdx, end);
+		word = word + hoverWord;
+	} else {
+		// remove last . character for autocompletion
+		if (word && word.length > 1 && word[word.length - 1] === '.') {
+			word = word.substring(0, word.length - 1);
+		}
+	}
+	
+	console.log('found word: ', word);
+	return word;
+}

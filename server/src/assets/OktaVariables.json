@@ -1,0 +1,46 @@
+[
+	{
+		"name": "user",
+		"label": "user",
+		"description": "user context, type: Object",
+		"type": "Variable",
+		"properties": [
+			{
+				"name": "profile",
+				"label": "profile",
+				"description": "user profile, type: Object",
+				"type": "Property",
+				"properties": [
+					{
+						"name": "username",
+						"label": "username",
+						"description": "user name, type: String",
+						"type": "EndProperty",
+						"example": "Henry Li"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "baseURL",
+		"label": "baseURL",
+		"description": "branding level domain URL, type: String",
+		"type": "FinalVariable"
+	},
+	{
+		"name": "f",
+		"label": "f",
+		"description": "okta functions",
+		"type": "Variable",
+		"properties": [
+			{
+				"name": "escapeHtml",
+				"label": "escapeHtml($html)",
+				"description": "Escapes the characters in a String using HTML entities.",
+				"type": "Function",
+				"example": "escapedHTML"
+			}
+		]
+	}
+]

@@ -34,7 +34,7 @@ export class VTLParserErrorListener implements ParserErrorListener {
 			message: msg,
 			source: 'velocity'
 		});
-		console.log("parser error", msg);
+		//console.log("parser error", msg);
 	}
 }
 
@@ -61,6 +61,6 @@ export class VTLLexerErrorListener implements ANTLRErrorListener<number> {
 			source: 'velocity'
 		});
 
-		console.log("lexer error", msg);
+		//console.log("lexer error", msg);
 	}
 }
