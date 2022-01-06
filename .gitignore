@@ -1,2 +1,7 @@
+out
 node_modules
-*.vsix
+client/server
+.vscode-test
+.antlr
+*.tokens
+*.interp

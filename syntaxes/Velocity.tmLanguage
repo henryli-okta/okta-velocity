@@ -253,8 +253,8 @@
 					<key>match</key>
 					<string>(?x)
 						(\#) (?:
-							      \b(?:else|end)\b
-							|(\{) \b(?:else|end)\b (\})
+							      \b(?:else|end|break)\b
+							|(\{) \b(?:else|end|break)\b (\})
 						)</string>
 					<key>name</key>
 					<string>source.velocity.embedded</string>
@@ -521,7 +521,7 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>beginCaptures</key>
+					<key>captures</key>
 					<dict>
 						<key>0</key>
 						<dict>
@@ -829,7 +829,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(if|while|for|in|foreach|return|ifelse|else|case|macro|end|stop)\b</string>
+					<string>\b(if|while|for|in|foreach|return|ifelse|else|case|macro|end|stop|break)\b</string>
 					<key>name</key>
 					<string>keyword.control.velocity</string>
 				</dict>

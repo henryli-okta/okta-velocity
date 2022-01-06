@@ -63,3 +63,15 @@ Added features X, Y, and Z.
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
+
+npm install -g antlr4ts-cli
+
+antlr4ts VTLLexer.g4
+
+/* eslint-disable no-useless-escape */
+
+change VTLLexer.ts line 240 add comment as bellow:
+// eslint-disable-next-line
+// @ts-ignore
+
+antlr4ts VTLParser.g4

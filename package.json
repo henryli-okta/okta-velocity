@@ -3,20 +3,57 @@
     "displayName": "okta-velocity",
     "description": "Okta Velocity(Enhanced Macro)",
     "version": "0.0.1",
-    "engines": {
+	"engines": {
         "vscode": "^1.63.0"
     },
     "categories": [
         "Programming Languages",
         "Snippets"
     ],
-    "contributes": {
-        "languages": [{
-            "id": "velocity",
-            "aliases": ["Velocity", "velocity"],
-            "extensions": [".vm",".fhtml","html","txt"],
-            "configuration": "./velocity.language-configuration.json"
-        }],
+	"activationEvents": [
+		"onLanguage:velocity"
+	],
+	"main": "./client/out/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Example configuration",
+			"properties": {
+				"languageServerExample.maxNumberOfProblems": {
+					"scope": "resource",
+					"type": "number",
+					"default": 100,
+					"description": "Controls the maximum number of problems produced by the server."
+				},
+				"languageServerExample.trace.server": {
+					"scope": "window",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off",
+					"description": "Traces the communication between VS Code and the language server."
+				}
+			}
+		},
+		"languages": [
+            {
+                "id": "velocity",
+                "aliases": [
+                    "Velocity",
+                    "velocity"
+                ],
+                "extensions": [
+                    ".vm",
+                    ".fhtml",
+                    "html",
+                    "txt"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
         "grammars": [
             {
                 "language": "velocity",
@@ -31,7 +68,9 @@
             {
                 "scopeName": "velocity.injection",
                 "path": "./syntaxes/VelocityInjection.json",
-                "injectTo": ["text.html.velocity"]
+                "injectTo": [
+                    "text.html.velocity"
+                ]
             }
         ],
         "snippets": [
@@ -40,5 +79,22 @@
                 "path": "./snippets/snippets.code-snippets"
             }
         ]
-    }
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"lint": "eslint ./client/src ./server/src --ext .ts,.tsx",
+		"postinstall": "cd client && npm install && cd ../server && npm install && cd .."
+	},
+	"devDependencies": {
+		"@types/mocha": "^8.2.3",
+		"@types/node": "^12.12.0",
+		"@typescript-eslint/eslint-plugin": "^4.23.0",
+		"@typescript-eslint/parser": "^4.23.0",
+		"eslint": "^7.26.0",
+		"mocha": "^8.3.2",
+		"typescript": "^4.4.3"
+	}
 }
+
