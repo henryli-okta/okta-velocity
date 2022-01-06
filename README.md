@@ -68,7 +68,7 @@ npm install -g antlr4ts-cli
 
 antlr4ts VTLLexer.g4
 
-/* eslint-disable no-useless-escape*/
+/* eslint-disable no-useless-escape */
 
 change VTLLexer.ts line 240 add comment "// @ts-ignore"
 // eslint-disable-next-line

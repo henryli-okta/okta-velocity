@@ -16,9 +16,11 @@ atom
  : TEXT
  | ESCAPED_CHAR
  | ESCAPED_BLOCK
+ | ESCAPED_DOLLAR_OTHER
  | variable
  | formal
  | property_or_method
+ | ESCAPED_DIRECTIVE
  | directive
  ;
 

@@ -62,7 +62,7 @@ export class DocumentInfo {
 	 * Parse document to collect diagnostics and find symbols
 	 */
 	parseDocument() {
-		console.log("start parsing document");
+		console.log("start parsing document" + this.document.uri);
 		const start = new Date();
 
 		let errorList: Diagnostic[] = [];	

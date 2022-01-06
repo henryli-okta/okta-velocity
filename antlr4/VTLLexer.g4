@@ -11,6 +11,14 @@ ESCAPED_CHAR
  : '\\' .
  ;
 
+ESCAPED_DOLLAR_OTHER
+ : '$' (~[a-zA-Z!{])
+ ;
+
+ESCAPED_DIRECTIVE
+ : '#' (' ' | [0-9] | '<')
+ ;
+
 START_DIRECTIVE
  : '#' -> skip, pushMode(DIR_)
  ;
