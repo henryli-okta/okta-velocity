@@ -70,7 +70,7 @@ antlr4ts VTLLexer.g4
 
 /* eslint-disable no-useless-escape */
 
-change VTLLexer.ts line 240 add comment "// @ts-ignore"
+change VTLLexer.ts line 240 add comment as bellow:
 // eslint-disable-next-line
 // @ts-ignore
 
