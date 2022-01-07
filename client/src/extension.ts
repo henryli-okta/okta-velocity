@@ -43,6 +43,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand('oktaVTLPreview.start', openPreviewToTheSide),
+		vscode.workspace.onDidSaveTextDocument((document) => {
+				if (document.languageId === 'velocity'
+					&& previewProvider.sourceUri == document.uri
+					&& previewProvider.previewPanel) {
+					previewProvider.updatePreviewContent(document);
+				}
+		}),
 	);
 
 	startLanguageClientAndServer(context);

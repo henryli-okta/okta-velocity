@@ -17,8 +17,95 @@
 						"description": "user name, type: String",
 						"type": "EndProperty",
 						"example": "Henry Li"
+					},
+					{
+						"name": "login",
+						"label": "login",
+						"description": "user email, type: String",
+						"type": "EndProperty",
+						"example": "henry.li@okta.com"
+					},
+					{
+						"name": "firstName",
+						"label": "firstName",
+						"description": "user's first name, type: String",
+						"type": "EndProperty",
+						"example": "Henry"
+					},
+					{
+						"name": "login",
+						"label": "login",
+						"description": "user email, type: String",
+						"type": "EndProperty",
+						"example": "henry.li@okta.com"
 					}
 				]
+			}
+		]
+	},
+	{
+		"name": "brand",
+		"label": "brand",
+		"description": "brand context, type: Object",
+		"type": "Variable",
+		"properties": [
+			{
+				"name": "theme",
+				"label": "theme",
+				"description": "brand theme settings, type: Object",
+				"type": "Property",
+				"properties": [
+					{
+						"name": "secondaryColor",
+						"label": "secondaryColor",
+						"description": "secondaryColor, type: Color",
+						"type": "EndProperty",
+						"example": "#ffffff"
+					},
+					{
+						"name": "primaryColor",
+						"label": "primaryColor",
+						"description": "primaryColor, type: Color",
+						"type": "EndProperty",
+						"example": "#44bc98"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "request",
+		"label": "request",
+		"description": "user authentication request, type: Object",
+		"type": "Variable",
+		"properties": [
+			{
+				"name": "factor",
+				"label": "factor",
+				"description": "Name of authentication factor, type: String",
+				"type": "EndProperty",
+				"example": "Email"
+			},
+			{
+				"name": "date",
+				"label": "date",
+				"description": "Event triggerred date, type: Date",
+				"type": "EndProperty",
+				"example": "2022-01-01 03:24:56.333 ET"
+			},
+			{
+				"name": "location",
+				"label": "location",
+				"description": "client location when submitted request, type: String",
+				"type": "EndProperty",
+				"example": "U.S."
+			},
+			{
+				"name": "performedBySubject",
+				"label": "performedBySubject",
+				"description": "When activity happened, type: String",
+				"type": "EndProperty",
+				"example": "Enroll email authenticator"
 			}
 		]
 	},
@@ -26,12 +113,20 @@
 		"name": "baseURL",
 		"label": "baseURL",
 		"description": "branding level domain URL, type: String",
-		"type": "FinalVariable"
+		"type": "FinalVariable",
+		"example": "https://www.myorg.okta"
 	},
 	{
-		"name": "f",
-		"label": "f",
-		"description": "okta functions",
+		"name": "activationLink",
+		"label": "activationLink",
+		"description": "branding level domain URL, type: String",
+		"type": "FinalVariable",
+		"example": "https://www.myorg.okta/activate"
+	},
+	{
+		"name": "StringTool",
+		"label": "StringTool",
+		"description": "okta string functions",
 		"type": "Variable",
 		"properties": [
 			{

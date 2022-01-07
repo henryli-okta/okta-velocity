@@ -7,8 +7,8 @@ import * as Velocity from 'velocityjs';
 
 
 export class VTLProvider {
-	private previewPanel: vscode.WebviewPanel;
-	private sourceUri: vscode.Uri; 
+	public previewPanel: vscode.WebviewPanel;
+	public sourceUri: vscode.Uri; 
 
 	public constructor (private context: vscode.ExtensionContext) {
 	}
@@ -59,11 +59,16 @@ export class VTLProvider {
 		}
 
 		// Update HTML content to the latest code in active editor
-		this.previewPanel.webview.html = this.getWebviewContent(editor);
+		this.previewPanel.webview.html = this.getWebviewContent(editor.document);
 	}
 
-	public getWebviewContent(editor: vscode.TextEditor): string {
-		const vm = editor.document.getText();
+	public updatePreviewContent(document: vscode.TextDocument) {
+		// Update HTML content to the latest code in active editor
+		this.previewPanel.webview.html = this.getWebviewContent(document);
+	}
+
+	public getWebviewContent(document: vscode.TextDocument): string {
+		const vm = document.getText();
 		const oktaContext = VTLProvider.getOktaContext();
 		const htmlContent = Velocity.render(vm, oktaContext);
 		console.log("After render: ", htmlContent);
@@ -71,12 +76,34 @@ export class VTLProvider {
 	}
 
 	public static getOktaContext() {
-		return {
-			customer: {
-				address: 'bar',
-				Address: 'foo'
+		const result = {};
+		try {
+			const data = fs.readFileSync(path.resolve(__dirname, "../../server/out/assets/OktaVariables.json"), 'utf8');
+			const json = JSON.parse(data.toString());
+			console.log("READ COMPLETED:" + json);
+			VTLProvider.dfs(json, result);
+		} catch (error) {
+			console.error(error);
+		}
+		console.log("okta context:", result);
+		return result;
+	}
+
+	private static dfs(json: any[] | null, obj: any) {
+		if (!json) {
+			return;
+		}
+
+		json.forEach(element => {
+			const key = element.name;
+			if (element.properties) {
+				obj[key] = {};
+				const newObj = obj[key];
+				VTLProvider.dfs(element.properties, newObj);
+			} else {
+				obj[key] = element.example;
 			}
-		};
+		});
 	}
 
 	private getProjectDirectoryPath(sourceUri: vscode.Uri) {
