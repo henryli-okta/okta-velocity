@@ -82,9 +82,9 @@
         ],
         "commands": [
             {
-                "command": "catCoding.start",
-                "title": "Start new cat coding session",
-                "category": "Cat Coding"
+                "command": "oktaVTLPreview.start",
+                "title": "Preview VTL with Okta Example Context",
+                "category": "VTL Preview"
             }
         ]
 	},

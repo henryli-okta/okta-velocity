@@ -5,6 +5,7 @@
 
 import * as path from 'path';
 import * as vscode from 'vscode';
+import { VTLProvider } from './VTLProvider';
 
 import {
 	LanguageClient,
@@ -21,6 +22,29 @@ import {
 let client: LanguageClient;
 
 export function activate(context: vscode.ExtensionContext) {
+	// only allow a single webview to exist at a time
+	const previewProvider = new VTLProvider(context);
+	const openPreviewToTheSide = () => {
+		const editor = vscode.window.activeTextEditor;
+		if (editor) {
+			const document = editor.document;
+			if (document.languageId === 'velocity') {
+				previewProvider.initPreview(document.uri, editor, {
+					viewColumn: vscode.ViewColumn.Two,
+					preserveFocus: true
+				});
+			} else {
+				vscode.window.showErrorMessage("Only support Velocity!");
+			}
+		} else {
+			vscode.window.showErrorMessage("No active text editor!");
+		}
+	};
+
+	context.subscriptions.push(
+		vscode.commands.registerCommand('oktaVTLPreview.start', openPreviewToTheSide),
+	);
+
 	startLanguageClientAndServer(context);
 }
 
