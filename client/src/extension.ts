@@ -6,6 +6,7 @@
 import * as path from 'path';
 import * as vscode from 'vscode';
 import { VTLProvider } from './VTLProvider';
+import { OktaVariableViewProvider } from './OktaVariableViewProvider';
 
 import {
 	LanguageClient,
@@ -22,7 +23,7 @@ import {
 let client: LanguageClient;
 
 export function activate(context: vscode.ExtensionContext) {
-	// only allow a single webview to exist at a time
+	// only allow a single preview panel to exist at a time
 	const previewProvider = new VTLProvider(context);
 	const openPreviewToTheSide = () => {
 		const editor = vscode.window.activeTextEditor;
@@ -52,6 +53,13 @@ export function activate(context: vscode.ExtensionContext) {
 		}),
 	);
 
+	//webview view
+	const provider = new OktaVariableViewProvider(context.extensionUri);
+	context.subscriptions.push(
+		vscode.window.registerWebviewViewProvider(OktaVariableViewProvider.viewType, provider)
+	);
+
+	//language features
 	startLanguageClientAndServer(context);
 }
 
