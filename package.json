@@ -11,11 +11,31 @@
         "Snippets"
     ],
 	"activationEvents": [
+        "onView:okta.varsView",
 		"onLanguage:velocity",
         "onCommand:catCoding.start"
 	],
 	"main": "./client/out/extension",
 	"contributes": {
+        "viewsContainers": {
+			"activitybar": [
+				{
+					"id": "okta",
+					"title": "Okta",
+					"icon": "media/okta.png"
+				}
+			]
+		},
+		"views": {
+			"okta": [
+				{
+					"type": "webview",
+					"id": "okta.varsView",
+					"name": "VTL Variables",
+					"when": "resourceLangId == velocity"
+				}
+			]
+		},
 		"configuration": {
 			"type": "object",
 			"title": "Example configuration",
