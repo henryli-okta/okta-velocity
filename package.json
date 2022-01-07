@@ -11,7 +11,8 @@
         "Snippets"
     ],
 	"activationEvents": [
-		"onLanguage:velocity"
+		"onLanguage:velocity",
+        "onCommand:catCoding.start"
 	],
 	"main": "./client/out/extension",
 	"contributes": {
@@ -78,8 +79,18 @@
                 "language": "velocity",
                 "path": "./snippets/snippets.code-snippets"
             }
+        ],
+        "commands": [
+            {
+                "command": "oktaVTLPreview.start",
+                "title": "Preview VTL with Okta Example Context",
+                "category": "VTL Preview"
+            }
         ]
 	},
+    "dependencies": {
+        "vscode": "*"
+    },
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "cd server && npm run compile && cd .. && tsc -b",
