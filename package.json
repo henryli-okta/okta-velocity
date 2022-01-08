@@ -13,7 +13,8 @@
 	"activationEvents": [
         "onView:okta.varsView",
 		"onLanguage:velocity",
-        "onCommand:catCoding.start"
+        "onCommand:oktaVTLPreview.start",
+        "onCommand:oktaEmail.pull"
 	],
 	"main": "./client/out/extension",
 	"contributes": {
@@ -38,7 +39,7 @@
 		},
 		"configuration": {
 			"type": "object",
-			"title": "Example configuration",
+			"title": "Okta VTL Extension Configuration",
 			"properties": {
 				"languageServerExample.maxNumberOfProblems": {
 					"scope": "resource",
@@ -56,7 +57,25 @@
 					],
 					"default": "off",
 					"description": "Traces the communication between VS Code and the language server."
-				}
+				},
+                "okta.orgBaseUrl": {
+                    "scope": "resource",
+                    "type": "string",
+                    "default": "https://henryli-oie-admin.trexcloud.com",
+                    "description": "org domain url"
+                },
+                "okta.apiToken": {
+                    "scope": "resource",
+                    "type": "string",
+                    "default": "00HWjIU08za-8Rn1YDiUgNjsDssqWsMM3u7ZRZ2i14",
+                    "description": "org api token"
+                },
+                "okta.downloadFolder": {
+                    "scope": "resource",
+                    "type": "string",
+                    "default": "emails",
+                    "description": "Default folder where email templates should be saved."
+                }
 			}
 		},
 		"languages": [
@@ -105,11 +124,17 @@
                 "command": "oktaVTLPreview.start",
                 "title": "Preview VTL with Okta Example Context",
                 "category": "VTL Preview"
+            },
+            {
+                "command": "oktaEmail.pull",
+                "title": "Pull email templates from org",
+                "category": "Email"
             }
         ]
 	},
     "dependencies": {
-        "vscode": "*"
+        "vscode": "*",
+        "mkdirp": "^0.5.5"
     },
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
