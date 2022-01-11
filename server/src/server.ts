@@ -44,7 +44,7 @@ const documentInfoCache = new Map<string, DocumentInfo>();
 
 // Okta Variables
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const oktaVariables: Map<string, any> = getOktaVariables();
+const oktaVariables = getOktaVariables();
 
 let hasConfigurationCapability = false;
 let hasWorkspaceFolderCapability = false;
@@ -190,8 +190,7 @@ connection.onDidChangeWatchedFiles(_change => {
 // This handler provides the initial list of the completion items.
 connection.onCompletion(
 	(_completionParams: CompletionParams): CompletionItem[] | null => {	
-		console.log(oktaVariables);
-		if (oktaVariables.size <= 0) {
+		if (!oktaVariables) {
 			return null;
 		}
 
@@ -203,12 +202,13 @@ connection.onCompletion(
 		}
 		
 		//$ doesn't work, which is a bug for vs code
-		for (const [key, value] of oktaVariables) {
+		for (const key in oktaVariables) {
+			const value = oktaVariables[key];
 			result.push(
 				{
-					label: "$" + value.get("label"),
-					kind: getCompletionItemKind(value.get("type")),
-					detail: value.get("description")
+					label: "$" + value["label"],
+					kind: getCompletionItemKind(value["type"]),
+					detail: value["description"]
 				}
 			);
 		}
@@ -249,22 +249,22 @@ connection.onHover(
 		}
 		
 		const words: string[] = word.split(".");
-		let variableMap: Map<string, any> | null = oktaVariables;
+		let jsonNode = oktaVariables;
 		for (let index = 0; index < words.length; index++) {
 			const item = words[index];
-			if (variableMap) {
-				if (!variableMap.has(item)) {
+			if (jsonNode) {
+				if (!jsonNode[item]) {
 					break;
 				}
 				if (index == words.length - 1) {
 					return {
 						contents: {
 							kind: MarkupKind.PlainText,
-							value: variableMap.get(item).get("description")
+							value: jsonNode[item]["description"]
 						}
 					};
 				} else {
-					variableMap = variableMap.get(item).get("properties");
+					jsonNode = jsonNode[item]["properties"];
 				}
 			}
 		}
@@ -286,38 +286,17 @@ documents.listen(connection);
 // Listen on the connection
 connection.listen();
 
-function getOktaVariables(): Map<string, any> {
-	const result = new Map<string, any>();
+function getOktaVariables() {
+	let result = null;
 	try {
-		const data = fs.readFileSync(path.resolve(__dirname, "./assets/OktaVariables.json"), 'utf8');
+		const data = fs.readFileSync(path.resolve(__dirname, "../../media/OktaVariables.json"), 'utf8');
 		const json = JSON.parse(data.toString());
-		console.log("READ COMPLETED:" + json);
-		dfs(json, result);
+		result = json;
+		console.log("READ COMPLETED:" + result);
 	} catch (error) {
 		console.error(error);
 	}
 	return result;
-}
-
-function dfs(json: any[] | null, map: Map<string, any>) {
-	if (!json) {
-		return;
-	}
-
-	json.forEach(element => {
-		const key = element.name;
-		const value = new Map<string, any>();
-		value.set("description", element.description);
-		value.set("type", element.type);
-		value.set("example", element.example);
-		value.set("label", element.label);
-
-		const properties = new Map<string, any>();
-		dfs(element.properties, properties);
-		value.set("properties", properties);
-
-		map.set(key, value);
-	});
 }
 
 function getCompletionItemKind(type:string): CompletionItemKind {
@@ -339,25 +318,26 @@ function getDotCompletionItems(_completionParams: CompletionParams): CompletionI
 	const result: CompletionItem[] = [];
 
 	const words: string[] = word.split(".");
-	let variableMap: Map<string, any> | null = oktaVariables;
+	let jsonNode = oktaVariables;
 	for (let index = 0; index < words.length; index++) {
 		const item = words[index];
-		if (variableMap) {
-			if (!variableMap.has(item)) {
-				variableMap = null;
+		if (jsonNode) {
+			if (!jsonNode[item]) {
+				jsonNode = null;
 				break;
 			}
-			variableMap = variableMap.get(item).get("properties");
+			jsonNode = jsonNode[item]["properties"];
 		}
 	}
 	
-	if (variableMap) {
-		for (const [key, value] of variableMap) {
+	if (jsonNode) {
+		for (const key in jsonNode) {
+			const item = jsonNode[key];
 			result.push(
 				{
-					label: value.get("label"),
-					kind: getCompletionItemKind(value.get("type")),
-					detail: value.get("description")
+					label: item["label"],
+					kind: getCompletionItemKind(item["type"]),
+					detail: item["description"]
 				}
 			);
 		}

@@ -1,141 +1,116 @@
-[
-	{
-		"name": "user",
+{
+	"user": {
 		"label": "user",
 		"description": "user context, type: Object",
 		"type": "Variable",
-		"properties": [
-			{
-				"name": "profile",
+		"properties": {
+			"profile": {
 				"label": "profile",
 				"description": "user profile, type: Object",
 				"type": "Property",
-				"properties": [
-					{
-						"name": "username",
+				"properties": {
+					"username": {
 						"label": "username",
 						"description": "user name, type: String",
 						"type": "EndProperty",
 						"example": "Henry Li"
 					},
-					{
-						"name": "login",
+					"login": {
 						"label": "login",
 						"description": "user email, type: String",
 						"type": "EndProperty",
 						"example": "henry.li@okta.com"
 					},
-					{
-						"name": "firstName",
+					"firstName": {
 						"label": "firstName",
 						"description": "user's first name, type: String",
 						"type": "EndProperty",
 						"example": "Henry"
-					},
-					{
-						"name": "login",
-						"label": "login",
-						"description": "user email, type: String",
-						"type": "EndProperty",
-						"example": "henry.li@okta.com"
 					}
-				]
+				}
 			}
-		]
+		}
 	},
-	{
-		"name": "brand",
+	"brand": {
 		"label": "brand",
 		"description": "brand context, type: Object",
 		"type": "Variable",
-		"properties": [
-			{
-				"name": "theme",
+		"properties": {
+			"theme": {
 				"label": "theme",
 				"description": "brand theme settings, type: Object",
 				"type": "Property",
-				"properties": [
-					{
-						"name": "secondaryColor",
+				"properties": {
+					"secondaryColor": {
 						"label": "secondaryColor",
 						"description": "secondaryColor, type: Color",
 						"type": "EndProperty",
 						"example": "#ffffff"
 					},
-					{
-						"name": "primaryColor",
+					"primaryColor": {
 						"label": "primaryColor",
 						"description": "primaryColor, type: Color",
 						"type": "EndProperty",
 						"example": "#44bc98"
 					}
-				]
+				}
 			}
-		]
+		}
 	},
-	{
-		"name": "request",
+	"request": {
 		"label": "request",
 		"description": "user authentication request, type: Object",
 		"type": "Variable",
-		"properties": [
-			{
-				"name": "factor",
+		"properties": {
+			"factor": {
 				"label": "factor",
 				"description": "Name of authentication factor, type: String",
 				"type": "EndProperty",
 				"example": "Email"
 			},
-			{
-				"name": "date",
+			"date": {
 				"label": "date",
 				"description": "Event triggerred date, type: Date",
 				"type": "EndProperty",
 				"example": "2022-01-01 03:24:56.333 ET"
 			},
-			{
-				"name": "location",
+			"location": {
 				"label": "location",
 				"description": "client location when submitted request, type: String",
 				"type": "EndProperty",
 				"example": "U.S."
 			},
-			{
-				"name": "performedBySubject",
+			"performedBySubject": {
 				"label": "performedBySubject",
 				"description": "When activity happened, type: String",
 				"type": "EndProperty",
 				"example": "Enroll email authenticator"
 			}
-		]
+		}
 	},
-	{
-		"name": "baseURL",
+	"baseURL": {
 		"label": "baseURL",
 		"description": "branding level domain URL, type: String",
 		"type": "FinalVariable",
 		"example": "https://www.myorg.okta"
 	},
-	{
-		"name": "activationLink",
+	"activationLink": {
 		"label": "activationLink",
 		"description": "branding level domain URL, type: String",
 		"type": "FinalVariable",
 		"example": "https://www.myorg.okta/activate"
 	},
-	{
-		"name": "StringTool",
+	"StringTool": {
 		"label": "StringTool",
 		"description": "okta string functions",
 		"type": "Variable",
-		"properties": [
-			{
-				"name": "escapeHtml",
+		"properties": {
+			"escapeHtml": {
 				"label": "escapeHtml($html)",
 				"description": "Escapes the characters in a String using HTML entities.",
 				"type": "Function",
 				"example": "escapedHTML"
 			}
-		]
+		}
 	}
-]
+}
