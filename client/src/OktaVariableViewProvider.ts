@@ -44,7 +44,7 @@ export class OktaVariableViewProvider implements vscode.WebviewViewProvider {
 					<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	
 					<!-- DevExtreme theme -->
-					<link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.4/css/dx.light.css">
+					<link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.4/css/dx.dark.css" />
 				
 					<!-- DevExtreme library -->
 					<script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.4/js/dx.all.js"></script>
