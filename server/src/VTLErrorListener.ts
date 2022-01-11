@@ -19,6 +19,8 @@ export class VTLParserErrorListener implements ParserErrorListener {
 		if(offendingSymbol && offendingSymbol.text)
 			endPositionInLine += offendingSymbol.text.length;
 
+		const message = msg.split('\n');
+
 		this.errorList.push({
 			severity: DiagnosticSeverity.Error,
 			range: {
@@ -31,7 +33,7 @@ export class VTLParserErrorListener implements ParserErrorListener {
 					character: endPositionInLine
 				}
 			},
-			message: msg,
+			message: message[0],
 			source: 'velocity'
 		});
 		//console.log("parser error", msg);
@@ -45,6 +47,8 @@ export class VTLLexerErrorListener implements ANTLRErrorListener<number> {
 
 		const endPositionInLine = charPositionInLine + 1;
 
+		const message = msg.split('\n');
+
 		this.errorList.push({
 			severity: DiagnosticSeverity.Error,
 			range: {
@@ -57,7 +61,7 @@ export class VTLLexerErrorListener implements ANTLRErrorListener<number> {
 					character: endPositionInLine
 				}
 			},
-			message: msg,
+			message:  message[0],
 			source: 'velocity'
 		});
 
