@@ -5,7 +5,7 @@
 
 import * as path from 'path';
 import * as vscode from 'vscode';
-import { VTLProvider } from './VTLProvider';
+import { VTLPreviewProvider } from './VTLPreviewProvider';
 import { OktaVariableViewProvider } from './OktaVariableViewProvider';
 
 import {
@@ -31,7 +31,7 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	// only allow a single preview panel to exist at a time
-	const previewProvider = new VTLProvider(context);
+	const previewProvider = new VTLPreviewProvider(context);
 	const openPreviewToTheSide = () => {
 		const editor = vscode.window.activeTextEditor;
 		if (editor) {

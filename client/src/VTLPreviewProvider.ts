@@ -6,7 +6,7 @@ import { tmpdir } from 'os';
 import * as Velocity from 'velocityjs';
 
 
-export class VTLProvider {
+export class VTLPreviewProvider {
 	public previewPanel: vscode.WebviewPanel;
 	public sourceUri: vscode.Uri; 
 	private oktaContext = null;
@@ -69,14 +69,20 @@ export class VTLProvider {
 	}
 
 	public getWebviewContent(document: vscode.TextDocument): string {
-		const vm = document.getText();
-		if (!this.oktaContext) {
-			this.oktaContext = VTLProvider.getOktaContext();
+		try {
+			const vm = document.getText();
+			if (!this.oktaContext) {
+				this.oktaContext = VTLPreviewProvider.getOktaContext();
+			}
+			console.log("okta context:", this.oktaContext);
+			const htmlContent = Velocity.render(vm, this.oktaContext);
+			console.log("After render: ", htmlContent);
+			return htmlContent;
+		} catch (error) {
+			console.error(error);
+			//vscode.window.showErrorMessage("Reder VTL template failed!");
+			vscode.window.showErrorMessage("Render VTL template failed!", {modal: true, detail: error.message});
 		}
-		console.log("okta context:", this.oktaContext);
-		const htmlContent = Velocity.render(vm, this.oktaContext);
-		console.log("After render: ", htmlContent);
-		return htmlContent;
 	}
 
 	public static getOktaContext() {
@@ -85,7 +91,7 @@ export class VTLProvider {
 			const data = fs.readFileSync(path.resolve(__dirname, "../../media/OktaVariables.json"), 'utf8');
 			const json = JSON.parse(data.toString());
 			console.log("READ COMPLETED:" + json);
-			VTLProvider.dfs(json, result);
+			VTLPreviewProvider.dfs(json, result);
 		} catch (error) {
 			console.error(error);
 		}
@@ -101,9 +107,14 @@ export class VTLProvider {
 			const item = json[key];
 			if (item["properties"]) {
 				obj[key] = {};
-				VTLProvider.dfs(item["properties"], obj[key]);
+				VTLPreviewProvider.dfs(item["properties"], obj[key]);
 			} else {
-				obj[key] = item["example"];
+				if(item["type"] === "Function") {
+					obj[key] = new Function(item["args"], item["funcBody"]);
+				}
+				else {
+					obj[key] = item["example"];
+				}
 			}
 		}
 	}

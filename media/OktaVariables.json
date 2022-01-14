@@ -109,7 +109,29 @@
 				"label": "escapeHtml($html)",
 				"description": "Escapes the characters in a String using HTML entities.",
 				"type": "Function",
-				"example": "escapedHTML"
+				"args": ["html"],
+				"funcBody": "return html"
+			}
+		}
+	},
+	"f": {
+		"label": "f",
+		"description": "functions",
+		"type": "Variable",
+		"properties": {
+			"plusOne": {
+				"label": "plusOne($num)",
+				"description": "Plus one",
+				"type": "Function",
+				"args": ["num"],
+				"funcBody": "return num+1"
+			},
+			"formatTimeDiffHoursNowInUserLocale": {
+				"label": "formatTimeDiffHoursNowInUserLocale($expireHours)",
+				"description": "return hours",
+				"type": "Function",
+				"args": ["expireHours"],
+				"funcBody": "return expireHours + ' hours'"
 			}
 		}
 	}
